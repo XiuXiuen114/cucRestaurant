@@ -1,0 +1,8 @@
+<!--miniprogram/pages/Start/startPage.wxml-->
+
+<view wx:if="{{!userInfo}}">
+     <view class="content">
+      <text>小程序需要授权获得你的公开信息（昵称、头像等），仅用于内部使用。</text>
+  </view>
+      <button class='button1' open-type='getUserInfo' bindgetuserinfo="onGotUserInfo">授权信息</button>
+ </view>
