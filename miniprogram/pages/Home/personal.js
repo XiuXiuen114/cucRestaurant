@@ -1,13 +1,16 @@
-// miniprogram/pages/Home/personal.js
+var _app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    menuitems: [
+      { text: '个人信息', url: '#', icon: '/images/user/user1.png', tips: '', arrows: '/images/user/arrows.png' },
+      { text: '预约中', url: '#', icon: '/images/user/user2.png', tips: '', arrows: '/images/user/arrows.png' },
+      { text: '待评论', url: '#', icon: '/images/user/user3.png', tips: '', arrows: '/images/user/arrows.png' },
+      { text: '帮助说明', url: '#', icon: '/images/user/user4.png', tips: '', arrows: '/images/user/arrows.png' }
+    ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
