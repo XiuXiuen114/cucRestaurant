@@ -1,5 +1,5 @@
 .avatar-wrapper {
-  background: #8b788a;
+  background: #9bc1ca;
   padding: 25px 0;
 }
  
@@ -15,7 +15,7 @@
  
 .avatar-wrapper .text {
   text-align: center;
-  color: #fff;
+  color: rgb(245, 245, 245);
 }
  
 .listimg image {
@@ -29,6 +29,7 @@
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: gray;
 }
  
 /*分割线样式*/

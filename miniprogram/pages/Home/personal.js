@@ -6,9 +6,10 @@ Page({
   data: {
     menuitems: [
       { text: '个人信息', url: '#', icon: '/images/user/user1.png', tips: '', arrows: '/images/user/arrows.png' },
-      { text: '预约中', url: '#', icon: '/images/user/user2.png', tips: '', arrows: '/images/user/arrows.png' },
+      { text: '待取餐', url: '#', icon: '/images/user/user2.png', tips: '', arrows: '/images/user/arrows.png' },
       { text: '待评论', url: '#', icon: '/images/user/user3.png', tips: '', arrows: '/images/user/arrows.png' },
-      { text: '帮助说明', url: '#', icon: '/images/user/user4.png', tips: '', arrows: '/images/user/arrows.png' }
+      { text: '帮助说明', url: '#', icon: '/images/user/user4.png', tips: '', arrows: '/images/user/arrows.png' },
+      { text: '关于我们', url: '#', icon: '/images/user/user5.png', tips: '', arrows: '/images/user/arrows.png' }
     ]
   },
   /**
