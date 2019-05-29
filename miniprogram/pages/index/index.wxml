@@ -40,4 +40,14 @@
     </navigator>
   </view>
 
+  <!-- 跳转首页 -->
+  <view class="uploader">
+    <navigator url="../mainpage/mainpage" open-type="navigate" class="uploader-text">
+      <text>跳转首页</text>
+    </navigator>
+  </view>
+
+  <view>
+
+  </view>
 </view>
