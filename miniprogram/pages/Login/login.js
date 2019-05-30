@@ -1,4 +1,4 @@
-// pages/Home/order.js
+// miniprogram/pages/Login/login.js
 Page({
 
   /**
