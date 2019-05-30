@@ -12,12 +12,7 @@
     "pages/Home/personal",
     "pages/Home/order"
   ],
-  "window": {                                                     
-
-
-
-
-    
+  "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
@@ -49,5 +44,6 @@
         "selectedIconPath": "icon/tab_icon_my_selected.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
