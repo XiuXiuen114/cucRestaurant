@@ -1,17 +1,12 @@
 {
   "pages": [
     "pages/Start/startPage",
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
     "pages/Home/mainpage",
-    "pages/Home/personal"
+    "pages/Home/personal",
+    "pages/Login/login",
+    "pages/Login/register"
   ],
-  "window": {                                                     
+  "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
