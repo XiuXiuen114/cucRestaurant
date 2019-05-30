@@ -23,15 +23,15 @@ Page({
             userInfo: res.authSetting
           })
           //console.log(this.data.userInfo);
-          this.goToOrder();
+          this.goToMain();
         }
       }
     })
   },
 
-  goToOrder: function (e) {
+  goToMain: function (e) {
     wx.switchTab({
-      url: '../Home/order',
+      url: '../Home/mainpage',
     })
   },
 

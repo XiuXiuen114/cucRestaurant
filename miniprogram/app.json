@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/Start/startPage",
-    "pages/Home/order",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -9,15 +8,10 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/mainpage/mainpage",
+    "pages/Home/mainpage",
     "pages/Home/personal"
   ],
   "window": {                                                     
-
-
-
-
-    
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
@@ -31,7 +25,7 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/Home/order",
+        "pagePath": "pages/Home/mainpage",
         "text": "点餐",
         "iconPath": "icon/tab_icon_home_default.png",
         "selectedIconPath": "icon/tab_icon_home_selected.png"

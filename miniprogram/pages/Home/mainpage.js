@@ -1,4 +1,4 @@
-// pages/mainpage/mainpage.js
+// pages/Home/mainpage.js
 Page({
 
   /**
@@ -61,6 +61,20 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+  // 向数据库中插入数据
+  insertData: function () {
+    const db = wx.cloud.database({
+      env: 'minidev'
+    });
+
+    db.collection('dishes').where({
+      _id: "1"
+    }).get().then(res => {
+      console.log(res);
+    })
+
 
   }
 })

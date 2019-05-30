@@ -22,8 +22,8 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框  
           wx.getUserInfo({
             success: res1 => {
-              // console.log("用户信息:");
-              //console.log(res1)
+              console.log("用户信息:");
+              console.log(res1.userInfo)
               that.globalData.userInfo = res1.userInfo;
               that.globalData.userType = 1;
               wx.setStorageSync('userInfo', res1.userInfo)
