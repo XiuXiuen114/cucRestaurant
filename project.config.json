@@ -33,9 +33,11 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"id": 0,
+					"name": "rester",
+					"pathName": "pages/Login/register",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

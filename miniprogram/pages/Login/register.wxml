@@ -1,2 +1,11 @@
 <!--miniprogram/pages/Login/register.wxml-->
-<text>miniprogram/pages/Login/register.wxml</text>
+<view class="view">
+      <input type='text' name="telNumber" class="inputText" placeholder=' 请输入手机号码' style='text-align:left' bindinput='getTelNumber'/>
+         <button bindtap='getCode' class="getCode" disabled='{{codeInputDisable}}'>{{sendCodeBtnText}}</button>
+
+      <input type='text'name="verificationCode" class="inputText" placeholder=' 请输入验证码' style='text-align:left' bindinput='getVerificationCode'/>
+
+        <input type='text' name="passwd" class="inputText" placeholder=' 请设置登录密码' style='text-align:left' bindinput='getPsd'/>
+ </view>
+
+ <button class="submit" form-type='submit' bindtap='applySubmit'>申请注册</button>

@@ -7,11 +7,15 @@
     "pages/Login/register"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#0cc3b0",
+      "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "smsvercode": {
+      "version": "1.0.1",
+      "provider": "wx47025434eb041672"
+    }
   },
   "tabBar": {
     "color": "#929292",
