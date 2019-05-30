@@ -8,7 +8,7 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/mainpage/mainpage"
+    "pages/mainpage/mainpage",
     "pages/Home/personal",
     "pages/Home/order"
   ],
