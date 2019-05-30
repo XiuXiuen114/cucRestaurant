@@ -8,7 +8,7 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/mainpage/mainpage"
+    "pages/Home/mainpage",
     "pages/Home/personal",
     "pages/Home/order"
   ],
@@ -35,6 +35,12 @@
         "text": "点餐",
         "iconPath": "icon/tab_icon_home_default.png",
         "selectedIconPath": "icon/tab_icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/Home/mainpage",
+        "text": "首页",
+        "iconPath": "icon/tab_icon_my_default.png",
+        "selectedIconPath": "icon/tab_icon_my_selected.png"
       },
       {
         "pagePath": "pages/Home/personal",
