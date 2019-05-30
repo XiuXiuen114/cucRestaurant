@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.insertData();
   },
 
   /**
@@ -65,13 +65,16 @@ Page({
   },
   // 向数据库中插入数据
   insertData: function () {
+
     const db = wx.cloud.database({
-      env: 'minidev'
+      env: 'minidev-ko6dk'
     });
 
     db.collection('dishes').where({
       _id: "1"
+      // dish_name:"麻辣香锅"
     }).get().then(res => {
+      console.log('get dishes');
       console.log(res);
     })
 

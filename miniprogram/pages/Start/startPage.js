@@ -31,7 +31,7 @@ Page({
 
   goToOrder: function (e) {
     wx.switchTab({
-      url: '../Home/order',
+      url: '../Home/mainpage',
     })
   },
 
@@ -51,7 +51,7 @@ Page({
               app.globalData.userType = 1;
               app.globalData.userInfo = res.userInfo;
               wx.switchTab({
-                url: '../Home/order',
+                url: '../Home/mainpage',
               })
             }
           })
