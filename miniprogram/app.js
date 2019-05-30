@@ -40,7 +40,7 @@ App({
     userInfo: null,
     userType: null,
     hasUserInfo: false,
-    userid: 'ozANd5R2-s45Fio7CCiZa7Lvj4v8',
+    //userid: 'ozANd5R2-s45Fio7CCiZa7Lvj4v8',
     customerId: null,
     faceid: null,
     sessionKey: '',

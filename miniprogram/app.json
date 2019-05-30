@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/Start/startPage",
+    "pages/Home/order",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -8,9 +9,8 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/mainpage/mainpage"
-    "pages/Home/personal",
-    "pages/Home/order"
+    "pages/mainpage/mainpage",
+    "pages/Home/personal"
   ],
   "window": {                                                     
 
