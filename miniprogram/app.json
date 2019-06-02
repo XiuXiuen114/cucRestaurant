@@ -10,7 +10,10 @@
     "pages/Personal/waiting_for_meals/wait",
     "pages/Personal/orderList/order",
     "pages/Personal/help/help",
-    "pages/Personal/about_us/about"
+    "pages/Personal/about_us/about",
+    "pages/Personal/setpsn",
+    "pages/Personal/setpsn/setpsn",
+    "pages/Personal/exit/user_exit"
   ],
   "window": {
     "backgroundTextStyle": "light",

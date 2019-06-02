@@ -1,35 +1,23 @@
-// miniprogram/pages/Personal/set/setInfo.js
+// miniprogram/pages/Personal/exit/user_exit.js
 Page({
   modalcnt: function () {
     wx.showModal({
-      title: '注意',
-      content: '账户被系统销毁后您账户的所有数据都会清空，您确定销毁账户吗？',
+      title: '提示',
+      content: '这是一个模态弹窗',
       success: function (res) {
         if (res.confirm) {
-          wx.showToast({
-            title: '账户已销毁',
-          //  duration:1000,
-          })
-          // wx.navigateBack({
-          //   duration:2000,
-          //   url: '../../Home/personal',
-          // })
-          setTimeout(function () {
-            wx.reLaunch({
-              url: '../../Home/personal',
-            })
-          }, 500)
+          console.log('用户点击确定')
         } else if (res.cancel) {
+          wx.navigateTo({
+            url: '../../Home/personal',
+          })
           console.log('用户点击取消')
         }
       }
     })
   },
   data: {
-    menuitems: [
-      { text: '个性设置', url: "../personalSet/setpsn", icon: '../../../icon/person.png', tips: '', id: 1, arrows: '../../../icon/youjiantou.png' },
-       { text: '安全设置', url: "../personalSet/setpsn", icon: '../../../icon/index_icon.png', tips: '', id: 1, arrows: '../../../icon/youjiantou.png' }
-      ]
+
   },
 
   /**
