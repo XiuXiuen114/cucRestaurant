@@ -43,7 +43,7 @@ Page({
       wx.setStorageSync('userType', "3");
       app.globalData.userType = "3";
       wx.switchTab({
-        url: '../Home/mainpage',
+        url: '../Home/personal',
       })
     }else{
       wx.showToast({

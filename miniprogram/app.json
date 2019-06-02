@@ -5,7 +5,12 @@
     "pages/Home/personal",
     "pages/Login/login",
     "pages/Login/register",
-    "pages/Login/setPsd"
+    "pages/Login/setPsd",
+    "pages/Personal/set/setInfo",
+    "pages/Personal/waiting_for_meals/wait",
+    "pages/Personal/orderList/order",
+    "pages/Personal/help/help",
+    "pages/Personal/about_us/about"
   ],
   "window": {
     "backgroundTextStyle": "light",

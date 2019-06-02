@@ -1,70 +1,48 @@
-var _app = getApp()
+var app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     menuitems: [
-      { text: '个人信息', url: '#', icon: '/images/user/user1.png', tips: '', arrows: '/images/user/arrows.png' },
-      { text: '待取餐', url: '#', icon: '/images/user/user2.png', tips: '', arrows: '/images/user/arrows.png' },
-      { text: '待评论', url: '#', icon: '/images/user/user3.png', tips: '', arrows: '/images/user/arrows.png' },
-      { text: '帮助说明', url: '#', icon: '/images/user/user4.png', tips: '', arrows: '/images/user/arrows.png' },
-      { text: '关于我们', url: '#', icon: '/images/user/user5.png', tips: '', arrows: '/images/user/arrows.png' }
-    ]
+      { text: '待取餐', url: "../Personal/waiting_for_meals/wait", icon: '../../icon/shijian.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      { text: '历史订单', url: "../Personal/orderList/order", icon: '../../icon/consumeList.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      { text: '帮助说明', url: "../Personal/help/help", icon: '../../icon/fuwudianpu.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      { text: '关于我们', url: "../Personal/about_us/about", icon: '../../icon/person.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      { text: '设置', url: "../Personal/set/setInfo", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
+    ],
+    userInfo: null,
+    userFlag: null
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      userFlag:app.globalData.userType
+    })
+    console.log(app.globalData.userType)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  register: function(){
+    wx.navigateTo({
+      url: '../Login/register',
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  login: function(){
+    wx.navigateTo({
+      url: '../Login/login',
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  exitLogin: function(){
+    wx.setStorageSync('userType', "2");
+    app.globalData.userType = "2";
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      userFlag: "2"
+    })
   }
 })
