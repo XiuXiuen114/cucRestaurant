@@ -10,7 +10,7 @@ Page({
   data: {
     verificationCode: null,
     telNumber: null,
-    passwd: null,
+   // passwd: null,
     codeInputDisable: false,
     currentTime: 600,  //验证码有效时间为10分钟
     sendCodeBtnText: "获取验证码",  
@@ -29,6 +29,12 @@ Page({
       address: app.globalData.userInfo.country + ' ' + app.globalData.userInfo.province
        + ' ' + app.globalData.userInfo.city
     })
+    console.log(app.globalData.userId)
+    if(app.globalData.userId && !app.globalData.resetPsd){
+      wx.navigateTo({
+        url: 'setPsd',
+      })
+    }
   },
 
   getVerificationCode: function (e) {
@@ -40,12 +46,6 @@ Page({
   getTelNumber: function (e) {
     this.setData({
       telNumber: e.detail.value
-    })
-  },
-
-  getPsd: function (e) {
-    this.setData({
-      passwd: e.detail.value
     })
   },
 
@@ -122,30 +122,45 @@ Page({
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     });
-    var bizContent = {
-      "register_time": util.formatTime(new Date()) ,
-      "user_address": that.data.address,
-      "user_name": that.data.nickname,
-      "user_password": that.data.passwd,
-      "user_phone": that.data.telNumber,
-      "user_picture": that.data.headImg
-    }
-    db.collection('users').add({
-      data: {
-        bizContent
-      },
+
+    db.collection('users').where({
+    }).count({
       success: function (res) {
-        console.log(res);
-        app.globalData.userId = res._id;
-        app.globalData.userType = 1;
-        wx.setStorageSync('userId', res._id)
-        wx.setStorageSync('userType', 1)
+        console.log('users table count:' + res.total)
+        // that.setData({
+        //   users_length: (res.total + 1).toString()
+        // })
+        db.collection('users').add({
+          data: {
+            _id: (res.total + 1).toString(),
+            register_time: util.formatTime(new Date()),
+            user_address: that.data.address,
+            user_name: that.data.nickname,
+            user_password: null,
+            user_phone: that.data.telNumber,
+            user_picture: that.data.headImg
+          },
+          success: function (res0) {
+            console.log(res0);
+            app.globalData.userId = (res.total + 1).toString();
+            app.globalData.userType = "2";
+            app.globalData.phone = that.data.telNumber;
+            console.log(app.globalData.userId)
+            wx.setStorageSync('userId', app.globalData.userId)
+            wx.setStorageSync('userType', "2")
+            wx.setStorageSync('phone', that.data.telNumber)
+
+            wx.navigateTo({
+              url: 'setPsd',
+            })
+          }
+        }, {
+            fail: function (err) {
+              console.error(err);
+            }
+          })
       }
-    }, {
-        fail: function (err) {
-          console.error(err);
-        }
-      })
+    })
   },
 
   applySubmit: function(){
@@ -154,12 +169,15 @@ Page({
     //手机与验证码进行匹配
     smsvercode.checkvercode(that.data.telNumber, that.data.verificationCode, function (res) {
       if (res.errno == "0") {
-        // wx.showToast({
-        //   title: '校验成功',
-        // })
-
         //匹配成功再进行用户添加
-        that.addUser();
+        if(!app.globalData.resetPsd){
+          that.addUser();
+        }else{
+          //忘记密码入口
+          wx.navigateTo({
+            url: 'setPsd',
+          })
+        }
       }
       else {
         wx.showToast({

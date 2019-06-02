@@ -1,4 +1,4 @@
-/* miniprogram/pages/Login/login.wxss */
+/* miniprogram/pages/Login/setPsd.wxss */
 .view{
   margin-top: 30rpx;
   display: flex;
@@ -15,7 +15,7 @@
   width: 60rpx;
   height: 50rpx;
   margin-left: 85%;
-  margin-top: 150rpx;
+  margin-top: 30rpx;
   z-index: 2;
   position: absolute;
 }
@@ -26,11 +26,4 @@
    border-radius: 44rpx;
    background-color: #0cc4b1;
    color: white
-}
-.forgetPsd{
-  margin-top: 20px;
-  margin-left:76%;
-  height: 100rpx;
-  font-size: 16px;
-  color: rgb(83, 65, 65)
 }

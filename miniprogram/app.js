@@ -10,8 +10,11 @@ App({
       })
     }
     this.globalData.userId = wx.getStorageSync('userId')
-    this.globalData.userId = wx.getStorageSync('userType')
+    this.globalData.userType = wx.getStorageSync('userType')
+    this.globalData.passwd = wx.getStorageSync('passwd')
+    this.globalData.phone = wx.getStorageSync('phone')
     this.getUserInfoIfAuthed();
+   // console.log(this.globalData.userId)
   },
 
   getUserInfoIfAuthed: function () {
@@ -26,9 +29,8 @@ App({
               console.log("用户信息:");
               console.log(res1.userInfo)
               that.globalData.userInfo = res1.userInfo;
-            //  that.globalData.userType = 1;
               wx.setStorageSync('userInfo', res1.userInfo)
-              wx.setStorageSync('userType', 1)
+             // wx.setStorageSync('userType', 1)
             }
           })
         }
@@ -39,13 +41,12 @@ App({
   // 全局变量
   globalData: {
     userInfo: null,
-    userType: null,
+    userType: "1", //标记注册和登录状态，1为未注册，2为已注册未登录，3为登录
     hasUserInfo: false,
-    //userid: 'ozANd5R2-s45Fio7CCiZa7Lvj4v8',
     userId: null,
     phone: null,
     passwd: null,
-    loginFlag: 1,  //标记注册和登录状态，1为未注册，2为已注册未登录，3为登录
+    resetPsd: false,  //忘记密码相关参数
     appid: 'wxafa0fcf8440c7289'
   }
 })

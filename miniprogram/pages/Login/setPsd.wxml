@@ -1,0 +1,14 @@
+<!--miniprogram/pages/Login/setPsd.wxml-->
+<view class="view">
+
+        <input type='text' password='{{!isShowPassword}}' name="passwd" class="inputText" placeholder=' 请设置登录密码' style='text-align:left' bindinput='getPsd1'/>
+        
+         <image class='icon' src='../../icon/eye_open.jpg' wx:if='{{isShowPassword}}' bindtap='toggleShowPassword'/>
+         <image class='icon' src='../../icon/eye_close.jpg' wx:if='{{!isShowPassword}}' bindtap='toggleShowPassword'/>
+
+        <input type='text' password='{{!isShowPassword}}' name="passwd" class="inputText" placeholder=' 请确认密码' style='text-align:left' bindinput='getPsd2'/>
+          
+  
+ </view>
+
+ <button class="submit" form-type='submit' bindtap='confirm'>确认</button>

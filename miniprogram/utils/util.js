@@ -1,3 +1,4 @@
+//设置日期和时间格式
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1

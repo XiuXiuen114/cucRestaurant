@@ -1,11 +1,14 @@
 // miniprogram/pages/Login/login.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    phone: null,
+    passwd: null,
+    isShowPassword: false
   },
 
   /**
@@ -15,52 +18,47 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  toggleShowPassword: function () {
+    var isShowPassword = !this.data.isShowPassword;
+    this.setData({
+      isShowPassword: isShowPassword
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getTelNumber: function (e) {
+    this.setData({
+      phone: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  getPsd: function (e) {
+    this.setData({
+      passwd: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  login: function(){
+    if(app.globalData.passwd = this.data.passwd && app.globalData.phone == this.data.phone){
+      console.log("登录成功！")
+      wx.setStorageSync('userType', "3");
+      app.globalData.userType = "3";
+      wx.switchTab({
+        url: '../Home/mainpage',
+      })
+    }else{
+      wx.showToast({
+        title: '用户名或密码错误!',
+        duration: 2000,
+        icon: 'none'
+      });
+    }
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  forgetPsd: function(){
+    app.globalData.resetPsd = true;
+    app.globalData.passwd = null;
+    wx.navigateTo({
+      url: 'register',
+    })
   }
 })
