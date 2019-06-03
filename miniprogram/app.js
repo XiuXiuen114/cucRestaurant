@@ -7,14 +7,34 @@ App({
     } else {
       wx.cloud.init({
         traceUser: true,
+        env: "minidev-ko6dk"
       })
     }
-    this.globalData.userId = wx.getStorageSync('userId')
-    this.globalData.userType = wx.getStorageSync('userType')
-    this.globalData.passwd = wx.getStorageSync('passwd')
-    this.globalData.phone = wx.getStorageSync('phone')
     this.getUserInfoIfAuthed();
-   // console.log(this.globalData.userId)
+    this.globalData.userInfo = wx.getStorageSync('userInfo')
+    this.globalData.userType = wx.getStorageSync('userType')
+    this.globalData.headPhoto = wx.getStorageSync('headPhoto')
+    this.globalData.userId = wx.getStorageSync('userId')
+    this.globalData.phone = wx.getStorageSync('phone')
+
+
+    if (this.globalData.phone){
+      //连接数据库
+      const db = wx.cloud.database({
+        env: 'minidev-ko6dk'
+      });
+
+      db.collection('users').where({
+        user_phone: this.globalData.phone,
+
+      }).get({
+        success: function (res) {
+          console.log(res);
+          wx.setStorageSync('userId',res.data[0]._id)
+          wx.setStorageSync('headPhoto', res.data[0].user_picture)
+        }
+      })
+    }
   },
 
   getUserInfoIfAuthed: function () {
@@ -46,7 +66,9 @@ App({
     userId: null,
     phone: null,
     passwd: null,
+    headPhoto: null,
     resetPsd: false,  //忘记密码相关参数
-    appid: 'wxafa0fcf8440c7289'
+    appid: 'wxafa0fcf8440c7289',
+    openid:''
   }
 })

@@ -35,6 +35,8 @@ Page({
         url: 'setPsd',
       })
     }
+
+   // this.addUser();
   },
 
   getVerificationCode: function (e) {
@@ -126,39 +128,50 @@ Page({
     db.collection('users').where({
     }).count({
       success: function (res) {
-        console.log('users table count:' + res.total)
-        // that.setData({
-        //   users_length: (res.total + 1).toString()
-        // })
-        db.collection('users').add({
-          data: {
-            _id: (res.total + 1).toString(),
-            register_time: util.formatTime(new Date()),
-            user_address: that.data.address,
-            user_name: that.data.nickname,
-            user_password: null,
-            user_phone: that.data.telNumber,
-            user_picture: that.data.headImg
-          },
-          success: function (res0) {
-            console.log(res0);
-            app.globalData.userId = (res.total + 1).toString();
-            app.globalData.userType = "2";
-            app.globalData.phone = that.data.telNumber;
-            console.log(app.globalData.userId)
-            wx.setStorageSync('userId', app.globalData.userId)
-            wx.setStorageSync('userType', "2")
-            wx.setStorageSync('phone', that.data.telNumber)
+        console.log(res)
 
-            wx.navigateTo({
-              url: 'setPsd',
-            })
+        db.collection('users').where({
+         // _id: app.globalData.userId
+        }).get({
+          success: function (res0) {
+            console.log(res0.data[res.total-1]._id);  //获取users表最后一个记录的id
+
+            db.collection('users').add({
+              data: {
+                _id: (parseInt(res0.data[res.total - 1]._id )+ 1).toString(),
+                register_time: util.formatTime(new Date()),
+                user_address: that.data.address,
+                user_name: that.data.nickname,
+                user_password: null,
+                user_phone: that.data.telNumber,
+                user_picture: that.data.headImg
+              },
+              success: function (res0) {
+                console.log(res0);
+                app.globalData.userId = (res.total + 1).toString();
+                app.globalData.userType = "2";
+                app.globalData.phone = that.data.telNumber;
+                console.log(app.globalData.userId)
+                wx.setStorageSync('userId', app.globalData.userId)
+                wx.setStorageSync('userType', "2")
+                wx.setStorageSync('phone', that.data.telNumber)
+
+                wx.navigateTo({
+                  url: 'setPsd',
+                })
+              }
+            }, {
+                fail: function (err) {
+                  console.error(err);
+                }
+              })
+
           }
-        }, {
-            fail: function (err) {
-              console.error(err);
-            }
-          })
+        })
+        that.setData({
+          users_length: (res.total + 1).toString()
+        })
+      
       }
     })
   },

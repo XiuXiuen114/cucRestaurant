@@ -20,9 +20,10 @@ Page({
   onLoad: function (options) {
     this.setData({
       userInfo: app.globalData.userInfo,
+      head:app.globalData.headPhoto,
       userFlag:app.globalData.userType
     })
-    console.log(this.data.userFlag)
+    console.log(app.globalData.userType)
   },
 
   register: function(){

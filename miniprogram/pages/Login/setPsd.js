@@ -52,6 +52,7 @@ Page({
       const db = wx.cloud.database({
         env: 'minidev-ko6dk'
       });
+
       db.collection('users').where({
         _id:app.globalData.userId
       }).get({

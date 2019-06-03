@@ -15,5 +15,16 @@
         <!-- 分割线 -->
        <view class="divLine"></view>
       </block>
-     <!-- <button class = "button" bindtap="onRemove">账户销毁</button> -->
   </view>
+
+<view>
+        <view class='content' bindtap='destroy'>
+          <view class="listimg">
+            <image src='../../../icon/index_icon.png'></image>
+          </view>
+          <text class='text'>注销账户</text>
+        </view>
+        <!-- 分割线 -->
+       <view class="divLine"></view>
+  </view>
+

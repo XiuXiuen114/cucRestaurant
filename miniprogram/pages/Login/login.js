@@ -15,7 +15,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(app.globalData.userType == '3'){
+      wx.switchTab({
+        url: '../Home/personal',
+      })
+    }
   },
 
   toggleShowPassword: function () {
@@ -43,7 +47,7 @@ Page({
       wx.setStorageSync('userType', "3");
       app.globalData.userType = "3";
       console.log(app.globalData.userType)
-      getCurrentPages()[getCurrentPages().length - 2].onLoad();
+      //getCurrentPages()[getCurrentPages().length - 2].onLoad();
       wx.switchTab({
         url: '../Home/personal',
       })
