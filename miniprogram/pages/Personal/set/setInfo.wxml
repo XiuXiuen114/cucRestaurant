@@ -16,5 +16,5 @@
        <view class="divLine"></view>
       </block>
      </view>
-     <button class = "btn" bindtap="modalcnt">账户销毁</button>
+     <button class = "btn" bindtap="onRemove">账户销毁</button>
 </view> 
