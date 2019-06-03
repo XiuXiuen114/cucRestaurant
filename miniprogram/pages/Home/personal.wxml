@@ -28,7 +28,6 @@
             <image src="{{item.icon}}"></image>
           </view>
           <text class="text2">{{item.text}}</text>
-          <!-- <view class="listicon">{{item.tips}}</view> -->
           <view class="arrows">
             <image src="{{item.arrows}}"></image>
           </view>

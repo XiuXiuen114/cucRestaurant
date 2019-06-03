@@ -1,12 +1,12 @@
-<view class="list-wrapper">
-    <view class="alllists">
+
+<view>
       <block wx:for="{{menuitems}}" wx:key="menu_for">
         <navigator url="{{item.url}}" class="lists">
         <view class='content'>
           <view class="listimg">
             <image src='{{item.icon}}'></image>
           </view>
-          <text>{{item.text}}</text>
+          <text class='text'>{{item.text}}</text>
           <view class="arrows">
             <image src="{{item.arrows}}"></image>
           </view>
@@ -15,6 +15,5 @@
         <!-- 分割线 -->
        <view class="divLine"></view>
       </block>
-     </view>
-     <button class = "btn" bindtap="onRemove">账户销毁</button>
-</view> 
+     <!-- <button class = "button" bindtap="onRemove">账户销毁</button> -->
+  </view>

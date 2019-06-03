@@ -1,4 +1,4 @@
-// pages/Personal/setpsn/setpsn.js
+// miniprogram/pages/Personal/set/account/destroy.js
 Page({
 
   /**

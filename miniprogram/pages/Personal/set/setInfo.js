@@ -3,8 +3,9 @@ var app=getApp()
 Page({
   data: {
     menuitems: [
-      { text: '个性设置', url: "../personalSet/setpsn", icon: '../../../icon/person.png', tips: '', id: 1, arrows: '../../../icon/youjiantou.png' },
-       { text: '安全设置', url: "../personalSet/setpsn", icon: '../../../icon/index_icon.png', tips: '', id: 1, arrows: '../../../icon/youjiantou.png' }
+      { text: '修改个人信息', url: "userInfo/modify", icon: '../../../icon/person.png',  arrows: '../../../icon/youjiantou.png' },
+       { text: '更换手机号 ', url: "account/changePhone", icon: '../../../icon/index_icon.png',arrows: '../../../icon/youjiantou.png' },
+      { text: '注销账户', url: "account/destroy", icon: '../../../icon/index_icon.png', arrows: '../../../icon/youjiantou.png' }
       ]
   },
 
@@ -26,11 +27,11 @@ Page({
       })
       wx.showModal({
         title: '注意',
-        content: '账户被系统销毁后您账户的所有数据都会清空，您确定销毁账户吗？',
+        content: '注销账户会清除用户数据，您确定注销吗？',
         success: function (res) {
           if (res.confirm) {
             wx.showToast({
-              title: '账户已销毁',
+              title: '账户已注销',
             })
             //本地缓存
             // wx.clearStorageSync()

@@ -1,4 +1,4 @@
-// pages/Personal/setpsn.js
+// miniprogram/pages/Personal/set/account/changePhone.js
 Page({
 
   /**

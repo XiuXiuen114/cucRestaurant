@@ -22,7 +22,7 @@ Page({
       userInfo: app.globalData.userInfo,
       userFlag:app.globalData.userType
     })
-    console.log(app.globalData.userType)
+    console.log(this.data.userFlag)
   },
 
   register: function(){

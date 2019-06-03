@@ -42,6 +42,8 @@ Page({
       console.log("登录成功！")
       wx.setStorageSync('userType', "3");
       app.globalData.userType = "3";
+      console.log(app.globalData.userType)
+      getCurrentPages()[getCurrentPages().length - 2].onLoad();
       wx.switchTab({
         url: '../Home/personal',
       })

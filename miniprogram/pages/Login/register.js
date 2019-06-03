@@ -12,7 +12,7 @@ Page({
     telNumber: null,
    // passwd: null,
     codeInputDisable: false,
-    currentTime: 600,  //验证码有效时间为10分钟
+    currentTime: 60,  //验证码有效时间为1分钟
     sendCodeBtnText: "获取验证码",  
     headImg: null,
     nickname: null,

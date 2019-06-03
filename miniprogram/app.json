@@ -11,9 +11,9 @@
     "pages/Personal/orderList/order",
     "pages/Personal/help/help",
     "pages/Personal/about_us/about",
-    "pages/Personal/setpsn",
-    "pages/Personal/setpsn/setpsn",
-    "pages/Personal/exit/user_exit"
+    "pages/Personal/set/userInfo/modify",
+    "pages/Personal/set/account/changePhone",
+    "pages/Personal/set/account/destroy"
   ],
   "window": {
     "backgroundTextStyle": "light",
