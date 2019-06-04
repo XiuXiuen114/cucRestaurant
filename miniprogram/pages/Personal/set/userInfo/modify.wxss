@@ -1,1 +1,41 @@
 /* miniprogram/pages/Personal/set/userInfo/modify.wxss */
+.head{
+ margin-top: 20px;
+ background: #a8ddd8;
+ height: 2rpx;
+ display: flex;
+ flex-direction: row;
+ padding-left: 20rpx;
+ padding-right: 20rpx;
+}
+.head1{
+ margin-top: 50px;
+ background: #a8ddd8;
+ height: 2rpx;
+ display: flex;
+ flex-direction: row;
+ padding-left: 20rpx;
+ padding-right: 20rpx;
+}
+.head_image{
+  margin-top: 5px;
+  width: 40px;
+  height: 40px;
+  margin-left:40%;
+  border-radius: 50%;
+}
+.text1{
+  display: flex;
+  margin-top: 10px;
+  width:40%;
+  text-align: center;
+  color:gray;
+}
+.user_name{
+  display: flex;
+  margin-top:10px;
+  width:40%;
+  margin-left: 35%;
+  text-align: left;
+  color:gray;
+}

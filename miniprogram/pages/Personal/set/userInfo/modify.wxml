@@ -1,2 +1,8 @@
-<!--miniprogram/pages/Personal/set/userInfo/modify.wxml-->
-<text>miniprogram/pages/Personal/set/userInfo/modify.wxml</text>
+<view class="head" bindtap='loadPic'>
+<text class='text1'>更改头像</text>
+<image src="{{headPhoto}}" class='head_image' mode='scaleToFill'></image>
+</view>
+<view class="head1">
+<text class='text1'>昵称</text>
+<text class='user_name' bindtap='set_Name'>{{userInfo.nickName}}</text>
+</view>

@@ -1,0 +1,7 @@
+<!--miniprogram/pages/Personal/set/setName.wxml-->
+<input class="head1" type='text" bindinput='getUsername' maxlength="10" placeholder='在此输入新昵称'/>
+<view class ='head'></view>
+<text class="tap">It's a good day to come to cucRestaurant.</text>
+<view class='ok'> 
+   <button class='text' bindtap="submit">确定</button>
+</view>
