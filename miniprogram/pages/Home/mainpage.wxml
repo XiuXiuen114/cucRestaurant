@@ -1,2 +1,20 @@
 <!--pages/Home/mainpage.wxml-->
-<text>pages/Home/mainpage.wxml</text>
+<!-- <text>pages/Home/mainpage.wxml</text> -->
+<!-- <view class='swiper-container'>
+  <swiper autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+    <block  wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" class='img' bindtap='switchImg'/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view> -->
+
+<!-- <view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{date}}" start="{{current_time}}" end="{{current_time}}" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view> -->
