@@ -1,5 +1,6 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -8,13 +9,55 @@
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
     "pages/mainpage/mainpage"
+=======
+    "pages/Start/startPage",
+    "pages/Home/mainpage",
+    "pages/Home/personal",
+    "pages/Login/login",
+    "pages/Login/register",
+    "pages/Login/setPsd",
+    "pages/Personal/set/setInfo",
+    "pages/Personal/waiting_for_meals/wait",
+    "pages/Personal/orderList/order",
+    "pages/Personal/help/help",
+    "pages/Personal/about_us/about",
+    "pages/Personal/set/userInfo/modify",
+    "pages/Personal/set/account/changePhone"
+>>>>>>> ca4be198f4cb8a119d1994eeec61050cf70805d7
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarBackgroundColor": "#0cc3b0",
     "navigationBarTextStyle": "black"
   },
+<<<<<<< HEAD
+=======
+  "plugins": {
+    "smsvercode": {
+      "version": "1.0.1",
+      "provider": "wx47025434eb041672"
+    }
+  },
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "#0cc3b0",
+    "backgroundColor": "#FAFAFA",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/Home/mainpage",
+        "text": "点餐",
+        "iconPath": "icon/tab_icon_home_default.png",
+        "selectedIconPath": "icon/tab_icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/Home/personal",
+        "text": "个人",
+        "iconPath": "icon/tab_icon_my_default.png",
+        "selectedIconPath": "icon/tab_icon_my_selected.png"
+      }
+    ]
+  },
+>>>>>>> ca4be198f4cb8a119d1994eeec61050cf70805d7
   "sitemapLocation": "sitemap.json"
 }

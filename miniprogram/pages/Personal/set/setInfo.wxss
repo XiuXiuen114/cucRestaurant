@@ -1,0 +1,39 @@
+
+.listimg image {
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  padding-left: 10rpx;
+}
+.content{
+  display: flex;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  color: gray;
+  vertical-align: middle;
+}
+/*分割线样式*/
+.divLine{
+ background: #a8ddd8;
+ width: 100%;
+ height: 3rpx;
+}
+.arrows image {
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin-left: 10rpx;
+}
+.text{
+  width: 75%;
+  padding-left: 10rpx;
+}
+.button{
+  margin-top: 200rpx;
+  width:450rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background-color: #0cc4b1;
+  color: white
+}

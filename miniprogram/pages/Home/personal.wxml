@@ -1,0 +1,42 @@
+
+<view class="mine-wrapper">
+  <view class="avatar-wrapper">
+    <view>
+      <view class="avatar">
+        <image style="border-radius:50%;" src="{{head}}" wx:if='{{head}}'></image>
+        <image style="border-radius:50%;" src="{{userInfo.avatarUrl}}" wx:else></image>
+      </view>
+      <view class="text1">
+        <text wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</text>
+        <text wx:if='{{userFlag == 1}}' bindtap="register">/注册</text>
+        <text wx:if='{{userFlag == 2}}' bindtap="login">/登录</text>
+        <text wx:if='{{userFlag == 3}}' bindtap='exitLogin'>/退出登录</text>
+      </view>
+      <view class="text">
+        <text wx:if="{{userSign==2}}">{{"您还没有填写真实信息,请填写"}}</text>
+        <text wx:elif="{{userSign==1}}">{{"会员用户"}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="list-wrapper">
+    <view class="alllists">
+      <block wx:for="{{menuitems}}" wx:key="menu_for">
+        <navigator url="{{item.url}}" class="lists" wx:if="{{userFlag == 3}}">
+        <view class='content'>
+          <view class="listimg">
+            <image src="{{item.icon}}"></image>
+          </view>
+          <text class="text2">{{item.text}}</text>
+          <view class="arrows">
+            <image src="{{item.arrows}}"></image>
+          </view>
+        </view>
+        </navigator>
+        <!-- 分割线 -->
+        <view class="divLine"></view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+.avatar-wrapper {
+  background: #0cc3b0;
+  padding: 30rpx 0;
+}
+ 
+.avatar-wrapper .avatar {
+  margin: 0 auto;
+  text-align: center;
+}
+ 
+.avatar-wrapper .avatar image {
+  width: 100px;
+  height: 100px;
+}
+ 
+.avatar-wrapper .text {
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+ 
+.listimg image {
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  padding-left: 20rpx;
+}
+ 
+.content{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: gray;
+}
+ 
+/*分割线样式*/
+.divLine{
+ background: #a8ddd8;
+ width: 100%;
+ height: 5rpx;
+}
+ 
+.arrows image {
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin-left: 10rpx;
+}
+.text1{
+   color: white;
+   text-align: center;
+   margin-bottom: 20rpx;
+}
+
+.text2{
+  width: 75%;
+}

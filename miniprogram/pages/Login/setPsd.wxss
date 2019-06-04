@@ -1,0 +1,29 @@
+/* miniprogram/pages/Login/setPsd.wxss */
+.view{
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.inputText{
+  height:110rpx;
+  border-bottom: 1px solid #0cc4b1;
+  font-size: 16px;
+  padding-left: 25rpx;
+}
+.icon{
+  width: 60rpx;
+  height: 50rpx;
+  margin-left: 85%;
+  margin-top: 30rpx;
+  z-index: 2;
+  position: absolute;
+}
+.submit{
+  margin-top: 200rpx;
+  width:450rpx;
+  height: 88rpx;
+   border-radius: 44rpx;
+   background-color: #0cc4b1;
+   color: white
+}

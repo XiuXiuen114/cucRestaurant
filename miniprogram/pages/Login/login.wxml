@@ -1,0 +1,13 @@
+<!--miniprogram/pages/Login/login.wxml-->
+<view class="view">
+      <input type='text' name="telNumber" class="inputText" placeholder=' 请输入手机号码' style='text-align:left' bindinput='getTelNumber'/>
+
+        <input type='text' password='{{!isShowPassword}}' name="passwd" class="inputText" placeholder=' 请输入密码' style='text-align:left' bindinput='getPsd'/>
+        
+          <image class='icon' src='../../icon/eye_open.jpg' wx:if='{{isShowPassword}}' bindtap='toggleShowPassword'/>
+         <image class='icon' src='../../icon/eye_close.jpg' wx:if='{{!isShowPassword}}' bindtap='toggleShowPassword'/>
+
+  <text class="forgetPsd"  bindtap='forgetPsd'>忘记密码</text>
+ </view>
+
+ <button class="submit" form-type='submit' bindtap='login'>登录</button>
