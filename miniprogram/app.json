@@ -12,10 +12,6 @@
     "pages/Personal/help/help",
     "pages/Personal/about_us/about",
     "pages/Personal/set/userInfo/modify",
-
-    "pages/Personal/set/account/changePhone"
-
-
     "pages/Personal/set/account/changePhone",
     "pages/Useless/useless",
     "pages/Personal/set/setName"
