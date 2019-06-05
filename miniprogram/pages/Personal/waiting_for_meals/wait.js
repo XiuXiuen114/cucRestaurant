@@ -1,18 +1,34 @@
 // miniprogram/pages/Personal/waiting_for_meals/wait.js
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    dish:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
+    })
+    db.collection('orders').where({
+      user_id:2
+    }).get({
 
+      success:function(res){
+        console.log(res)
+          that.setData({
+            dish:res.data[0].dish_id
+          })
+        console.log(that.data.dish)
+      }
+    })
   },
 
   /**
