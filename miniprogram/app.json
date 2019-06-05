@@ -14,6 +14,7 @@
     "pages/Personal/set/userInfo/modify",
     "pages/Personal/set/account/changePhone",
     "pages/Useless/useless"
+    "pages/Personal/set/setName"
   ],
   "window": {
     "backgroundTextStyle": "light",

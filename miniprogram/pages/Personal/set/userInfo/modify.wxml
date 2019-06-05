@@ -1,2 +1,16 @@
-<!--miniprogram/pages/Personal/set/userInfo/modify.wxml-->
-<text>miniprogram/pages/Personal/set/userInfo/modify.wxml</text>
+<view class="head" bindtap='loadPic'>
+<text class='text1'>头像</text>
+<image src="{{headPhoto}}" class='head_image' mode='scaleToFill'></image>
+</view>
+
+<view class="head1">
+<text class='text1'>昵称</text>
+<text class='user_name' bindtap='set_Name'>{{user_name}}</text>
+<image src="../../../../icon/youjiantou.png" class='_image'></image>
+</view>
+
+<view class='head1'>
+<text class='text1'>账户密码</text>
+<text class='user_name' bindtap='psd_new'></text>
+<image src="../../../../icon/youjiantou.png" class='_image'></image>
+</view>

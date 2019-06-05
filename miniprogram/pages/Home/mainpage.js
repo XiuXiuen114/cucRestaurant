@@ -13,6 +13,7 @@ Page({
     interval: 2000,
     duration: 1000,
     ads_list: [],
+
   },
 
   /**
