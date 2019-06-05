@@ -1,5 +1,6 @@
 <!--pages/Home/mainpage.wxml-->
 
+
 <!-- 标题 -->
 <!-- 搜索框view -->
 <view class="search_con">
@@ -21,5 +22,19 @@
 
 </view>
 
+
+
+<!-- <text>pages/Home/mainpage.wxml</text> -->
+<swiper indicator-dots="{{indicatorDots}}" bindchange='swiperChange'
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current='{{cur_index}}'>
+  <block wx:for="{{ads_list}}" wx:key="unique">
+    <swiper-item>
+      <image src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
+      class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<button bindtap='goUseless'>useless</button>
 
 

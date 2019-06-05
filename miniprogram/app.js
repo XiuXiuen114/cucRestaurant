@@ -69,6 +69,8 @@ App({
     headPhoto: null,
     resetPsd: false,  //忘记密码相关参数
     appid: 'wxafa0fcf8440c7289',
-    openid:''
+    openid:'',
+    resID:null,//店家首页
+    dishID:null//菜品首页
   }
 })

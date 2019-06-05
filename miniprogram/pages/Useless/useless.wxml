@@ -1,0 +1,30 @@
+<!--pages/Useless/useless.wxml-->
+<text>pages/Useless/useless.wxml</text>
+<!-- date selector -->
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{set_start_date}}" start="{{limit_start_date}}" end="{{limit_end_date}}" bindchange="bindStartDate">
+    <view class="picker">
+      ad start time: {{set_start_date}}
+    </view>
+  </picker>
+
+  <picker mode="date" value="{{set_end_date}}" start="2019-06-04" end="2019-07-04" bindchange="bindEndDate">
+    <view class="picker">
+      ad start time: {{set_end_date}}
+    </view>
+  </picker>
+</view>
+<!-- end date selector -->
+<view class="section">
+  <input placeholder="请输入广告内容" bindblur='bindContent' auto-focus/>
+</view>
+<view class="section">
+  <picker bindchange="bindDuration" value="{{duration}}" range="{{duration_array}}">
+    <view class="picker">
+      选择广告天数{{duration}}
+    </view>
+  </picker>
+</view>
+<button bindtap='uploadImage'>上传一张广告图片</button>
+<button bindtap='submitAd'>提交广告</button>
