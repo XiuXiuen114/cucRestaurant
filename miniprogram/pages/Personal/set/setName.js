@@ -35,8 +35,7 @@ Page({
       success: function (res) {
         console.log(that.data.userName)
         wx.showToast({
-          title: '更改成功！',
-          timestamp:1000
+          title: '更改成功！'
         })
         getCurrentPages()[getCurrentPages().length - 3].onLoad()
         wx.redirectTo({
