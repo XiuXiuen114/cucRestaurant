@@ -47,7 +47,7 @@ Page({
     ad_data: {
       _id: "1",
       ad_content: "五折封顶！",
-      ad_picture: this.uploadImage(),
+      ad_picture: null,
       ad_price: 300,
       start_time: null,
       end_time: null,
