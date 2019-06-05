@@ -4,5 +4,5 @@
 </view>
 <view class="head1">
 <text class='text1'>昵称</text>
-<text class='user_name' bindtap='set_Name'>{{userInfo.nickName}}</text>
+<text class='user_name' bindtap='set_Name'>{{user_name}}</text>
 </view>

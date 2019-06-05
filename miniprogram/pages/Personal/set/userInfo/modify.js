@@ -6,7 +6,8 @@ Page({
    */
   data: {
     headPhoto:null,
-    userInfo: null
+    userInfo: null,
+    user_name:null
   },
 
   /**
@@ -14,9 +15,23 @@ Page({
    */
 
   onLoad: function (options) {
+    var that = this;
     this.setData({
-      headPhoto:app.globalData.headPhoto,
-      userInfo: app.globalData.userInfo,
+      headPhoto:app.globalData.headPhoto
+    })
+    const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
+    })
+    db.collection('users').where({
+      _id: app.globalData.userId
+    }).get({
+      success: function (res) {
+        that.setData({
+          user_name: res.data[0].user_name
+        })
+      }, fail: function (err) {
+        console.log(err)
+      }
     })
   },
   set_Name:function(){

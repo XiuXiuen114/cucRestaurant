@@ -36,7 +36,9 @@ Page({
         console.log(that.data.userName)
         wx.showToast({
           title: '更改成功！',
+          timestamp:1000
         })
+        getCurrentPages()[getCurrentPages().length - 3].onLoad()
         wx.redirectTo({
           url: 'userInfo/modify',
         })
