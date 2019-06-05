@@ -1,13 +1,41 @@
 // pages/Home/mainpage.js
+const app=getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    re: []
   },
-
+  //执行点击事件
+  formSubmit: function(e){
+   // console.log(e.dish_name)
+    console.log('nishi')
+    const db = wx.cloud.database()
+    var that = this
+    var formData = e.detail.value.keyword
+    db.collection('dishes').where({
+      //使用正则查询，实现对搜索的模糊查询
+      dish_name: db.RegExp({
+        //从搜索栏中获取的value作为规则进行匹配
+        regexp: '.*'+formData,
+        options: 'i',
+        //大小写不区分
+      })
+    }).get({
+      success: res => {
+        console.log(res.data)
+        that.setData({
+          re: JSON.stringify(res.data,null,2)
+        })
+        //wx.hideLoading();
+      }
+    }, {
+        fail: function (err) {
+          console.error(err);
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -76,8 +104,8 @@ Page({
 
     db.collection('dishes').add({
       data: {
-        _id: "3",
-        dish_name: "回锅肉盖饭",
+        _id: "5",
+        dish_name: "烤肉拌饭",
         dish_picture: null,
         own_of_res_id: "",
         dish_price: 13,

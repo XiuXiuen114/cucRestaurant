@@ -1,15 +1,5 @@
 {
   "pages": [
-<<<<<<< HEAD
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/mainpage/mainpage"
-=======
     "pages/Start/startPage",
     "pages/Home/mainpage",
     "pages/Home/personal",
@@ -23,15 +13,13 @@
     "pages/Personal/about_us/about",
     "pages/Personal/set/userInfo/modify",
     "pages/Personal/set/account/changePhone"
->>>>>>> ca4be198f4cb8a119d1994eeec61050cf70805d7
+
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0cc3b0",
     "navigationBarTextStyle": "black"
   },
-<<<<<<< HEAD
-=======
   "plugins": {
     "smsvercode": {
       "version": "1.0.1",
@@ -58,6 +46,6 @@
       }
     ]
   },
->>>>>>> ca4be198f4cb8a119d1994eeec61050cf70805d7
+
   "sitemapLocation": "sitemap.json"
 }
