@@ -1,4 +1,4 @@
-// miniprogram/pages/Personal/waiting_for_meals/wait.js
+// miniprogram/pages/Personal/set/setName.js
 var app=getApp()
 Page({
 
@@ -6,31 +6,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dish:[],
+    userName:app.globalData.userInfo.nickName
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
+
+  },
+  getUsername: function (e) {
+    this.setData({
+      userName: e.detail.value
+    })
+  },
+  
+  submit:function(){
+    var that=this;
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
-    db.collection('orders').where({
-      user_id:2
-    }).get({
-
-      success:function(res){
-        console.log(res)
-          that.setData({
-            dish:res.data[0].dish_id
-          })
-        console.log(that.data.dish)
+    app.globalData.userInfo.nickName = that.data.userName
+    // db.collection
+    db.collection('users').doc(app.globalData.userId).update({
+      data: {
+        user_name: that.data.userName
+      },
+      success: function (res) {
+        console.log(that.data.userName)
+        wx.showToast({
+          title: '更改成功！'
+        })
+        getCurrentPages()[getCurrentPages().length - 3].onLoad()
+        wx.redirectTo({
+          url: 'userInfo/modify',
+        })
+      }, fail: function (err) {
+        console.log(err);
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
