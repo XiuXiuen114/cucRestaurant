@@ -1,7 +1,4 @@
 // pages/Home/mainpage.js
-
-const app=getApp()
-
 var util = require('../../utils/util.js');  
 const app=getApp();
 
@@ -11,7 +8,13 @@ Page({
    */
   data: {
 
-    re: []
+    re: [],
+     //轮播初始化参数
+    indicatorDots: true,
+    autoplay: true,
+    interval: 2000,
+    duration: 1000,
+    ads_list: [],
   },
   //执行点击事件
   formSubmit: function(e){
@@ -41,15 +44,6 @@ Page({
           console.error(err);
         }
       })
-
-    //轮播初始化参数
-    indicatorDots: true,
-    autoplay: true,
-    interval: 2000,
-    duration: 1000,
-    ads_list: [],
-
-
   },
   /**
    * 生命周期函数--监听页面加载
@@ -66,42 +60,6 @@ Page({
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     });
-
-
-    db.collection('dishes').add({
-      data: {
-        _id: "5",
-        dish_name: "烤肉拌饭",
-        dish_picture: null,
-        own_of_res_id: "",
-        dish_price: 13,
-        reserved_number: 102,
-        thumbs_up: 99,
-        thumbs_down: 1,
-        update_time: null
-      },
-      }) 
-      .then(res => {
-        console.log(res);
-      })// end add function
-
-  }, // end insertDishData
-  // 向数据库commentses中插入数据
-  insertCommentData: function () {
-    //连接数据库
-    const db = wx.cloud.database({
-      env: 'minidev-ko6dk'
-    });
-
-    db.collection('comments').add({
-      data: {
-        _id: "4",
-        comment_content:"有点太咸了！",
-        comment_time:null,
-        dish_id:"2",
-        user_id:"1"
-      },
-
     const _=db.command
     var cur=new Date().getTime();//当前时间的时间戳
     // console.log('cur_time', cur);
@@ -121,7 +79,7 @@ Page({
       })
   },// end getAds
   //轮播自动切换
-  swiperChange:function(e){
+  swiperChange: function(e){
 
   },
   //轮播选择一张图片
@@ -137,5 +95,5 @@ Page({
     })
   },
   
- 
+
 }) // end pages
