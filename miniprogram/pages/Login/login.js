@@ -47,7 +47,7 @@ Page({
       wx.setStorageSync('userType', "3");
       app.globalData.userType = "3";
       console.log(app.globalData.userType)
-      //getCurrentPages()[getCurrentPages().length - 2].onLoad();
+      getCurrentPages()[getCurrentPages().length - 2].onLoad();
       wx.switchTab({
         url: '../Home/personal',
       })

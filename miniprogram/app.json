@@ -14,8 +14,8 @@
     "pages/Personal/set/userInfo/modify",
     "pages/Personal/set/account/changePhone",
     "pages/Useless/useless",
-    "pages/Personal/set/setName"
-
+    "pages/Personal/set/setName",
+    "pages/Home/register_shop"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -48,6 +48,5 @@
       }
     ]
   },
-
   "sitemapLocation": "sitemap.json"
 }

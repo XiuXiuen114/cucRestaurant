@@ -27,4 +27,7 @@
         <!-- 分割线 -->
        <view class="divLine"></view>
   </view>
-
+ 
+<view class='exit' bindtap='exitLogin'>
+    <text> 退出当前账号</text>
+</view>

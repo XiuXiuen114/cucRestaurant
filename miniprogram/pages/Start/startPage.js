@@ -15,18 +15,10 @@ Page({
    */
   onLoad: function (options) {
     //console.log(this.data.userInfo)
-    wx.getSetting({
-      success: res => {
-        // 先判断用户是否授权获取用户信息
-        if (res.authSetting['scope.userInfo']) {
-          this.setData({
-            userInfo: res.authSetting
-          })
-          //console.log(this.data.userInfo);
-          this.goToMain();
-        }
-      }
-    })
+    this.data.userInfo = wx.getStorageSync("userInfo")
+    if(this.data.userInfo){
+      this.goToMain();
+    }
   },
 
   goToMain: function (e) {
