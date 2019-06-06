@@ -143,6 +143,7 @@ Page({
                 user_address: that.data.address,
                 user_name: that.data.nickname,
                 user_password: null,
+                status: '1',
                 user_phone: that.data.telNumber,
                 user_picture: that.data.headImg
               },
@@ -150,6 +151,7 @@ Page({
                 console.log(res0);
                 app.globalData.userId = (res.total + 1).toString();
                 app.globalData.userType = "2";
+                app.globalData.status = '1';
                 app.globalData.phone = that.data.telNumber;
                 console.log(app.globalData.userId)
                 wx.setStorageSync('userId', app.globalData.userId)
