@@ -38,12 +38,12 @@ Page({
     })
   },
 
-  exitLogin: function(){
-    wx.setStorageSync('userType', "2");
-    app.globalData.userType = "2";
-    this.setData({
-      userInfo: app.globalData.userInfo,
-      userFlag: "2"
-    })
-  }
+  // exitLogin: function(){
+  //   wx.setStorageSync('userType', "2");
+  //   app.globalData.userType = "2";
+  //   this.setData({
+  //     userInfo: app.globalData.userInfo,
+  //     userFlag: "2"
+  //   })
+  // }
 })

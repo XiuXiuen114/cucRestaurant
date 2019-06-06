@@ -16,6 +16,14 @@ Page({
     console.log('userid:' + app.globalData.userId)
   },
 
+  exitLogin: function(){
+    wx.setStorageSync('userType', "2");
+    app.globalData.userType = "2";
+   wx.switchTab({
+     url: '../Home/personal'
+   })
+  },
+
   destroy: function () {
    // var id=[];
   var that = this;
@@ -41,14 +49,14 @@ Page({
 
           // const name = db.collection('users').doc('1'); //返回_id为1的记录引用
           // console.log(name)
-          db.collection('users').doc('1').remove({
-            success (res) {
+          db.collection('users').doc('XPX82vdsX1oQes4A').remove({
+            success: function (res) {
               console.log(res)
               wx.showToast({
                 title: '账号注销成功',
               })
             },
-            fail(err){
+            fail: function (err) {
               wx.showToast({
                 icon: 'none',
                 title: '注销失败',
