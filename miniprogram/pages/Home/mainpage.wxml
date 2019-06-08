@@ -37,4 +37,27 @@
 
 <button bindtap='goUseless'>useless</button>
 
-
+<!-- 列表项-->
+<view class="appointment">
+  <view class="app-moduler">
+  <view wx:for="{{list}}" wx:key="{{index}}" >
+    <navigator url="dishpage/dishpage" class="mod-item">
+      <view class="mod-signup">
+        <image src="{{item.dish_picture}}"></image>
+      </view>
+      <view class="mod-img">
+        <image src="{{item.dish_picture}}" class="mod-image"></image>
+      </view>
+      <view class="mod-title">
+         <text>{{item.dish_name}}</text>  
+      </view>
+      <view class="mod-info">
+        <view class="mod-icon">
+          <image src="{{item.dish_picture}}" class="icon"></image>
+        </view>
+        <view class="moinfont">{{item.reserved_number}}</view>
+      </view>
+    </navigator>
+    </view>
+   </view>
+</view>

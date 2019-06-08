@@ -1,7 +1,7 @@
 // pages/Home/mainpage.js
 var util = require('../../utils/util.js');  
 const app=getApp();
-
+//var base64 = require("../images/base64");
 Page({
   /**
    * 页面的初始数据
@@ -18,8 +18,6 @@ Page({
   },
   //执行点击事件
   formSubmit: function(e){
-   // console.log(e.dish_name)
-    console.log('nishi')
     const db = wx.cloud.database()
     var that = this
     var formData = e.detail.value.keyword
@@ -49,7 +47,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.dishList();
   },
   onShow: function (options) {
     this.getAds();//广告轮播初始化,获取ads表内在当天范围内的广告，并赋值给ads_list
@@ -95,5 +93,100 @@ Page({
     })
   },
   
+//列表相关函数
 
+//菜品列表，比如新品之类的
+dishList: function(){
+  const db = wx.cloud.database()
+  const _=db.command
+  var that = this
+  db.collection('dishes').where({
+    //thumbs_up>10表示这是最热单品
+    thumbs_up:_.gt(50)
+    
+  }).get({
+    success: res => {
+      console.log(res.data)
+      that.setData({
+        list: res.data
+      })
+  
+    }
+  }, {
+      fail: function (err) {
+        console.error(err);
+      }
+    })
+
+},
+  tempData: function () {
+    var list = [{
+      rank: "1",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "李飞",
+      pace: "23456",
+    },
+    {
+      rank: "2",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "张叶",
+      pace: "23450",
+    },
+    {
+      rank: "3",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "王小婷",
+      pace: "22345",
+    },
+    {
+      rank: "4",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "袁经理",
+      pace: "21687",
+    },
+    {
+      rank: "5",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "陈雅婷",
+      pace: "21680",
+    },
+    {
+      rank: "6",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "许安琪",
+      pace: "20890",
+    },
+    {
+      rank: "7",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "里俊飞",
+      pace: "20741",
+    },
+    {
+      rank: "8",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "李小俊",
+      pace: "19511",
+    },
+    {
+      rank: "9",
+      txtStyle: "",
+      icon: "/icon/skzxc.jpg",
+      name: "陈俊飞",
+      pace: "19501",
+    },
+    ]
+
+    this.setData({
+      list: list
+    });
+  }
 }) // end pages
