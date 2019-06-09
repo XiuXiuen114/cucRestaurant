@@ -25,15 +25,25 @@
 
 
 <!-- <text>pages/Home/mainpage.wxml</text> -->
-<swiper indicator-dots="{{indicatorDots}}" bindchange='swiperChange'
+<swiper indicator-dots="{{indicatorDots}}" bindchange='swiperChange' 
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current='{{cur_index}}'>
   <block wx:for="{{ads_list}}" wx:key="unique">
     <swiper-item>
       <image src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
-      class="slide-image" width="355" height="150"/>
+      class="slide-image" mode='widthFix'/>
     </swiper-item>
   </block>
 </swiper>
+
+<!-- 最热、最新图标 -->
+<view class="weui-grids">
+  <block wx:for="{{icons}}" wx:key="unique">
+      <navigator url="/pages/Rankpage/rankpage" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="{{item.picture}}" />
+          <view class="weui-grid__label">{{item.name}}</view>
+      </navigator>
+  </block>
+</view>
 
 <button bindtap='goUseless'>useless</button>
 

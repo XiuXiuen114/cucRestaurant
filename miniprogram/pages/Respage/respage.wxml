@@ -1,0 +1,28 @@
+<!--pages/Respage/respage.wxml-->
+<view class="weui-cell">
+  <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+      <image src="{{res_info.res_picture}}" style="width: 150px; height: 150px; display: block"/>
+      <!-- <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</view> -->
+  </view>
+  <view class="weui-cell__bd">
+      <view>{{res_info.res_name}}</view>
+      <view style="font-size: 13px;color: #888888;">地址：{{res_info.res_address}}</view>
+      <view style="font-size: 13px;color: #888888;">电话：{{res_info.res_phone}}</view>
+  </view>
+</view>
+
+<view class="weui-panel__hd">菜单列表</view>
+  <view class="weui-panel__bd">
+    <!-- <view wx:for="{{res_dishes}}" wx:key="unique" bindtap='clickDish'> -->
+      <navigator wx:for="{{res_dishes}}" wx:key="unique" data-link_id="{{item._id}}"  bindtap='clickDish'
+      url="/pages/Home/dishpage/dishpage" class="weui-media-box weui-media-box_appmsg"                          hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{item.dish_picture}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title">{{item.dish_name}}</view>
+              <view class="weui-media-box__desc">价格：{{item.dish_price}}</view>
+          </view>
+      </navigator>
+     <!-- </view> -->
+  </view>

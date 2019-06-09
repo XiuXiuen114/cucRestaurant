@@ -70,6 +70,20 @@ Page({
     // this.getHottestDishes();
     // console.log('useless onload');
   },
+  updateAds:function(){
+    const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
+    });
+    db.collection('ads').doc('todo-identifiant-aleatoire').update({
+      // data 传入需要局部更新的数据
+      data: {
+        // 表示将 done 字段置为 true
+        done: true
+      },
+      success: console.log,
+      fail: console.error
+    })
+  },
   bindContent:function(e){
 
     this.setData({
@@ -231,6 +245,7 @@ Page({
         that.setData({
           'ad_data.ad_picture': res.tempFilePaths[0]
         });
+        console.log(res.tempFilePaths[0]);
       },
     }) // end wx
   }, // end uploadImg

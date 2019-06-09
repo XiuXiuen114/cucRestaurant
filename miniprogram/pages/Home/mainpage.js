@@ -1,5 +1,7 @@
 // pages/Home/mainpage.js
 var util = require('../../utils/util.js');  
+// var hoticon = require('../../icon/mainpageicon/HOT.png');  
+// var newicon = require('../../icon/mainpageicon/NEW.png');  
 const app=getApp();
 //var base64 = require("../images/base64");
 Page({
@@ -15,6 +17,10 @@ Page({
     interval: 2000,
     duration: 1000,
     ads_list: [],
+
+    icons: [{ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新' },
+      { 'picture': '/icon/mainpageicon/HOT.png', 'name': '人气' }],
+    grids: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   },
   //执行点击事件
   formSubmit: function(e){
@@ -48,10 +54,16 @@ Page({
    */
   onLoad: function (options) {
     this.dishList();
+    // this.getIcons();
   },
   onShow: function (options) {
     this.getAds();//广告轮播初始化,获取ads表内在当天范围内的广告，并赋值给ads_list
     console.log('adslist', this.data.ads_list);
+  },
+  getIcons: function () {
+    this.data.icons.push({ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新'});
+    this.data.icons.push({ 'picture': '/icon/mainpageicon/HOT.png', 'name': '最热'}); 
+    console.log('icons', this.data.icons);
   },
   //获取广告数据
   getAds: function () {
@@ -84,12 +96,18 @@ Page({
   swiperClick:function(e){
     //跳转至该res-id的首页
     app.globalData.resID = e.target.dataset.link_id;
-    console.log('global resID',app.globalData.resID);
+    console.log('target link id', e.target.dataset.link_id);
+    this.goRespage();
   },
-  //跳转至useless网页
   goUseless:function(){
     wx.navigateTo({
       url: '/pages/Useless/useless',
+    })
+  },
+  //跳转至店家首页
+  goRespage:function(){
+    wx.navigateTo({
+      url: '/pages/Respage/respage',
     })
   },
   
