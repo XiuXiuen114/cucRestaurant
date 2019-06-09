@@ -55,3 +55,15 @@
 .text2{
   width: 75%;
 }
+.register{
+  margin-top: 10%;
+  text-align: center;
+  width:100%;
+  color: gray;
+  border-top: 3rpx solid #a8ddd8 ;
+  border-bottom: 3rpx solid #a8ddd8 ;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 20px;
+  background-color: #a8ddd8;
+}

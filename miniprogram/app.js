@@ -32,6 +32,7 @@ App({
           console.log(res);
           wx.setStorageSync('userId',res.data[0]._id)
           wx.setStorageSync('headPhoto', res.data[0].user_picture)
+          this.globalData.status = res.data[0].status
         }
       })
     }
@@ -70,6 +71,7 @@ App({
     resetPsd: false,  //忘记密码相关参数
     appid: 'wxafa0fcf8440c7289',
     openid:'',
+    status: '1', //1表示是师生用户，2表示是商家，从而显示不同的主页
     resID:null,//店家首页
     dishID:null//菜品首页
   }

@@ -29,11 +29,14 @@
   width: 75%;
   padding-left: 10rpx;
 }
-.button{
-  margin-top: 200rpx;
-  width:450rpx;
-  height: 88rpx;
-  border-radius: 44rpx;
-  background-color: #0cc4b1;
-  color: white
+.exit{
+  margin-top: 60%;
+  text-align: center;
+  width:100%;
+  color: gray;
+  border-top: 3rpx solid #a8ddd8 ;
+  border-bottom: 3rpx solid #a8ddd8 ;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 20px;
 }
