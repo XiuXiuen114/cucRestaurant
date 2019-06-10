@@ -7,6 +7,7 @@ Page({
    */
   data: {
     dish:[],
+    dish_imf:[]
   },
 
   /**
@@ -22,13 +23,24 @@ Page({
     }).get({
 
       success:function(res){
-        console.log(res)
           that.setData({
             dish:res.data[0].dish_id
           })
-        console.log(that.data.dish)
+        console.log(that.data.dish[1])
       }
     })
+    that.data.dish=that.data.dish.toString()
+
+    db.collection('dishes').doc(2).get({
+      success: function (res1) {
+        console.log(res1)
+        that.setData({
+          dish_imf: res1.data
+        })
+        console.log(that.data.dish_imf)
+      }
+    })
+      
   },
 
   /**
