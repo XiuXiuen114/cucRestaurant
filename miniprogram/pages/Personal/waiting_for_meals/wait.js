@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    order_time:[],
     dish:[],
     dish_imf:[]
   },
@@ -19,28 +20,31 @@ Page({
       env: 'minidev-ko6dk'
     })
     db.collection('orders').where({
-      user_id:2
+      user_id:Number(app.globalData.userId)
     }).get({
-
       success:function(res){
           that.setData({
             dish:res.data[0].dish_id
           })
-        console.log(that.data.dish[1])
-      }
-    })
-    that.data.dish=that.data.dish.toString()
-
-    db.collection('dishes').doc(2).get({
-      success: function (res1) {
-        console.log(res1)
-        that.setData({
-          dish_imf: res1.data
-        })
+        for(var i=0;i<that.data.dish.length;i++){
+         db.collection('dishes').where({
+          _id: String(res.data[0].dish_id[i])
+        }).get({
+          success: function (res1) {
+            that.data.order_time.push(res.data[0].order_start_time)
+            that.data.dish_imf.push(res1.data[0])
+            that.setData({
+              dish_imf:that.data.dish_imf,
+              order_time:that.data.order_time
+            })
+           }//success
+         })//get
+        }
         console.log(that.data.dish_imf)
+        console.log(that.data.order_time)
       }
     })
-      
+
   },
 
   /**
