@@ -74,6 +74,6 @@ App({
     status: '1', //1表示是师生用户，2表示是商家，从而显示不同的主页
     resID:null,//店家首页
     dishID:null,//菜品首页
-    rankID: null,//0表示上新、1表示最热
+    rankID: null,//0表示上新、1表示最热、2表示推荐
   }
 })
