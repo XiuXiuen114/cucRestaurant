@@ -15,11 +15,12 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 2000,
-    duration: 1000,
+    duration: 300,
     ads_list: [],
 
     icons: [{ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新' },
-      { 'picture': '/icon/mainpageicon/HOT.png', 'name': '人气' }],
+      { 'picture': '/icon/mainpageicon/HOT.png', 'name': '榜单' },
+      { 'picture': '/icon/mainpageicon/REC.png', 'name': '推荐' }],
     grids: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   },
   //执行点击事件
@@ -64,6 +65,22 @@ Page({
     this.data.icons.push({ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新'});
     this.data.icons.push({ 'picture': '/icon/mainpageicon/HOT.png', 'name': '最热'}); 
     console.log('icons', this.data.icons);
+  },
+  //选择上新、榜单、推荐
+  clickOption: function (e) {  
+    let option = e.currentTarget.dataset.option;
+    switch(option){
+      case '上新':
+        app.globalData.rankID = 0;
+        break;
+      case '榜单':
+        app.globalData.rankID = 1;
+        break;
+      case '推荐':
+        app.globalData.rankID = 2;
+        break;
+    }
+    console.log('clickOption', option);
   },
   //获取广告数据
   getAds: function () {
