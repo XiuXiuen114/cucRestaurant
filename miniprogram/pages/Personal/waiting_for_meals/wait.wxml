@@ -3,7 +3,6 @@
   <block wx:for="{{dish_imf}}" wx:key="id">
     <block wx:for="{{item.dish_id}}"  wx:key="id" wx:for-item="dish">
           <image src="{{dish.dish_picture}}" />
-           <text>{{dish.order_start_time}}</text>
           <view>{{dish.dish_name}}</view>
           <text>{{dish.dish_price}}￥</text>
           <view>订单码:{{dish.reserved_number}}</view>
