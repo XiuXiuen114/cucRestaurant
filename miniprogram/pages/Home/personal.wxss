@@ -1,5 +1,5 @@
 .avatar-wrapper {
-  background: #0cc3b0;
+  background: #7BAFE2;
   padding: 30rpx 0;
 }
  
@@ -35,10 +35,10 @@
  
 /*分割线样式*/
 .divLine{
- background: #a8ddd8;
+ background: #91B0E4;
  width: 100%;
  height: 5rpx;
-}
+}#CFC8F5
  
 .arrows image {
   vertical-align: middle;
@@ -60,10 +60,10 @@
   text-align: center;
   width:100%;
   color: gray;
-  border-top: 3rpx solid #a8ddd8 ;
-  border-bottom: 3rpx solid #a8ddd8 ;
+  border-top: 3rpx solid #7BAFE2 ;
+  border-bottom: 3rpx solid #7BAFE2;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   font-size: 20px;
-  background-color: #a8ddd8;
+  background-color: #7BAFE2;
 }
