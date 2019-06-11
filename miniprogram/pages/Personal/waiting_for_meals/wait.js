@@ -22,25 +22,13 @@ Page({
     db.collection('orders').where({
       user_id:Number(app.globalData.userId)
     }).get({
-      success:function(res){
+          success:function(res){
+          console.log(res)
           that.setData({
-            dish:res.data[0].dish_id
+            dish_imf:res.data,
+            order_time:res.data[0].order_start_time
           })
-        for(var i=0;i<that.data.dish.length;i++){
-         db.collection('dishes').where({
-          _id: String(res.data[0].dish_id[i])
-        }).get({
-          success: function (res1) {
-            that.data.order_time.push(res.data[0].order_start_time)
-            that.data.dish_imf.push(res1.data[0])
-            that.setData({
-              dish_imf:that.data.dish_imf,
-              order_time:that.data.order_time
-            })
-           }//success
-         })//get
-        }
-        console.log(that.data.dish_imf)
+        console.log(that.data.dish_imf)//一次预定
         console.log(that.data.order_time)
       }
     })
