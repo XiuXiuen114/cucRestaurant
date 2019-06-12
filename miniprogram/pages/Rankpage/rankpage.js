@@ -15,6 +15,10 @@ Page({
   onLoad: function (options) {
     this.getRankID();
   },
+  addToCart: function (e) {
+    let dish_id=e.currentTarget.dataset.dish_id;
+    console.log('dish_id',dish_id);
+  },
   getRankID:function(){
     switch(app.globalData.rankID){
       case 0:
@@ -34,8 +38,9 @@ Page({
       env: 'minidev-ko6dk'
     });
     let that = this;
+    console.log('getNew');
     db.collection('dishes').orderBy
-    ('update_time', 'desc').get
+      ('update_time', 'desc').limit(20).get
     ({
       success: function (res) {
         //res.data为满足条件的json数组
@@ -54,8 +59,9 @@ Page({
       env: 'minidev-ko6dk'
     });
     let that = this;
+    console.log('getHot');
     db.collection('dishes').orderBy
-      ('thumbs_up', 'desc').get
+      ('thumbs_up', 'desc').limit(20).get
       ({
         success: function (res) {
           //res.data为满足条件的json数组
@@ -74,11 +80,10 @@ Page({
       env: 'minidev-ko6dk'
     });
     let that = this;
-    console.log('userID', app.globalData.userId)
+    console.log('userID', app.globalData.userId);
     db.collection('orders').where({
       user_id:app.globalData.userId
-    }).orderBy('thumbs_up', 'desc')
-    .get({
+    }).get({
         success: function (res) {
           //res.data为满足条件的json数组
           console.log('getRec', res.data);

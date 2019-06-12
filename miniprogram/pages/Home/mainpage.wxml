@@ -29,8 +29,8 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current='{{cur_index}}'>
   <block wx:for="{{ads_list}}" wx:key="unique">
     <swiper-item>
-      <image src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
-      class="slide-image" mode='widthFix'/>
+      <image wx:if="{{item.ad_picture}}" src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
+       class="slide-image" mode='widthFix'/>
     </swiper-item>
   </block>
 </swiper>
@@ -46,7 +46,7 @@
   </block>
 </view>
 
-<button bindtap='goUseless'>useless</button>
+<button bindtap='goUseless'>先不要动这个按钮</button>
 
 <!-- 列表项-->
 <view class="appointment">
