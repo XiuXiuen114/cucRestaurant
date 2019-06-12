@@ -23,7 +23,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0cc3b0",
+    "navigationBarBackgroundColor": "7BAFE2",
     "navigationBarTextStyle": "black"
   },
   "plugins": {
@@ -34,7 +34,7 @@
   },
   "tabBar": {
     "color": "#929292",
-    "selectedColor": "#0cc3b0",
+    "selectedColor": "#7BAFE2",
     "backgroundColor": "#FAFAFA",
     "borderStyle": "white",
     "list": [
