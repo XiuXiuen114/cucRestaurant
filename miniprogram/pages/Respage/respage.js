@@ -5,8 +5,7 @@ Page({
   data: {
     res_id: '',//所跳转的餐厅id=全局变量的dishID
     res_info:{},
-    res_dishes: [],
-    icons: { 'CART': '/icon/dishicon/CART.png'}
+    res_dishes: []
   },
 
   onLoad: function (options) {
@@ -19,6 +18,7 @@ Page({
   onShow: function () {
 
   },
+
   getAllDishes: function () {
     //从dishes表中查找出属于该餐厅的所有商品
     let that = this;

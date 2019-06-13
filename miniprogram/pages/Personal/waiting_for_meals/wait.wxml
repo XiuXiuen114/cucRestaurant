@@ -1,11 +1,12 @@
 <!--miniprogram/pages/Personal/waiting_for_meals/wait.wxml-->
 <view>
-  <block wx:for="{{dish_imf}}" wx:key="id">
-    <block wx:for="{{item.dish_id}}"  wx:key="id" wx:for-item="dish">
-          <image src="{{dish.dish_picture}}" />
-          <view>{{dish.dish_name}}</view>
-          <text>{{dish.dish_price}}￥</text>
-          <view>订单码:{{dish.reserved_number}}</view>
-      </block>
+  <block wx:for="{{dish_imf}}">
+          <image src="{{item.dish_picture}}" />
+          <view>{{item.dish_name}}</view>
+          <text>{{item.dish_price}}￥</text>
+          <view>订单码:{{item.reserved_number}}</view>
   </block>
+    <!-- <block wx:for="{{order_time}}">
+          <view>{{item}}</view>
+  </block> -->
 </view>

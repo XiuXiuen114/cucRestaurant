@@ -12,10 +12,11 @@ App({
     }
     this.getUserInfoIfAuthed();
     this.globalData.userInfo = wx.getStorageSync('userInfo')
-   // this.globalData.userType = wx.getStorageSync('userType')
+    this.globalData.userType = wx.getStorageSync('userType')
     this.globalData.headPhoto = wx.getStorageSync('headPhoto')
     this.globalData.userId = wx.getStorageSync('userId')
     this.globalData.phone = wx.getStorageSync('phone')
+
 
     if (this.globalData.phone){
       //连接数据库
@@ -32,7 +33,6 @@ App({
           wx.setStorageSync('userId',res.data[0]._id)
           wx.setStorageSync('headPhoto', res.data[0].user_picture)
           this.globalData.status = res.data[0].status
-          
         }
       })
     }
@@ -75,6 +75,5 @@ App({
     resID:null,//店家首页
     dishID:null,//菜品首页
     rankID: null,//0表示上新、1表示最热、2表示推荐
-    canteenID: null,//1星光、2南苑、3北苑、4中蓝、5梆子井、6清真
   }
 })
