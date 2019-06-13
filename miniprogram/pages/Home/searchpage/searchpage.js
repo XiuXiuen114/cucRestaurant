@@ -1,38 +1,49 @@
-// miniprogram/pages/Personal/waiting_for_meals/wait.js
-var app=getApp()
+// pages/Home/searchpage/searchpage.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    order_time:[],
-    dish:[],
-    dish_imf:[]
+    re: [],
   },
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    const db = wx.cloud.database({
-      env: 'minidev-ko6dk'
-    })
-    db.collection('orders').where({
-      user_id:Number(app.globalData.userId)
-    }).get({
-          success:function(res){
-          console.log(res)
-          that.setData({
-            dish_imf:res.data,
-            order_time:res.data[0].order_start_time
-          })
-        console.log(that.data.dish_imf)//一次预定
-        console.log(that.data.order_time)
-      }
-    })
+    
+  },
 
+  searchdish: function (e) {
+
+    const db = wx.cloud.database()
+    var that = this
+    var formData = e.detail.value.keyword
+    db.collection('dishes').where({
+      //使用正则查询，实现对搜索的模糊查询
+      dish_name: db.RegExp({
+        //从搜索栏中获取的value作为规则进行匹配
+        regexp: '.*' + formData,
+        options: 'i',
+        //大小写不区分
+      })
+    }).get({
+      success: res => {
+        console.log('搜索结果', res.data)
+        that.setData({
+          re: JSON.stringify(res.data, null, 2)
+        })
+        //wx.hideLoading();
+      }
+    }, {
+        fail: function (err) {
+          console.error(err);
+        }
+      })
   },
 
   /**

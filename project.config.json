@@ -30,12 +30,25 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "mainpage",
 					"pathName": "pages/Home/mainpage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+
+					"name": "tmp",
+					"pathName": "pages/Home/tmp/tmp",
+				}，
+				{
+					"id": -1,
+					"name": "personal",
+					"pathName": "pages/Home/personal",
 					"scene": null
 				}
 			]
