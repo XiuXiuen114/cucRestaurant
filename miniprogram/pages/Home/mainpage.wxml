@@ -6,11 +6,11 @@
 <!-- <view class="search_con"> -->
 <!-- 表单 -->
 <view class='search'>
-  <!-- <form bindsubmit="formSubmit"> -->
+ <!--> <form bindsubmit="formSubmit"> -->
   <!-- 记得设置name值，这样JS才能接收name=keyword的值 -->
-    <input type="text" name="keyword" class="search_input" placeholder='想吃点什么呢'/>
-    <button formType="submit" class="search_btn">搜索</button>    
-  <!-- </form> -->
+    <input type="text" name="keyword" bindtap='formSubmit' class="search_input" placeholder='想吃点什么呢'/>
+    <button formType="submit"  class="search_btn">搜索</button>    
+ <!-->  </form> -->
   </view>
 <!-- </view> -->
 <!-- 搜索结果展示 -->
@@ -54,21 +54,21 @@
 <view class="appointment">
   <view class="app-moduler">
   <view wx:for="{{list}}" wx:key="{{index}}" >
-    <navigator url="dishpage/dishpage" class="mod-item">
+    <navigator url="dishpage/dishpage" class="mod-item" >
       <view class="mod-signup">
-        <image src="{{item.dish_picture}}"></image>
+        <image src="{{item.can_picture}}"></image>
       </view>
       <view class="mod-img">
-        <image src="{{item.dish_picture}}" class="mod-image"></image>
+        <image src="{{item.can_picture}}" class="mod-image" bindtap='viewitem' data-resturants_id="{{item._id}}"></image>
       </view>
       <view class="mod-title">
-         <text>{{item.dish_name}}</text>  
+         <text>{{item.address}}</text>  
       </view>
       <view class="mod-info">
         <view class="mod-icon">
-          <image src="{{item.dish_picture}}" class="icon"></image>
+          <image src="{{item.can_picture}}" class="icon"></image>
         </view>
-        <view class="moinfont">{{item.reserved_number}}</view>
+        <view class="moinfont">{{item._id}}</view>
       </view>
     </navigator>
     </view>
