@@ -12,11 +12,10 @@ App({
     }
     this.getUserInfoIfAuthed();
     this.globalData.userInfo = wx.getStorageSync('userInfo')
-    this.globalData.userType = wx.getStorageSync('userType')
+   // this.globalData.userType = wx.getStorageSync('userType')
     this.globalData.headPhoto = wx.getStorageSync('headPhoto')
     this.globalData.userId = wx.getStorageSync('userId')
     this.globalData.phone = wx.getStorageSync('phone')
-
 
     if (this.globalData.phone){
       //连接数据库
@@ -33,6 +32,7 @@ App({
           wx.setStorageSync('userId',res.data[0]._id)
           wx.setStorageSync('headPhoto', res.data[0].user_picture)
           this.globalData.status = res.data[0].status
+          
         }
       })
     }

@@ -59,7 +59,7 @@ Page({
   },
   onShow: function (options) {
     this.getAds();//广告轮播初始化,获取ads表内在当天范围内的广告，并赋值给ads_list
-    console.log('adslist', this.data.ads_list);
+   // console.log('adslist', this.data.ads_list);
   },
   getIcons: function () {
     this.data.icons.push({ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新'});
@@ -100,6 +100,7 @@ Page({
         that.setData({
           ads_list:res.data
         });
+        console.log(that.data.ads_list)
       }
     }, {
         fail: console.error
