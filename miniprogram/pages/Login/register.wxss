@@ -7,7 +7,7 @@
 }
 .inputText{
   height:110rpx;
-  border-bottom: 1px solid #0cc4b1;
+  border-bottom: 1px solid #7BAFE2;
   font-size: 16px;
   padding-left: 25rpx;
 }
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   height: 80rpx;
-  background-color: #0cc4b1;
+  background-color: #7BAFE2;
   color: white;
   z-index: 2;
 }
@@ -31,6 +31,6 @@
   width:450rpx;
   height: 88rpx;
    border-radius: 44rpx;
-   background-color: #0cc4b1;
+   background-color: #7BAFE2;
    color: white
 }
