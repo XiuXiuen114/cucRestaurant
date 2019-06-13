@@ -3,15 +3,17 @@
 
 <!-- 标题 -->
 <!-- 搜索框view -->
-<view class="search_con">
+<!-- <view class="search_con"> -->
 <!-- 表单 -->
-  <form bindsubmit="formSubmit">
+<view class='search'>
+  <!-- <form bindsubmit="formSubmit"> -->
   <!-- 记得设置name值，这样JS才能接收name=keyword的值 -->
     <input type="text" name="keyword" class="search_input" placeholder='想吃点什么呢'/>
     <button formType="submit" class="search_btn">搜索</button>    
-  </form>
+  <!-- </form> -->
 </view>
 
+<!-- </view> -->
 <!-- 搜索结果展示 -->
 <view wx:if="{{re}}" wx:key="re" class="search_result">{{re}}
 <!-- 当提交空白表单的时候 -->
@@ -32,6 +34,8 @@
     <swiper-item>
       <image src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
  mode='widthFix'/>
+      <image wx:if="{{item.ad_picture}}" src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
+       class="slide-image" mode='widthFix'/>
     </swiper-item>
   </block>
 </swiper>
@@ -47,7 +51,7 @@
   </block>
 </view>
 
-<button bindtap='goUseless'>useless</button>
+<button bindtap='goUseless'>先不要动这个按钮</button>
 
 <!-- 列表项-->
 <view class="appointment">

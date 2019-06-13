@@ -55,6 +55,7 @@ Page({
    */
   onLoad: function (options) {
     this.dishList();
+    // this.getAds();//广告轮播初始化,获取ads表内在当天范围内的广告，并赋值给ads_list
     // this.getIcons();
   },
   onShow: function (options) {

@@ -18,11 +18,12 @@
     "pages/Personal/set/setName",
     "pages/Home/dishpage/dishpage",
     "pages/Respage/respage",
-    "pages/Rankpage/rankpage"
+    "pages/Rankpage/rankpage",
+    "pages/Cartpage/cartpage"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0cc3b0",
+    "navigationBarBackgroundColor": "7BAFE2",
     "navigationBarTextStyle": "black"
   },
   "plugins": {
@@ -33,7 +34,7 @@
   },
   "tabBar": {
     "color": "#929292",
-    "selectedColor": "#0cc3b0",
+    "selectedColor": "#7BAFE2",
     "backgroundColor": "#FAFAFA",
     "borderStyle": "white",
     "list": [
@@ -42,6 +43,12 @@
         "text": "点餐",
         "iconPath": "icon/tab_icon_home_default.png",
         "selectedIconPath": "icon/tab_icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/Cartpage/cartpage",
+        "text": "订单",
+        "iconPath": "icon/tab_shop_normal.png",
+        "selectedIconPath": "icon/tab_shop_selected.png"
       },
       {
         "pagePath": "pages/Home/personal",
