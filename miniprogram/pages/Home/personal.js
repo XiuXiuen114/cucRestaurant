@@ -45,7 +45,7 @@ Page({
         console.log(err)
       }
     })
-    console.log(app.globalData.status)
+    console.log(app.globalData.userFlag)
   },
 
   register: function(){
