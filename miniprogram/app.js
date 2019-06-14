@@ -17,6 +17,7 @@ App({
     this.globalData.shop_name= wx.getStorageSync('shop_name')
     this.globalData.userId = wx.getStorageSync('userId')
     this.globalData.phone = wx.getStorageSync('phone')
+    this.globalData.headPhoto = wx.getStorageSync('headPhoto')
   
      const db = wx.cloud.database({
       env: 'minidev-ko6dk'
