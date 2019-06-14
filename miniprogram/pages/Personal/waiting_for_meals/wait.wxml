@@ -1,11 +1,6 @@
-<!--miniprogram/pages/Personal/waiting_for_meals/wait.wxml-->
-<view>
-  <block wx:for="{{dish_imf}}" wx:key="id">
-    <block wx:for="{{item.dish_id}}"  wx:key="id" wx:for-item="dish">
-          <image src="{{dish.dish_picture}}" />
-          <view>{{dish.dish_name}}</view>
-          <text>{{dish.dish_price}}￥</text>
-          <view>订单码:{{dish.reserved_number}}</view>
-      </block>
-  </block>
-</view>
+<import src="../../Templates/orders_inf.wxml" />
+<view wx:for="{{dish_imf}}" wx:key="id">
+<view wx:for="{{item.dish_id}}" wx:for-item="dish" wx:key="id">
+  <template is="orders_inf" data="{{dish_name:dish.dish_name,dish_picture:dish.dish_picture,dish_price:dish.dish_price}}"/>
+  </view>
+  </view>

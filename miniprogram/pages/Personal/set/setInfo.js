@@ -19,8 +19,9 @@ Page({
   exitLogin: function(){
     wx.setStorageSync('userType', "2");
     app.globalData.userType = "2";
+    getCurrentPages()[getCurrentPages().length-2].onLoad()
    wx.switchTab({
-     url: 'Home/personal'
+     url: '../../Home/personal'
    })
   },
 
@@ -49,7 +50,7 @@ Page({
 
           // const name = db.collection('users').doc('1'); //返回_id为1的记录引用
           // console.log(name)
-          db.collection('users').doc('XPX82vdsX1oQes4A').remove({
+          db.collection('users').doc(app.globalData.userId).remove({
             success: function (res) {
               console.log(res)
               wx.showToast({
