@@ -19,7 +19,6 @@ Page({
   onLoad: function (options) {
 
     var that = this
-    console.log(options.order_Id)
     that.setData({
       resId:options.order_Id
     })
