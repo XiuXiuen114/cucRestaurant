@@ -10,7 +10,8 @@
           <image style="border-radius:50%;" src="{{userInfo.avatarUrl}}" wx:else></image>
         </view>
         <view class="text1">
-          <text>{{userName}}</text>
+          <text wx:if="{{userName}}">{{userName}}</text>
+          <text wx:else>{{userInfo.nickName}}</text>
           <text wx:if='{{userFlag == 1}}' bindtap="register">/注册</text>
           <text wx:if='{{userFlag == 2}}' bindtap="login">/登录</text>
           <!-- <text wx:if='{{userFlag == 3}}' bindtap='exitLogin'>/退出登录</text> -->
@@ -49,5 +50,18 @@
 
 
 <view wx:else>
-
+  <view class="mine-wrapper">
+    <view class="avatar-wrapper">
+      <view>
+        <view class="avatar">
+          <image style="border-radius:50%;" src="{{shop_image}}" wx:if='{{shop_image}}'></image>
+          <image style="border-radius:50%;" src="{{userInfo.avatarUrl}}" wx:else></image>
+        </view>
+        <view class="text1">
+          <text wx:if="{{shop_name}}">{{shop_name}}</text>
+          <text wx:else>{{userInfo.nickName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

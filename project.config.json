@@ -40,9 +40,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "personal",
-					"pathName": "pages/Home/personal",
+					"pathName": "pages/Home/register_shop",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -12,29 +12,43 @@ App({
     }
     this.getUserInfoIfAuthed();
     this.globalData.userInfo = wx.getStorageSync('userInfo')
-   // this.globalData.userType = wx.getStorageSync('userType')
-    this.globalData.headPhoto = wx.getStorageSync('headPhoto')
+    this.globalData.userType = wx.getStorageSync('userType') ? wx.getStorageSync('userType'):1
+    this.globalData.shop_photo = wx.getStorageSync('shop_photo')
+    this.globalData.shop_name= wx.getStorageSync('shop_name')
     this.globalData.userId = wx.getStorageSync('userId')
     this.globalData.phone = wx.getStorageSync('phone')
+  
+     const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
+    });
 
-    if (this.globalData.phone){
+    if (this.globalData.phone && this.globalData.status == '1'){
       //连接数据库
-      const db = wx.cloud.database({
-        env: 'minidev-ko6dk'
-      });
-
       db.collection('users').where({
         user_phone: this.globalData.phone,
-
       }).get({
         success: function (res) {
           console.log(res);
           wx.setStorageSync('userId',res.data[0]._id)
           wx.setStorageSync('headPhoto', res.data[0].user_picture)
+          wx.setStorageSync('userName', res.data[0].user_name)
           this.globalData.status = res.data[0].status
-          
+          getCurrentPages().pop().onLoad();
         }
       })
+    } else if (this.globalData.phone && this.globalData.status == '2'){
+        db.collection('shop').where({
+          user_phone: this.globalData.phone,
+        }).get({
+          success: function (res) {
+            console.log(res);
+            wx.setStorageSync('userId', res.data[0]._id)
+            wx.setStorageSync('shop_photo', res.data[0].res_photo)
+            wx.setStorageSync('shop_name', res.data[0].res_name)
+            this.globalData.status = res.data[0].status
+            getCurrentPages().pop().onLoad();
+          }
+        })
     }
   },
 
@@ -68,6 +82,8 @@ App({
     phone: null,
     passwd: null,
     headPhoto: null,
+    shop_photo: null,
+    shop_name: null,
     resetPsd: false,  //忘记密码相关参数
     appid: 'wxafa0fcf8440c7289',
     openid:'',

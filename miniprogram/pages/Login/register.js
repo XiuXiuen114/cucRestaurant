@@ -16,7 +16,8 @@ Page({
     sendCodeBtnText: "获取验证码",  
     headImg: null,
     nickname: null,
-    address: null
+    address: null,
+    id: null
   },
 
   /**
@@ -35,8 +36,6 @@ Page({
         url: 'setPsd',
       })
     }
-
-   // this.addUser();
   },
 
   getVerificationCode: function (e) {
@@ -129,16 +128,25 @@ Page({
     }).count({
       success: function (res) {
         console.log(res)
-
         db.collection('users').where({
          // _id: app.globalData.userId
         }).get({
           success: function (res0) {
-            console.log(res0.data[res.total-1]._id);  //获取users表最后一个记录的id
-
+           // console.log(res0.data[res.total-1]._id);  //获取users表最后一个记录的id
+          // console.log(res0)
+            if (res.total != 0){
+              that.setData({
+                id: parseInt(res0.data[res.total - 1]._id) + 1
+              })
+            }else{
+              that.setData({
+                id: 1
+              })
+            }
+            console.log(that.data.id)
             db.collection('users').add({
               data: {
-                _id: (parseInt(res0.data[res.total - 1]._id )+ 1).toString(),
+                _id: that.data.id.toString(),
                 register_time: util.formatTime(new Date()),
                 user_address: that.data.address,
                 user_name: that.data.nickname,
@@ -149,7 +157,7 @@ Page({
               },
               success: function (res0) {
                 console.log(res0);
-                app.globalData.userId = (res.total + 1).toString();
+                app.globalData.userId = res0._id;
                 app.globalData.userType = "2";
                 app.globalData.status = '1';
                 app.globalData.phone = that.data.telNumber;
