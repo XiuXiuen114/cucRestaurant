@@ -91,5 +91,6 @@ App({
     resID:null,//店家首页
     dishID:null,//菜品首页
     rankID: null,//0表示上新、1表示最热、2表示推荐
+    canteenID: null,//1星光、2南苑、3北苑、4中蓝、5梆子井、6清真
   }
 })

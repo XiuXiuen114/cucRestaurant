@@ -1,2 +1,27 @@
 <!--pages/Home/dishpage/dishpage.wxml-->
-<text>pages/Home/dishpage/dishpage.wxml</text>
+
+<!-- 列表项-->
+<view class="appointment">
+  <view class="app-moduler">
+  <view wx:for="{{all_dishes}}" wx:key="{{index}}" >
+    <navigator url="dishpage/dishpage" class="mod-item" >
+      <view class="mod-signup">
+        <image src="{{item.res_picture}}"></image>
+      </view>
+      <view class="mod-img">
+        <image src="{{item.res_picture}}" class="mod-image"></image>
+      </view>
+      <view class="mod-title">
+         <text>{{item.res_name}}</text>  
+      </view>
+      <view class="mod-info">
+        <view class="mod-icon">
+          <image src="{{item.res_picture}}" class="icon"></image>
+        </view>
+        <view class="moinfont">{{item.res_status}}</view>
+      </view>
+    </navigator>
+    </view>
+   </view>
+</view>
+
