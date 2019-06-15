@@ -19,17 +19,24 @@
 }
 .head_image{
   margin-top: 5px;
-  width: 40px;
-  height: 40px;
-  margin-left:50%;
+  width: 43px;
+  height: 43px;
+  margin-left:45%;
   border-radius: 50%;
 }
-._image{
+.image{
   vertical-align: middle;
   margin-top: 15px;
   width: 15px;
   height: 15px;
   margin-left: 10rpx;
+}
+.image2{
+  vertical-align: middle;
+  margin-top: 15px;
+  width: 15px;
+  height: 15px;
+  margin-left: 58%;
 }
 .text1{
   display: flex;

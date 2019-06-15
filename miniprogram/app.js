@@ -15,6 +15,7 @@ App({
     this.globalData.userType = wx.getStorageSync('userType') ? wx.getStorageSync('userType'):1
     this.globalData.shop_photo = wx.getStorageSync('shop_photo')
     this.globalData.shop_name= wx.getStorageSync('shop_name')
+    this.globalData.user_name = wx.getStorageSync('userName')
     this.globalData.userId = wx.getStorageSync('userId')
     this.globalData.phone = wx.getStorageSync('phone')
     this.globalData.headPhoto = wx.getStorageSync('headPhoto')
@@ -85,6 +86,7 @@ App({
     headPhoto: null,
     shop_photo: null,
     shop_name: null,
+    user_name: null,
     resetPsd: false,  //忘记密码相关参数
     appid: 'wxafa0fcf8440c7289',
     openid:'',

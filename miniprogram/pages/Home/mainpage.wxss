@@ -134,4 +134,9 @@
   text-indent: 30rpx;
   color:#586C94;
 }
+.slide-image{
+  width: 70%;
+  height: 130px;
+  margin-left: 15%;
+}
 

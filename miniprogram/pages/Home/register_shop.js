@@ -209,6 +209,7 @@ Page({
                 app.globalData.userType = "2";
                 app.globalData.status = '2';
                 app.globalData.phone = that.data.telNumber;
+                app.globalData.passwd = that.data.password;
                 console.log(app.globalData.userId)
                 wx.setStorageSync('userId', app.globalData.userId)
                 wx.setStorageSync('userType', "2")
