@@ -1,21 +1,12 @@
 /* miniprogram/pages/Personal/set/userInfo/modify.wxss */
 .head{
- margin-top: 20px;
- background: #a8ddd8;
- height: 2rpx;
- display: flex;
- flex-direction: row;
- padding-left: 20rpx;
- padding-right: 20rpx;
-}
-.head1{
- margin-top: 50px;
- background: #a8ddd8;
- height: 2rpx;
- display: flex;
- flex-direction: row;
- padding-left: 20rpx;
- padding-right: 20rpx;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 3rpx solid lightgrey;
 }
 .head_image{
   margin-top: 5px;

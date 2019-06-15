@@ -31,13 +31,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
   color: gray;
-}
- 
-/*分割线样式*/
-.divLine{
- background: #91B0E4;
- width: 100%;
- height: 3rpx;
+  border-bottom: 3rpx solid lightgrey;
+  padding-bottom: 20rpx;
+  padding-top: 10rpx;
 }
  
 .arrows image {
@@ -55,15 +51,17 @@
 .text2{
   width: 75%;
 }
+
 .register{
   margin-top: 10%;
+  /* margin-left: 20%; */
   text-align: center;
   width:100%;
   color: gray;
-  border-top: 3rpx solid #7BAFE2 ;
-  border-bottom: 3rpx solid #7BAFE2;
+  border-top: 3rpx solid lightgray ;
+  border-bottom: 3rpx solid lightgray;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   font-size: 20px;
-  background-color: #7BAFE2;
+  background-color: rgba(123, 174, 226, 0.623);
 }

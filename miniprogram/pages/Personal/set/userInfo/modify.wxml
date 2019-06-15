@@ -4,13 +4,13 @@
   <image src="{{headPhoto}}" class='head_image' mode='scaleToFill'></image>
 </view>
 
-<view class="head1" >
+<view class="head" >
   <text class='text1'>昵称</text>
   <text class='user_name' bindtap='set_Name'>{{user_name}}</text>
   <image src="../../../../icon/youjiantou.png" class='image'></image>
 </view>
 
-<view class='head1'>
+<view class='head'>
   <text class='text1' bindtap='changePsd'>账户密码</text>
   <image src="../../../../icon/youjiantou.png" class='image2' bindtap='changePsd'></image>
 </view>

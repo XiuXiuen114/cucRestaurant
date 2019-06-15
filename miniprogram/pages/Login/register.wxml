@@ -5,7 +5,6 @@
 
       <input type='text'name="verificationCode" class="inputText" placeholder=' 请输入验证码' style='text-align:left' bindinput='getVerificationCode'/>
 
-        <!-- <input type='text' name="passwd" class="inputText" placeholder=' 请设置登录密码' style='text-align:left' bindinput='getPsd'/> -->
  </view>
 
  <button class="submit" form-type='submit' bindtap='applySubmit'>确认</button>
