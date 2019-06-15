@@ -1,2 +1,13 @@
 <!--miniprogram/pages/Personal/orderList/order.wxml-->
-<text>miniprogram/pages/Personal/orderList/order.wxml</text>
+<view wx:for="{{res_}}" class="list" bindtap="order_info" id="{{item.order_id}}"> 
+  <view class="shop_address">{{item.address}}</view>
+  <image class="shop_image" src="{{item.picture}}"></image>
+  <view class="shop_name">{{item.name}}</view>
+  <view class="text_date">
+  <text>联系商家：{{item.phone}}</text>
+  </view>
+  <view class="text_date">
+  <text>下单时间：{{item.date}}</text>
+  </view>
+  <view class="divLine"></view>
+</view>
