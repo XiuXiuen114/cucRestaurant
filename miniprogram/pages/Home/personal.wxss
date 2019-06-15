@@ -37,7 +37,7 @@
 .divLine{
  background: #91B0E4;
  width: 100%;
- height: 5rpx;
+ height: 3rpx;
 }
  
 .arrows image {
@@ -58,13 +58,12 @@
 .register{
   margin-top: 10%;
   text-align: center;
-  margin-left: 5%;
-  width:90%;
-  color: white;
-  border-top: 1rpx solid #7BAFE2 ;
-  border-bottom: 1rpx solid #7BAFE2;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
+  width:100%;
+  color: gray;
+  border-top: 3rpx solid #7BAFE2 ;
+  border-bottom: 3rpx solid #7BAFE2;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
   font-size: 20px;
   background-color: #7BAFE2;
 }
