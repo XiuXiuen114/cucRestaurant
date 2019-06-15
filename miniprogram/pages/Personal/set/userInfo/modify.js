@@ -41,7 +41,7 @@ Page({
         sizeType:['compressed'],
         sourceType: ['album', 'camera'],
         success: function(res) {
-       //   console.log(res.tempFilePaths[0])
+          console.log(res.tempFilePaths[0])
           wx.setStorageSync('headPhoto', res.tempFilePaths[0])
           app.globalData.headPhoto = res.tempFilePaths[0]
           that.setData({

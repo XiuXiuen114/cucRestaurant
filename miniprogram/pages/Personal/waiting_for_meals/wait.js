@@ -6,8 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    count:0,
-    resId:null,
+    order_time:[],
     dish:[],
     dish_imf:[]
   },
@@ -15,8 +14,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-
   onLoad: function (options) {
+<<<<<<< HEAD
       var that = this
       console.log(options.order_Id)
       that.setData({
@@ -44,6 +43,26 @@ Page({
           console.log(that.data.order_time)
         }
       }) 
+=======
+    var that = this
+    const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
+    })
+    db.collection('orders').where({
+      user_id:Number(app.globalData.userId)
+    }).get({
+          success:function(res){
+          console.log(res)
+          that.setData({
+            dish_imf:res.data,
+            order_time:res.data[0].order_start_time
+          })
+        console.log(that.data.dish_imf)//一次预定
+        console.log(that.data.order_time)
+      }
+    })
+
+>>>>>>> parent of 2e591fb... 待取餐+历史订单界面
   },
 
   /**
