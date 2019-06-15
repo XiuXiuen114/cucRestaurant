@@ -18,6 +18,12 @@
       </view>
     </view>
 
+<!-- 添加空白区域的设计 -->
+    <view wx:if="{{userFlag == 1 || userFlag == 2}}" class='empty'>添加空白区域的设计
+    
+    </view>  
+
+
     <view class="list-wrapper">
       <view class="alllists">
         <block wx:for="{{menuitems}}" wx:key="menu_for">
