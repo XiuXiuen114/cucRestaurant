@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!--miniprogram/pages/Personal/waiting_for_meals/wait.wxml-->
 <view>
   <block wx:for="{{dish_imf}}">
@@ -11,11 +11,9 @@
           <view>{{item}}</view>
   </block> -->
 </view>
-=======
 <import src="../../Templates/orders_inf.wxml" />
 <view wx:for="{{dish_imf}}" wx:key="id">
 <view wx:for="{{item.dish_id}}" wx:for-item="dish" wx:key="id">
   <template is="orders_inf" data="{{dish_name:dish.dish_name,dish_picture:dish.dish_picture,dish_price:dish.dish_price}}"/>
   </view>
   </view>
->>>>>>> 15949fd94e64e746acedb5c299499c62632772be

@@ -31,15 +31,8 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current='{{cur_index}}'>
   <block wx:for="{{ads_list}}" wx:key="unique">
     <swiper-item>
-<<<<<<< HEAD
-      <image src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
-      class="slide-image" mode='widthFix'/>
-=======
-      <!-- <image src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
- mode='widthFix'/> -->
       <image wx:if="{{item.ad_picture}}" src="{{item.ad_picture}}"  bindtap='swiperClick' data-link_id="{{item.res_id}}"
        class="slide-image" mode='scaletoFill'/>
->>>>>>> 15949fd94e64e746acedb5c299499c62632772be
     </swiper-item>
   </block>
 </swiper>

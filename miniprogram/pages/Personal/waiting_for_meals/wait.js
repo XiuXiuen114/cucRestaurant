@@ -17,54 +17,33 @@ Page({
    */
 
   onLoad: function (options) {
-
-    var that = this
-    that.setData({
-      resId:options.order_Id
-    })
-    console.log(that.data.orderId)
-    const db = wx.cloud.database({
-      env: 'minidev-ko6dk'
-    })
-    db.collection('orders').where({
-      user_id:Number(app.globalData.userId),
-      res_id:Number(that.data.resId)
-    }).get({
-<<<<<<< HEAD
-      success:function(res){
+      var that = this
+      console.log(options.order_Id)
+      that.setData({
+        resId: options.order_Id
+      })
+      console.log(that.data.orderId)
+      const db = wx.cloud.database({
+        env: 'minidev-ko6dk'
+      })
+      db.collection('orders').where({
+        user_id: Number(app.globalData.userId),
+        res_id: Number(that.data.resId)
+      }).get({
+        success: function (res) {
+          console.log(res)
           that.setData({
-            dish:res.data[0].dish_id
+            dish_imf: res.data,
+            order_time: res.data[0].order_start_time ,
+            count: res.data.length
           })
-        for(var i=0;i<that.data.dish.length;i++){
-         db.collection('dishes').where({
-          _id: String(res.data[0].dish_id[i])
-        }).get({
-          success: function (res1) {
-            that.data.order_time.push(res.data[0].order_start_time)
-            that.data.dish_imf.push(res1.data[0])
-            that.setData({
-              dish_imf:that.data.dish_imf,
-              order_time:that.data.order_time
-            })
-           }//success
-         })//get
+          for (var i = 0; i < that.data.count; i++) {
+            that.data.dish_imf[i].order_start_time = that.data.dish_imf[i].order_start_time.getFullYear() + '-' + that.data.dish_imf[i].order_start_time.getMonth() + '-' + that.data.dish_imf[i].order_start_time.getDate() + ' ' + that.data.dish_imf[i].order_start_time.getHours() + ":" + that.data.dish_imf[i].order_start_time.getMinutes()
+          }
+          console.log(that.data.dish_imf)//一次预定 
+          console.log(that.data.order_time)
         }
-        console.log(that.data.dish_imf)
-        console.log(that.data.order_time)
-=======
-          success:function(res){
-          that.setData({
-            dish_imf:res.data,
-            count:res.data.length
-          })
-        for (var i = 0; i < that.data.count; i++) {
-          that.data.dish_imf[i].order_start_time = that.data.dish_imf[i].order_start_time.getFullYear() + '-' + that.data.dish_imf[i].order_start_time.getMonth() + '-' + that.data.dish_imf[i].order_start_time.getDate() + ' ' + that.data.dish_imf[i].order_start_time.getHours() + ":" + that.data.dish_imf[i].order_start_time.getMinutes()
-        }
-        console.log(that.data.dish_imf)//一次预定
->>>>>>> 15949fd94e64e746acedb5c299499c62632772be
-      }
-    })
-
+      }) 
   },
 
   /**

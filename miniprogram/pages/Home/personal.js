@@ -34,7 +34,6 @@ Page({
       shop_name: app.globalData.shop_name,
       shop_image: app.globalData.shop_photo
     })
-<<<<<<< HEAD
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
@@ -51,9 +50,6 @@ Page({
         console.log(err)
       }
     })
-=======
-
->>>>>>> 15949fd94e64e746acedb5c299499c62632772be
     console.log(app.globalData.status)
   },
 
