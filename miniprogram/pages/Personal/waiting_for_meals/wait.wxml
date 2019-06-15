@@ -1,25 +1,9 @@
-
-<!--miniprogram/pages/Personal/waiting_for_meals/wait.wxml-->
 <import src="../../Templates/orders_inf.wxml" />
 <view wx:for="{{dish_imf}}" wx:key="id">
 <view wx:for="{{item.dish_id}}" wx:for-item="dish" wx:key="id">
-  <template is="orders_inf" data="{{dish_name:dish.dish_name,dish_picture:dish.dish_picture,dish_price:dish.dish_price}}"/>
-  </view>
-  </view>
-<!--miniprogram/pages/Personal/waiting_for_meals/wait.wxml-->
-<view>
-  <block wx:for="{{dish_imf}}" wx:key="id">
-    <block wx:for="{{item.dish_id}}"  wx:key="id" wx:for-item="dish">
-          <image src="{{dish.dish_picture}}" />
-          <view>{{dish.dish_name}}</view>
-          <text>{{dish.dish_price}}￥</text>
-          <view>订单码:{{dish.reserved_number}}</view>
-      </block>
-  </block>
-</view>
 <template is="orders_inf" data="{{dish_name:dish.dish_name,dish_picture:dish.dish_picture,dish_price:dish.dish_price}}"/>
 <view class = "divLine"></view>
-
+</view>
 <view class = "text2">
 <text class = "text">共计</text>
 <text class = "total_">{{total_price}}￥</text>
@@ -27,5 +11,4 @@
 <view class = "divLine1"></view>
 <view class = "order_inf">下单时间：{{time}}</view>
 <view class = "order_inf">状态：待取餐/待评价/已评价</view>
-
-
+</view>

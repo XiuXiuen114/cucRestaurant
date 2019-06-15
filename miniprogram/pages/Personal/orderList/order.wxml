@@ -1,4 +1,3 @@
-<!--miniprogram/pages/Personal/orderList/order.wxml-->
 <view wx:for="{{res_}}" class="list" bindtap="order_info" id="{{item.order_id}}"> 
   <view class="shop_address">{{item.address}}</view>
   <image class="shop_image" src="{{item.picture}}"></image>
