@@ -1,5 +1,68 @@
+/* miniprogram/pages/Personal/orderList/order.wxss */
+.divLine{
+background: #91B0E4;
+width: 100%;
+height: 5rpx;
+}
+.divLine1{
+background: #91B0E4;
+width: 100%;
+height: 5rpx;
+}
+.list{
+width: 50%;
+}
+.text_date{
+color: gray;
+font-size: 10px;
+margin-left: 60%;
+}
+.shop_address{
+margin-top:10px;
+color:rgb(136, 173, 206);
+font-size:17px;
+font-family: "幼圆"; 
+text-align: flex;
+margin-left:40%;
+}
+.dish_price{
+color: gray;
+font-family: "幼圆";
+font-size: 15px;
+margin-left:70%;
+}
+.dish_name{
+margin-left:7%;
+margin-bottom:50%;
+font-family: "幼圆";
+color:gray;
+font-size: 15px;
+}
+.text2{
+margin-top:2%;
+margin-bottom:2%; 
+color: gray;
+}
+.text{
+font-family: "幼圆";
+margin-left:8%;
+}
+.order_inf{
+color: gray;
+margin-top:10px;
+font-family: "幼圆";
+margin-left:50%;
+font-size: 14px;
+}
+.total_{
+margin-top:10px;
+font-family: "幼圆";
+margin-left:60%;
+}
 .dish_image{
-  width: 80px;
-  height:80px;
-
+width:70px;
+height:70px;
+margin-left: 6%;
+margin-top:5%;
+border-radius: 50%;
 }

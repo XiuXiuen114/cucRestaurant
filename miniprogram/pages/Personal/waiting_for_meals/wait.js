@@ -8,6 +8,8 @@ Page({
   data: {
     count:0,
     resId:null,
+    total_price:0,
+    time:null,
     dish:[],
     dish_imf:[]
   },
@@ -18,7 +20,6 @@ Page({
 
   onLoad: function (options) {
       var that = this
-      console.log(options.order_Id)
       that.setData({
         resId: options.order_Id
       })
@@ -38,7 +39,14 @@ Page({
             count: res.data.length
           })
           for (var i = 0; i < that.data.count; i++) {
-            that.data.dish_imf[i].order_start_time = that.data.dish_imf[i].order_start_time.getFullYear() + '-' + that.data.dish_imf[i].order_start_time.getMonth() + '-' + that.data.dish_imf[i].order_start_time.getDate() + ' ' + that.data.dish_imf[i].order_start_time.getHours() + ":" + that.data.dish_imf[i].order_start_time.getMinutes()
+            that.setData({
+              time: that.data.dish_imf[i].order_start_time.getFullYear() + '-' + that.data.dish_imf[i].order_start_time.getMonth() + '-' + that.data.dish_imf[i].order_start_time.getDate() + ' ' + that.data.dish_imf[i].order_start_time.getHours() + ":" + that.data.dish_imf[i].order_start_time.getMinutes()
+            })
+           for(var j=0;j<that.data.dish_imf[i].dish_id.length;j++){
+             that.setData({
+               total_price:that.data.total_price+that.data.dish_imf[i].dish_id[j].dish_price
+             })
+           }
           }
           console.log(that.data.dish_imf)//一次预定 
           console.log(that.data.order_time)
