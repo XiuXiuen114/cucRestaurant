@@ -30,7 +30,7 @@ Page({
 
   changePsd: function(){
     wx.navigateTo({
-      url: '../../../Login/setPsd?flag=true',
+      url: '../../../Login/setPsd',
     })
   },
 

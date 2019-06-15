@@ -15,7 +15,7 @@
 }
 /*分割线样式*/
 .divLine{
- background: #a8ddd8;
+ background: lightgrey;
  width: 100%;
  height: 3rpx;
 }
@@ -34,8 +34,8 @@
   text-align: center;
   width:100%;
   color: gray;
-  border-top: 3rpx solid #a8ddd8 ;
-  border-bottom: 3rpx solid #a8ddd8 ;
+  border-top: 1rpx solid lightgrey ;
+  border-bottom: 1rpx solid lightgrey ;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   font-size: 20px;

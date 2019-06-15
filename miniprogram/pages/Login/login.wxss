@@ -7,7 +7,7 @@
 }
 .inputText{
   height:110rpx;
-  border-bottom: 1px solid #7BAFE2;
+  border-bottom: 1px solid lightgrey;
   font-size: 16px;
   padding-left: 25rpx;
 }
