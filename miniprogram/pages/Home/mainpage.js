@@ -15,7 +15,7 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 2000,
-    duration: 300,
+    duration: 500,
     ads_list: [],
 
     icons: [{ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新' },

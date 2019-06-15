@@ -1,0 +1,7 @@
+<template name="orders_inf">
+<view>
+          <image src="{{dish_picture}}" class="dish_image"/>
+          <view>{{dish_name}}</view>
+          <text>{{dish_price}}￥</text>
+</view>
+</template>

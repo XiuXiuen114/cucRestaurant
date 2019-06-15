@@ -33,9 +33,16 @@
 			"current": 0,
 			"list": [
 				{
+<<<<<<< HEAD
 					"id": -1,
 					"name": "mainpage",
 					"pathName": "pages/Home/mainpage",
+=======
+					"id": 1,
+					"name": "personal",
+					"pathName": "pages/Home/register_shop",
+					"query": "",
+>>>>>>> 15949fd94e64e746acedb5c299499c62632772be
 					"scene": null
 				}
 			]

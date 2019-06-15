@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order_time:[],
+    count:0,
+    resId:null,
     dish:[],
     dish_imf:[]
   },
@@ -14,14 +15,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function (options) {
+
     var that = this
+    that.setData({
+      resId:options.order_Id
+    })
+    console.log(that.data.orderId)
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
     db.collection('orders').where({
-      user_id:Number(app.globalData.userId)
+      user_id:Number(app.globalData.userId),
+      res_id:Number(that.data.resId)
     }).get({
+<<<<<<< HEAD
       success:function(res){
           that.setData({
             dish:res.data[0].dish_id
@@ -42,6 +51,17 @@ Page({
         }
         console.log(that.data.dish_imf)
         console.log(that.data.order_time)
+=======
+          success:function(res){
+          that.setData({
+            dish_imf:res.data,
+            count:res.data.length
+          })
+        for (var i = 0; i < that.data.count; i++) {
+          that.data.dish_imf[i].order_start_time = that.data.dish_imf[i].order_start_time.getFullYear() + '-' + that.data.dish_imf[i].order_start_time.getMonth() + '-' + that.data.dish_imf[i].order_start_time.getDate() + ' ' + that.data.dish_imf[i].order_start_time.getHours() + ":" + that.data.dish_imf[i].order_start_time.getMinutes()
+        }
+        console.log(that.data.dish_imf)//一次预定
+>>>>>>> 15949fd94e64e746acedb5c299499c62632772be
       }
     })
 
