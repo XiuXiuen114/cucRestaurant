@@ -21,7 +21,8 @@ App({
     this.globalData.userId = wx.getStorageSync('userId')
     this.globalData.phone = wx.getStorageSync('phone')
     this.globalData.headPhoto = wx.getStorageSync('headPhoto')
-  
+    this.globalData.status = wx.getStorageSync('status') ? wx.getStorageSync('status'):1
+
      const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     });
@@ -37,7 +38,6 @@ App({
           wx.setStorageSync('userId',res.data[0]._id)
           wx.setStorageSync('headPhoto', res.data[0].user_picture)
           wx.setStorageSync('userName', res.data[0].user_name)
-          this.globalData.status = res.data[0].status
           getCurrentPages().pop().onLoad();
         }
       })
@@ -50,7 +50,6 @@ App({
             wx.setStorageSync('userId', res.data[0]._id)
             wx.setStorageSync('shop_photo', res.data[0].res_photo)
             wx.setStorageSync('shop_name', res.data[0].res_name)
-            this.globalData.status = res.data[0].status
             getCurrentPages().pop().onLoad();
           }
         })
