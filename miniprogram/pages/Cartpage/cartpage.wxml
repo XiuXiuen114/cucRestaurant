@@ -1,2 +1,10 @@
 <!--pages/Cartpage/cartpage.wxml-->
 <text>pages/Cartpage/cartpage.wxml</text>
+<checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{items}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+</checkbox-group>
+
+<view>{{}}</view>
+<button bindtap='submitCart'>提交</button>

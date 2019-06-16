@@ -75,6 +75,10 @@ Clickdish: function(e)
   var option = e.currentTarget.dataset.dishid;
   app.globalData.dishID = option;
   console.log('Clickdish', app.globalData.dishID);
+},
+Clickyuding: function(e)
+{
+  var option = e.currentTarget.dataset.dishidd;
 }
 
 })

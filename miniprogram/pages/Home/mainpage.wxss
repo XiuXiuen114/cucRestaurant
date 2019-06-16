@@ -15,19 +15,19 @@
   padding-right: 10px;
   color: #333;
   width: 70%;
-  padding-left: 40rpx;
+  padding-left: 20rpx;
 }
 .search_btn{
   height: 35px;
   background: #7BAFE2;
   color: #fff;
   border-radius: 50px;
-  width: 18%;
+  width: 22%;
   display:flex;
   flex-direction:column;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
 }
 .search_result{
   width: 80%;
