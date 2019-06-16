@@ -1,5 +1,4 @@
-// pages/Home/dishpage/dishpage.js
-// pages/Rankpage/rankpage.js
+
 const app = getApp();
 Page({
 

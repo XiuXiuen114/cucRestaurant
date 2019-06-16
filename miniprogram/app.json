@@ -18,12 +18,16 @@
     "pages/Personal/set/setName",
     "pages/Home/shoppage/shoppage",
     "pages/Home/searchpage/searchpage",
-    "pages/Home/searchbar/searchbar",
-    "pages/Home/tmp/tmp",
     "pages/Home/dishpage/dishpage",
     "pages/Respage/respage",
     "pages/Rankpage/rankpage",
-    "pages/Cartpage/cartpage"
+    "pages/Home/searchbar/searchbar",
+    "pages/Home/tmp/tmp",
+    "pages/Cartpage/cartpage",
+    "pages/ShopManager/order",
+    "pages/ShopManager/dishUpdate",
+    "pages/ShopManager/ads",
+    "pages/ShopManager/order_ing"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,10 +1,27 @@
 <!--miniprogram/pages/Home/register_shop.wxml-->
 <view class="view">
       <input type='text' name="name_shop" class="inputText" placeholder=' 请输入店名' style='text-align:left' bindinput='getName'/>
-        
-      <input type='text' name="address" class="inputText" placeholder=' 请输入地址，如：南苑二楼' style='text-align:left' bindinput='getAddress'/>
 
-      <input type='text' name="telNumber" class="inputText" placeholder=' 请输入店家手机号码' style='text-align:left' bindinput='getTelNumber'/>
+<view class='list-msg'>
+<!--下拉框  -->
+    <view class='list-msg1' bindtap='bindShowMsg'>
+        <text>{{kind}}</text>
+        <image class='icon2' src='../../icon/arrow_down.png'></image>
+    </view>
+<!-- 下拉需要显示的列表 -->
+    <view class="select_box" wx:if="{{select}}">
+        <view class="select_one" bindtap="mySelect" data-name="中蓝餐厅">中蓝餐厅</view>
+        <view class="select_one" bindtap="mySelect" data-name="北苑餐厅">北苑餐厅</view>
+        <view class="select_one" bindtap="mySelect" data-name="南苑餐厅">南苑餐厅</view>
+        <view class="select_one" bindtap="mySelect" data-name="梆子井餐厅">梆子井餐厅</view>
+        <view class="select_one" bindtap="mySelect" data-name="星光餐厅">星光餐厅</view>
+        <view class="select_one" bindtap="mySelect" data-name="清真餐厅">清真餐厅</view>
+    </view>
+</view>
+        
+      <input type='text' name="address" class="inputText" placeholder=' 请输入具体地址，如：南苑x楼xxx' style='text-align:left' bindinput='getAddress'/>
+
+      <input type='text' name="telNumber" class="inputText" placeholder=' 请输入商家手机号码' style='text-align:left' bindinput='getTelNumber'/>
        <button bindtap='getCode' class="getCode" disabled='{{codeInputDisable}}'>{{sendCodeBtnText}}</button>
 
       <input type='text'name="verificationCode" class="inputText" placeholder=' 请输入验证码' style='text-align:left' bindinput='getVerificationCode'/>
@@ -16,7 +33,7 @@
   </view>
       <view class='shop_photo'>
          <image src='{{photo_shop}}' class='photo' mode='scaleToFill'></image>
-         <button class='button' bindtap='setPhoto'>上传店家图片</button>
+         <button class='button' bindtap='setPhoto'>上传商家店铺图片</button>
       </view>
 
  </view>

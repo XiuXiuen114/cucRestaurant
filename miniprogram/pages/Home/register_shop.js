@@ -18,7 +18,9 @@ Page({
     shop_name: null,
     password: null,
     id: null,
-    isShowPassword: false
+    isShowPassword: false,
+    select: false,
+    kind: '请选择入驻食堂'
   },
 
   /**
@@ -65,6 +67,20 @@ Page({
     })
   },
 
+  bindShowMsg: function() {
+    this.setData({
+      select: !this.data.select
+    })
+  },
+
+  mySelect: function(e) {
+    var name = e.currentTarget.dataset.name
+    this.setData({
+      kind: name,
+      select: false
+    })
+  },
+
   setPhoto: function(){
     var that = this;
     wx.chooseImage({
@@ -76,24 +92,6 @@ Page({
         that.setData({
           photo_shop: res.tempFilePaths[0]
         })
-       // getCurrentPages()[getCurrentPages().length - 3].onLoad()
-        // const db = wx.cloud.database({
-        //   env: 'minidev-ko6dk'
-        // })
-        // db.collection
-      //   db.collection('users').doc(app.globalData.userId).update({
-      //     data: {
-      //       user_picture: res.tempFilePaths[0],
-      //     },
-      //     success: function (res1) {
-      //       console.log(res1)
-      //       wx.showToast({
-      //         title: '更换成功！',
-      //       })
-      //     }, fail: function (err) {
-      //       console.log(err);
-      //     }
-      //   })
        }
     })
   },
@@ -165,7 +163,7 @@ Page({
     });
   },
 
-  addUser: function () {
+  addShop: function () {
     var that = this;
     //连接数据库
     const db = wx.cloud.database({
@@ -180,7 +178,7 @@ Page({
           // _id: app.globalData.userId
         }).get({
           success: function (res0) {
-            console.log(res0.data[res.total - 1]._id);  //获取shop表最后一个记录的id
+            console.log(res0.data[res.total - 1]._id);  //获取restaurants表最后一个记录的id
             if (res0.data[res.total - 1]._id){
               that.setData({
                 id: parseInt(res0.data[res.total - 1]._id )+ 1
@@ -196,6 +194,7 @@ Page({
                 _id: that.data.id.toString(),
                 register_time: util.formatTime(new Date()),
                 res_address: that.data.address,
+                kind: that.data.kind,
                 res_name: that.data.shop_name,
                 password: that.data.password,
                 status: '2',
@@ -238,13 +237,13 @@ Page({
 
   applySubmit: function () {
     var that = this;
-    if (that.data.shop_name && that.data.address && that.data.password && that.data.photo_shop) {
+    if (that.data.shop_name && that.data.address && that.data.password && that.data.photo_shop && that.data.kind) {
       var smsvercode = requirePlugin("smsvercode");  //引用短信校验码插件
       //手机与验证码进行匹配
       smsvercode.checkvercode(that.data.telNumber, that.data.verificationCode, function (res) {
         if (res.errno == "0") {
-          //匹配成功再进行用户添加
-            that.addUser();
+          //匹配成功再进行店铺添加
+          that.addShop();
         }
         else {
           wx.showToast({

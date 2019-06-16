@@ -1,3 +1,4 @@
+
 /* pages/Home/dishpage/dishpage.wxss */
 
 .clear{clear: both;overflow: hidden;}
@@ -107,3 +108,4 @@
 .kefu button .iconfont{ padding:0px;}
 
 .icon-shoucang2{color:red;}
+
