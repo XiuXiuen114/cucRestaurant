@@ -21,7 +21,11 @@
     "pages/Rankpage/rankpage",
     "pages/Home/searchbar/searchbar",
     "pages/Home/tmp/tmp",
-    "pages/Cartpage/cartpage"
+    "pages/Cartpage/cartpage",
+    "pages/ShopManager/order",
+    "pages/ShopManager/dishUpdate",
+    "pages/ShopManager/ads",
+    "pages/ShopManager/order_ing"
   ],
   "window": {
     "backgroundTextStyle": "light",
