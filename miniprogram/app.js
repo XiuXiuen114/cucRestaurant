@@ -1,4 +1,3 @@
-
 //app.js
 App({
   onLaunch: function () {
@@ -11,7 +10,6 @@ App({
         env: "minidev-ko6dk"
       })
     }
-    this.getUserInfoIfAuthed();
 
     this.globalData.userInfo = wx.getStorageSync('userInfo')
     this.globalData.userType = wx.getStorageSync('userType')
@@ -24,15 +22,10 @@ App({
     this.globalData.phone = wx.getStorageSync('phone')
     this.globalData.headPhoto = wx.getStorageSync('headPhoto')
     this.globalData.status = wx.getStorageSync('status') ? wx.getStorageSync('status'):1
-
     this.getUserInfoIfAuthed();
-
      const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     });
-
-
-    if (this.globalData.phone){
 
     if (this.globalData.phone && this.globalData.status == '1'){
       //连接数据库
@@ -48,30 +41,18 @@ App({
         }
       })
     } else if (this.globalData.phone && this.globalData.status == '2'){
-
-        db.collection('shop').where({
-          user_phone: this.globalData.phone,
-
         db.collection('restaurants').where({
           res_phone: this.globalData.phone,
-
         }).get({
           success: function (res) {
             console.log(res);
             wx.setStorageSync('userId', res.data[0]._id)
-
-            wx.setStorageSync('shop_photo', res.data[0].res_photo)
-
             wx.setStorageSync('shop_photo', res.data[0].res_picture)
-
             wx.setStorageSync('shop_name', res.data[0].res_name)
             getCurrentPages().pop().onLoad();
           }
         })
     }
-
-  }
-
   },
 
   getUserInfoIfAuthed: function () {
@@ -84,11 +65,7 @@ App({
           wx.getUserInfo({
             success: res1 => {
               console.log("用户信息:");
-
-              console.log(res1.userInfo)
-
            //   console.log(res1.userInfo)
-
               that.globalData.userInfo = res1.userInfo;
               wx.setStorageSync('userInfo', res1.userInfo)
              // wx.setStorageSync('userType', 1)
@@ -118,10 +95,7 @@ App({
     resID:null,//店家首页
     dishID:null,//菜品首页
     rankID: null,//0表示上新、1表示最热、2表示推荐
-
-    cartDishes: null,//购物车中的菜品列表
-
-
+    cartDishes:[],//购物车中的菜品列表
   }
 })
 

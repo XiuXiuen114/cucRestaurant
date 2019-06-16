@@ -30,24 +30,24 @@ Page({
 
   },
   getDbDish:function(dish_id){
-    const db = wx.cloud.database()
-    db.collection('dishes').where({
-      _id: dish_id // 填入当前用户 openid
-    }).get({
-      success: function (res) {
-        console.log('getDishName res',res);      
-      }
-    })
+    // const db = wx.cloud.database();
+    // db.collection('dishes').where({
+    //   _id: dish_id // 填入当前用户 openid
+    // }).get({
+    //   success: function (res) {
+    //     console.log('getDishName res',res);      
+    //   }
+    // })
   },
   setData:function(){//cart_dishes的两个字段
-    let that=this;
-    for (dish in app.globalData.cart_dishes){//dish只是一个id
-      let dbdish=that.getDbDish(dish);
-      this.cart_dishes.push({'name':dbdish,'price':});
-    }
-    this.setData({
-      dishes_list:app.globalData.cartDishes
-    })
+    // let that=this;
+    // for (dish in app.globalData.cart_dishes){//dish只是一个id
+    //   let dbdish=that.getDbDish(dish);
+    //   this.cart_dishes.push({'name':dbdish,'price':});
+    // }
+    // this.setData({
+    //   dishes_list:app.globalData.cartDishes
+    // })
   },
   checkboxChange: function (e) {
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
