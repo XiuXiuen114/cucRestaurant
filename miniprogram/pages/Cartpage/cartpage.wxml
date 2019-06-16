@@ -1,10 +1,28 @@
-<!--pages/Cartpage/cartpage.wxml-->
-<text>pages/Cartpage/cartpage.wxml</text>
-<checkbox-group bindchange="checkboxChange">
-  <label class="checkbox" wx:for="{{items}}">
-    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-  </label>
-</checkbox-group>
+<view>
+  <!-- 未购买商品提示 -->
+  <view wx:if="{{cart_dishes.length==0}}">您未购买任何商品！</view>
+  
+  <!-- 购物车中菜品列表 -->
+  <block wx:for="{{cart_dishes}}" wx:key="unique">
+    <block>
+      <van-card
+      num="{{item.number}}"
+      price="{{item.dish.dish_price}}"
+      title="{{item.dish.dish_name}}"
+      thumb="{{item.dish.dish_picture}}"
+      />
+    </block>
+    <block>
+      <image style="width: 30px; height: 30px;" src="/icon/dishicon/ADD.png" bindtap='addNumber' data-dish_index="{{index}}"></image>
+      {{item.number}}
+      <image style="width: 30px; height: 30px;" src="/icon/dishicon/MINUS.png" bindtap='minusNumber' data-dish_index="{{index}}"></image>
+    </block>
+  </block>
 
-<view>{{}}</view>
-<button bindtap='submitCart'>提交</button>
+  <!-- 提交订单栏 -->
+  <van-submit-bar
+    price="{{total_price*100}}"
+    button-text="提交订单"
+    bind:submit="submitCart"
+  />
+</view>

@@ -51,8 +51,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "cartpage",
+					"pathName": "pages/Cartpage/cartpage",
+					"scene": null
+				}
+			]
 		}
 	}
 }
