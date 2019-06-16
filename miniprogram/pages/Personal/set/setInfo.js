@@ -20,7 +20,7 @@ Page({
     wx.setStorageSync('userType', "2");
     app.globalData.userType = "2";
    wx.switchTab({
-     url: '../Home/personal'
+     url: 'Home/personal'
    })
   },
 

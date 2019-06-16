@@ -49,7 +49,7 @@ Page({
       console.log(app.globalData.userType)
       wx.switchTab({
         url: '../Home/personal',
-        success(res){
+        success(res) {
           getCurrentPages().pop().onLoad();
         }
       })

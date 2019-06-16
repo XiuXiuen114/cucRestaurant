@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function (options) {
     //console.log(this.data.userInfo)
-    this.data.userInfo = wx.getStorageSync("userInfo")
+    this.data.userInfo = app.globalData.userInfo
     if(this.data.userInfo){
       this.goToMain();
     }

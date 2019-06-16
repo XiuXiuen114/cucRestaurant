@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userName:app.globalData.userInfo.nickName
+    userName:app.globalData.user_name
   },
 
   /**
@@ -15,6 +15,7 @@ Page({
   onLoad: function (options) {
 
   },
+
   getUsername: function (e) {
     this.setData({
       userName: e.detail.value
@@ -26,7 +27,8 @@ Page({
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
-    app.globalData.userInfo.nickName = that.data.userName
+    app.globalData.user_name = that.data.userName
+    wx.setStorageSync('userName', that.data.userName)
     // db.collection
     db.collection('users').doc(app.globalData.userId).update({
       data: {
@@ -37,9 +39,12 @@ Page({
         wx.showToast({
           title: '更改成功！'
         })
-        getCurrentPages()[getCurrentPages().length - 3].onLoad()
-        wx.redirectTo({
-          url: 'userInfo/modify',
+        getCurrentPages()[getCurrentPages().length - 4].onLoad()
+        getCurrentPages().pop()
+        // wx.navigateTo({
+        //   url: 'userInfo/modify',
+        // })
+        wx.navigateBack({
         })
       }, fail: function (err) {
         console.log(err);

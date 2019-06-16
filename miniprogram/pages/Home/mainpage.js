@@ -15,7 +15,7 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 2000,
-    duration: 300,
+    duration: 500,
     ads_list: [],
 
     icons: [{ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新' },
@@ -25,21 +25,41 @@ Page({
   },
   //执行点击事件
   formSubmit: function(e){
-    wx.navigateTo({
-      url: '/pages/Home/tmp/tmp',
-    })
+    const db = wx.cloud.database()
+    var that = this
+    var formData = e.detail.value.keyword
+    db.collection('dishes').where({
+      //使用正则查询，实现对搜索的模糊查询
+      dish_name: db.RegExp({
+        //从搜索栏中获取的value作为规则进行匹配
+        regexp: '.*'+formData,
+        options: 'i',
+        //大小写不区分
+      })
+    }).get({
+      success: res => {
+        console.log(res.data)
+        that.setData({
+          re: JSON.stringify(res.data,null,2)
+        })
+        //wx.hideLoading();
+      }
+    }, {
+        fail: function (err) {
+          console.error(err);
+        }
+      })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.dishList();
-    // this.getAds();//广告轮播初始化,获取ads表内在当天范围内的广告，并赋值给ads_list
     // this.getIcons();
   },
   onShow: function (options) {
     this.getAds();//广告轮播初始化,获取ads表内在当天范围内的广告，并赋值给ads_list
-   // console.log('adslist', this.data.ads_list);
+    console.log('adslist', this.data.ads_list);
   },
   getIcons: function () {
     this.data.icons.push({ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新'});
@@ -80,7 +100,6 @@ Page({
         that.setData({
           ads_list:res.data
         });
-        console.log(that.data.ads_list)
       }
     }, {
         fail: console.error
@@ -111,14 +130,18 @@ Page({
   
 //列表相关函数
 
-//各个餐厅信息
+//菜品列表，比如新品之类的
 dishList: function(){
   const db = wx.cloud.database()
- 
+  const _=db.command
   var that = this
-  db.collection('canteen').get({
-    success(res) {
-      console.log('canteen',res.data)  
+  db.collection('dishes').where({
+    //thumbs_up>10表示这是最热单品
+    thumbs_up:_.gt(50)
+    
+  }).get({
+    success: res => {
+      console.log(res.data)
       that.setData({
         list: res.data
       })
@@ -130,13 +153,5 @@ dishList: function(){
       }
     })
 
-},
-//餐厅点击事件
-viewitem: function(e)
-{
-  var option = e.currentTarget.dataset.resturants_id;
-  app.globalData.canteenID = option;
-  console.log('viewitem', app.globalData.canteenID );
 }
-
 }) // end pages
