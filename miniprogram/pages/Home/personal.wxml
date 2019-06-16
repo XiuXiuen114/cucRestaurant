@@ -1,6 +1,6 @@
 
 <view wx:if="{{status == 1}}">
-
+<!-- 师生界面 -->
   <view class="mine-wrapper">
 
     <view class="avatar-wrapper">
@@ -52,18 +52,36 @@
 
 
 <view wx:else>
+<!-- 商户界面 -->
   <view class="mine-wrapper">
     <view class="avatar-wrapper">
       <view>
         <view class="avatar">
           <image style="border-radius:50%;" src="{{shop_image}}" wx:if='{{shop_image}}'></image>
-          <image style="border-radius:50%;" src="{{userInfo.avatarUrl}}" wx:else></image>
         </view>
         <view class="text1">
           <text wx:if="{{shop_name}}">{{shop_name}}</text>
-          <text wx:else>{{userInfo.nickName}}</text>
         </view>
       </view>
     </view>
   </view>
+
+    <view class="list-wrapper">
+      <view class="alllists">
+        <block wx:for="{{menuitems2}}" wx:key="menu_for">
+          <navigator url="{{item.url}}" class="lists" wx:if="{{userFlag == 3}}">
+            <view class='content'>
+                <view class="listimg">
+                  <image src="{{item.icon}}"></image>
+                </view>
+                <text class="text2">{{item.text}}</text>
+                <view class="arrows">
+                  <image src="{{item.arrows}}"></image>
+                </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+
 </view>

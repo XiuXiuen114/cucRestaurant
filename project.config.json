@@ -32,6 +32,8 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -49,10 +51,8 @@
 			"list": []
 		},
 		"miniprogram": {
-
 			"current": -1,
 			"list": []
-
 		}
 	}
 }
