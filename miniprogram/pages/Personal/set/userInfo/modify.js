@@ -17,28 +17,23 @@ Page({
   onLoad: function (options) {
     var that = this;
     this.setData({
-      headPhoto:app.globalData.headPhoto
-    })
-    const db = wx.cloud.database({
-      env: 'minidev-ko6dk'
-    })
-    db.collection('users').where({
-      _id: app.globalData.userId
-    }).get({
-      success: function (res) {
-        that.setData({
-          user_name: res.data[0].user_name
-        })
-      }, fail: function (err) {
-        console.log(err)
-      }
+      headPhoto:app.globalData.headPhoto,
+      user_name: app.globalData.user_name
     })
   },
+
   set_Name:function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../setName',
     })
   },
+
+  changePsd: function(){
+    wx.navigateTo({
+      url: '../../../Login/setPsd',
+    })
+  },
+
   loadPic:function(){
     var that = this;
       wx.chooseImage({
@@ -53,6 +48,7 @@ Page({
             headPhoto: res.tempFilePaths[0]
           })
           getCurrentPages()[getCurrentPages().length - 3].onLoad()
+
           const db = wx.cloud.database({
             env: 'minidev-ko6dk'
           })
@@ -73,52 +69,5 @@ Page({
         }
       })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+ 
 })

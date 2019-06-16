@@ -1,1 +1,2 @@
 /* miniprogram/pages/Personal/waiting_for_meals/wait.wxss */
+@import "../../Templates/orders_inf.wxss";

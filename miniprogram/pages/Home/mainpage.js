@@ -15,7 +15,7 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 2000,
-    duration: 300,
+    duration: 500,
     ads_list: [],
 
     icons: [{ 'picture': '/icon/mainpageicon/NEW.png', 'name': '上新' },
@@ -55,7 +55,6 @@ Page({
    */
   onLoad: function (options) {
     this.dishList();
-    // this.getAds();//广告轮播初始化,获取ads表内在当天范围内的广告，并赋值给ads_list
     // this.getIcons();
   },
   onShow: function (options) {

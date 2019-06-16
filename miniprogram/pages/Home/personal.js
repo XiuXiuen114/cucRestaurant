@@ -6,17 +6,19 @@ Page({
    */
   data: {
     menuitems: [
-      { text: '待取餐', url: "../Personal/waiting_for_meals/wait", icon: '../../icon/shijian.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      { text: '待取餐', url: "../Personal/orderList/order", icon: '../../icon/shijian.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '历史订单', url: "../Personal/orderList/order", icon: '../../icon/consumeList.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '帮助说明', url: "../Personal/help/help", icon: '../../icon/fuwudianpu.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '关于我们', url: "../Personal/about_us/about", icon: '../../icon/person.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '设置', url: "../Personal/set/setInfo", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
-      { text: '商户注册', url: "./register_shop", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      // { text: '商户注册', url: "./register_shop", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
     ],
     userInfo: null,
     userName:null,
     userFlag: null,
-    status: null
+    status: null,
+    shop_name: null,
+    shop_image: null
   },
   /**
    * 生命周期函数--监听页面加载
@@ -26,8 +28,11 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo,
       head:app.globalData.headPhoto,
+      userName:wx.getStorageSync('userName'),
       userFlag:app.globalData.userType,
-      status: app.globalData.status
+      status: app.globalData.status,
+      shop_name: app.globalData.shop_name,
+      shop_image: app.globalData.shop_photo
     })
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'

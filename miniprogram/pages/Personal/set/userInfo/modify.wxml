@@ -1,16 +1,16 @@
+
 <view class="head" bindtap='loadPic'>
-<text class='text1'>头像</text>
-<image src="{{headPhoto}}" class='head_image' mode='scaleToFill'></image>
+  <text class='text1'>头像</text>
+  <image src="{{headPhoto}}" class='head_image' mode='scaleToFill'></image>
 </view>
 
-<view class="head1">
-<text class='text1'>昵称</text>
-<text class='user_name' bindtap='set_Name'>{{user_name}}</text>
-<image src="../../../../icon/youjiantou.png" class='_image'></image>
+<view class="head" >
+  <text class='text1'>昵称</text>
+  <text class='user_name' bindtap='set_Name'>{{user_name}}</text>
+  <image src="../../../../icon/youjiantou.png" class='image'></image>
 </view>
 
-<view class='head1'>
-<text class='text1'>账户密码</text>
-<text class='user_name' bindtap='psd_new'></text>
-<image src="../../../../icon/youjiantou.png" class='_image'></image>
+<view class='head'>
+  <text class='text1' bindtap='changePsd'>账户密码</text>
+  <image src="../../../../icon/youjiantou.png" class='image2' bindtap='changePsd'></image>
 </view>

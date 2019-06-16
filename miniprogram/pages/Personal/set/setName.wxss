@@ -1,35 +1,29 @@
-.head{
- margin-top:34px;
- background: #a8ddd8;
- height: 2rpx;
- padding-left: 20rpx;
- padding-right: 20rpx;
+.line{
+  margin-top:34px;
+  background: lightgrey;
+  height: 2rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
-.head1{
- margin-top: 35px;
- height: 2rpx;
- padding-left: 20rpx;
- padding-right: 20rpx;
+.text{
+  margin-top: 35px;
+  height: 2rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .ok{
   margin-top:55px;
 }
-.text1{
-  display: flex;
-  margin-top: 10px;
-  padding-left: 20rpx;
-  width:40%;
-  text-align: center;
-  color:gray;
-}
-.text{
+.button{
   width: 75%;
   padding-left: 10rpx;
-  color:  #a8ddd8;
+  color:  #7BAFE2;
+  border: 1px solid #7BAFE2;
+  border-radius: 20rpx;
 }
 .tap{
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 13px;
   color: gray;
   width:40%;
   padding-left: 20rpx;

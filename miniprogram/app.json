@@ -19,6 +19,8 @@
     "pages/Home/dishpage/dishpage",
     "pages/Respage/respage",
     "pages/Rankpage/rankpage",
+    "pages/Home/searchbar/searchbar",
+    "pages/Home/tmp/tmp",
     "pages/Cartpage/cartpage"
   ],
   "window": {

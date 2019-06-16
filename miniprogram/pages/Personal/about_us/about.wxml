@@ -1,2 +1,7 @@
 <!--miniprogram/pages/Personal/about_us/about.wxml-->
-<text>miniprogram/pages/Personal/about_us/about.wxml</text>
+<view>我们是谁？</view>
+<text>我们是中国传媒大学大三在读且专业为计算机科学与技术的在校女大学生,cucRestaurant便是我们的作品。</text>
+<view>我们的初衷？</view>
+<text>由于校内师生们的上下课时间较为统一并且窗口期很小，校内食堂在上下课时间段内人数骤增，产生大量师生排队点餐现象，非常容易影响校内师生的课程安排，cucRestaurant可以提前下单后再到食堂取餐即可，满足了校内大部分人群的需要，可以有效地减少大家大量的排队时间去做更多有意义的事情。</text>
+<view>我们的未来？</view>
+<text>未来的改善我们需要用户们宝贵的建议。</text>

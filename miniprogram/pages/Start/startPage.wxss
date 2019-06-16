@@ -2,7 +2,7 @@
 .content {
   font-size: 16px;
   margin-left: 20%;
-  margin-ight: 20%;
+  margin-right: 20%;
   margin-top: 20%;
   width: 60%;
   text-align: left;
@@ -11,7 +11,7 @@
 .button1{
   margin-top: 8%;
   font-size: 17px;
-  background-color: rgb(108, 205, 212);
+  background-color: #7BAFE2;
   color: white;
   border-radius: 10px;
   width: 35%;
