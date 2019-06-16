@@ -1,3 +1,4 @@
+
 //app.js
 App({
   onLaunch: function () {
@@ -100,3 +101,4 @@ App({
     cartDishes: null,//购物车中的菜品列表
   }
 })
+
