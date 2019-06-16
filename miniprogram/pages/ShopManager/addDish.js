@@ -1,4 +1,4 @@
-// miniprogram/pages/ShopManager/order_ing.js
+// miniprogram/pages/ShopManager/addDish.js
 Page({
 
   /**

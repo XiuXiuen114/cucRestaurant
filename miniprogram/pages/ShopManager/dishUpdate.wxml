@@ -1,2 +1,17 @@
 <!--miniprogram/pages/ShopManager/dishUpdate.wxml-->
-<text>miniprogram/pages/ShopManager/dishUpdate.wxml</text>
+<view wx:for="{{dishlist}}"  wx:key="id">
+      <view class='list'>
+        <image src='{{item.dish_picture}}' mode='scaletoFill' class='image'></image>
+        <view class='column1'>
+            <text>菜品：{{item.dish_name}}</text>
+            <text>价格：{{item.dish_price}}元</text>
+            <text>线上销售量：{{item.reserved_number}}</text>
+      </view>
+       <view class='column2'>
+          <button class='button' bindtap='remove'  id="{{item._id}}">删除</button>
+        </view>
+       
+      </view>
+    </view>
+
+ <button class='button2' bindtap='add'>添加</button>
