@@ -1,0 +1,93 @@
+<!--pages/Home/dishpage/dishpage.wxml-->
+<!--轮播图-->
+
+<!--商品幻灯片-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" class="banner" duration="{{duration}}" circular="{{duration}}">
+  <block >
+    <swiper-item>
+      <image src="{{dishes[0].dish_picture}}" class="slide-image" mode="aspectFill" ></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!--商品幻灯片 end-->
+<view class="info-price clear">
+  <view class='price'>￥{{dishes[0].dish_price}} </view>
+  <view class='fenxiang'>
+      <button class='fxbtn' open-type="share">
+        <view style='height:20px;margin-top:8px;'><image src='/icon/fenxiang.jpg' mode="aspectFill" ></image></view>
+        <view>分享</view>
+      </button>
+  </view>
+</view>
+<view class="info-title">
+    <text class="sub">{{dishes[0].dish_name}}</text>
+   <image style='height:20px;width:20px;' src="/icon/yuyue.png"></image>
+      <text class="sub">{{dishes[0].reserved_number}}</text>
+</view>
+<view style="border-top:1px solid #F6F6F6;background: #fff; padding:5px 15px;">
+    <view class="clearfix flex grey gridXt">
+    <image style='height:20px;width:20px;' src="/icon/dishicon/GOOD.png"></image>
+      <text class="sub">{{dishes[0].thumbs_up}}</text>
+    <image style='height:20px;width:20px;' src="/icon/dishicon/BAD.png"></image>
+      <text class="sub">{{dishes[0].thumbs_down}}</text>
+    </view>
+</view>
+<block wx:if="{{pjDataList!=''}}">
+  <!--评价-->
+  <view class='pj_box'>
+    <view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
+     <view style='float:left;'>商品评价</view>
+     <view style='float:right;margin-left:2px;margin-top:-1px;'>
+        <image src="/icon/youjiantou.png" class="ico_img_jt"></image>
+     </view>
+     <view style='float:right;font-size:12px;color:#A2A2A2;'>
+        <navigator url="pjList?id={{goods_id}}">查看全部</navigator>
+     </view>
+     <view class='clear'></view>
+    </view>
+    <block wx:for="{{comments}}"  wx:key="_id">
+      <view class="list_item">
+        <view class='pj_u_info clear'>
+          <view class='header_img'><image src="{{item.headpic}}" mode="aspectFit"></image></view>
+          <view class='name'>{{item.user_id}}</view>
+          <view class='time'>{{item.comment_time}}</view>
+        </view>
+        <view class='pj_cont'>
+          {{item.comment_content}}
+        </view>
+      </view>
+    </block>
+</view>
+</block>
+<!--商品详情-->
+<view class='details_box'>
+  <view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
+     <view>商品详情</view>
+  </view>
+  <view style='padding:10px 0px;'>
+      <view class="wxParse">
+        商品简短介绍
+      </view>
+    </view>
+</view>
+<!--底部浮动 start-->
+<view class="foot-nav mt15">
+  <view class="flex con gridXt tc">
+    <view class="fast-links mr15 flex f12">
+      <view class="sub gridYr" bindtap='shoucang'>
+        <text class="iconfont {{is_shoucang==0?'icon-shoucang1':'icon-shoucang2'}}">收藏</text>
+      </view>
+      <view class="sub kefu">
+       <button open-type="contact">
+        <text class="iconfont icon-lianxikefu">客服</text>
+       </button>
+      </view>
+      <view class="sub gridYr">
+        <text class="iconfont icon-gouwuche">购物车</text>
+      </view>
+    </view>
+    <view class="add-cart sub f16">
+      <button class="add-cart-btn" bindtap='buy' data-buyid="{{item._id}}">立即购买</button>
+    </view>
+  </view>
+</view>

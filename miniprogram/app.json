@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/Start/startPage",
+    "pages/Home/mainpage",
+    "pages/Home/personal",
+    "pages/Home/register_shop",
+    "pages/Login/login",
+    "pages/Login/register",
+    "pages/Login/setPsd",
+    "pages/Personal/set/setInfo",
+    "pages/Personal/waiting_for_meals/wait",
+    "pages/Personal/orderList/order",
+    "pages/Personal/help/help",
+    "pages/Personal/about_us/about",
+    "pages/Personal/set/userInfo/modify",
+    "pages/Personal/set/account/changePhone",
+    "pages/Useless/useless",
+    "pages/Personal/set/setName",
+    "pages/Home/shoppage/shoppage",
+    "pages/Home/searchpage/searchpage",
+    "pages/Home/searchbar/searchbar",
+    "pages/Home/tmp/tmp",
+    "pages/Home/dishpage/dishpage",
+    "pages/Respage/respage",
+    "pages/Rankpage/rankpage",
+    "pages/Cartpage/cartpage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "7BAFE2",
+    "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "smsvercode": {
+      "version": "1.0.1",
+      "provider": "wx47025434eb041672"
+    }
+  },
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "#7BAFE2",
+    "backgroundColor": "#FAFAFA",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/Home/mainpage",
+        "text": "点餐",
+        "iconPath": "icon/tab_icon_home_default.png",
+        "selectedIconPath": "icon/tab_icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/Cartpage/cartpage",
+        "text": "订单",
+        "iconPath": "icon/tab_shop_normal.png",
+        "selectedIconPath": "icon/tab_shop_selected.png"
+      },
+      {
+        "pagePath": "pages/Home/personal",
+        "text": "个人",
+        "iconPath": "icon/tab_icon_my_default.png",
+        "selectedIconPath": "icon/tab_icon_my_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
+

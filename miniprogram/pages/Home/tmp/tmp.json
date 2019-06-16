@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "SearchBar": "/pages/Home/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "活动管理"
 }

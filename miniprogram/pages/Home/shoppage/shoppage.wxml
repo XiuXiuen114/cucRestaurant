@@ -1,0 +1,28 @@
+<!--pages/Home/dishpage/dishpage.wxml-->
+
+<!-- 列表项-->
+<view class="appointment">
+  <view class="app-moduler">
+  <view wx:for="{{all_dishes}}" wx:key="{{index}}" >
+    <navigator url="/pages/Respage/respage" class="mod-item" bindtap="Clickres" data-resid="{{item._id}}">
+      <view class="mod-signup">
+     <!-->   <image src="{{item.res_picture}}"></image>-->
+      </view>
+      <view class="mod-img">
+        <image src="{{item.res_picture}}" class="mod-image"></image>
+      </view>
+      <view class="mod-title">
+         <text>{{item.res_name}}</text>
+      </view>
+      <view class="mod-info">
+        <view class="mod-icon">
+        <image src="/icon/star2.jpg" class="icon"></image>
+        </view>
+         <text class="moinfont2">评分</text>
+        <view class="moinfont">店铺状态{{item.res_status}}</view>
+      </view>
+    </navigator>
+    </view>
+   </view>
+</view>
+
