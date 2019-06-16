@@ -1,1 +1,1 @@
-/* miniprogram/pages/Personal/historyList/history_list.wxss */
+@import "../orderList/order.wxss";

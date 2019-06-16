@@ -9,6 +9,7 @@ Page({
     time: null,
     total_price: 0,
     orderId: null,
+    status:null,
     resId: null,
     dish: [],
     dish_imf: []
@@ -32,7 +33,8 @@ Page({
       success: function (res) {
         that.setData({
           dish_imf: res.data,
-          count: res.data.length
+          count: res.data.length,
+          status:res.data[0].status
         })
         for (var i = 0; i < that.data.count; i++) {
           that.setData({
