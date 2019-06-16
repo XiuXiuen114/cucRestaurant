@@ -30,7 +30,7 @@
                           {{item.update_time}}
                         </view>
                     </view>
-                    <image style="width: 30px; height: 30px;" src="/icon/dishicon/CART.png" bindtap='addToCart' data-dish_id='{{item._id}}'/>
+                    <image style="width: 30px; height: 30px;" src="/icon/dishicon/CART.png" bindtap='addToCart' data-dish='{{item}}'/>
                 <!-- </block> -->
                 </view>
             </view>
