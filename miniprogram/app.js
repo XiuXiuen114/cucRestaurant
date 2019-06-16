@@ -75,5 +75,6 @@ App({
     resID:null,//店家首页
     dishID:null,//菜品首页
     rankID: null,//0表示上新、1表示最热、2表示推荐
+    cartDishes: null,//购物车中的菜品列表
   }
 })
