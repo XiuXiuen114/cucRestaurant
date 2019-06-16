@@ -28,7 +28,8 @@
     "pages/ShopManager/dishUpdate",
     "pages/ShopManager/ads",
     "pages/ShopManager/applyAd",
-    "pages/ShopManager/addDish"
+    "pages/ShopManager/addDish",
+    "pages/Personal/historyList/history_list"
   ],
   "window": {
     "backgroundTextStyle": "light",
