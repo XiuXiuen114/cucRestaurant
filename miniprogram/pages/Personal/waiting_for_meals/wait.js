@@ -2,31 +2,32 @@
 var app = getApp()
 Page({
   /**
-   * 页面的初始数据
-   */
+  * 页面的初始数据
+  */
   data: {
     count: 0,
-    time:null,
-    total_price:0,
+    time: null,
+    total_price: 0,
+    orderId: null,
     resId: null,
     dish: [],
     dish_imf: []
   },
   /**
-   * 生命周期函数--监听页面加载
-   */
+  * 生命周期函数--监听页面加载
+  */
   onLoad: function (options) {
     var that = this
     that.setData({
-      resId: options.order_Id
+      orderId: options.order_Id
     })
-
+    console.log("click Order_id:" + that.data.orderId)
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
     db.collection('orders').where({
       user_id: Number(app.globalData.userId),
-      res_id: Number(that.data.resId)
+      _id: that.data.orderId
     }).get({
       success: function (res) {
         that.setData({
@@ -48,38 +49,38 @@ Page({
     })
   },
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  * 生命周期函数--监听页面初次渲染完成
+  */
   onReady: function () {
   },
   /**
-   * 生命周期函数--监听页面显示
-   */
+  * 生命周期函数--监听页面显示
+  */
   onShow: function () {
   },
   /**
-   * 生命周期函数--监听页面隐藏
-   */
+  * 生命周期函数--监听页面隐藏
+  */
   onHide: function () {
   },
   /**
-   * 生命周期函数--监听页面卸载
-   */
+  * 生命周期函数--监听页面卸载
+  */
   onUnload: function () {
   },
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+  * 页面相关事件处理函数--监听用户下拉动作
+  */
   onPullDownRefresh: function () {
   },
   /**
-   * 页面上拉触底事件的处理函数
-   */
+  * 页面上拉触底事件的处理函数
+  */
   onReachBottom: function () {
   },
   /**
-   * 用户点击右上角分享
-   */
+  * 用户点击右上角分享
+  */
   onShareAppMessage: function () {
   }
 })
