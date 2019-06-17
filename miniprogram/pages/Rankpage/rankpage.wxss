@@ -21,3 +21,14 @@ padding-top: 5rpx;
 padding-bottom: 5rpx;
 padding-top: 5rpx;
 }
+.tobooking {
+background-color: #7BAFE2;
+position: absolute;
+right: 0;
+width: 120rpx;
+height: 160rpx;
+line-height: 160rpx;
+text-align: center;
+color: #fff;
+font-size: 30rpx;
+}

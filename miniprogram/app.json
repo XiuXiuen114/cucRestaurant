@@ -58,7 +58,7 @@
       },
       {
         "pagePath": "pages/Cartpage/cartpage",
-        "text": "订单",
+        "text": "购物车",
         "iconPath": "icon/tab_shop_normal.png",
         "selectedIconPath": "icon/tab_shop_selected.png"
       },

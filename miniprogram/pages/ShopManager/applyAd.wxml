@@ -1,2 +1,13 @@
 <!--miniprogram/pages/ShopManager/applyAd.wxml-->
-<text>miniprogram/pages/ShopManager/applyAd.wxml</text>
+<view class="view">
+      <input type='text' name="ad_content" class="inputText" placeholder=' 请输入活动名称' style='text-align:left' bindinput='getContent'/>
+
+      <view class='shop_photo'>
+         <image src='{{ad_picture}}' class='photo' mode='scaleToFill'></image>
+         <button class='button' bindtap='setPhoto'>上传商家活动图片</button>
+      </view>
+
+ </view>
+
+ <button class="submit" form-type='submit' bindtap='addAd'>提交</button>
+

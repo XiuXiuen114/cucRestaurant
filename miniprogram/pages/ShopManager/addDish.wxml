@@ -1,2 +1,14 @@
 <!--miniprogram/pages/ShopManager/addDish.wxml-->
-<text>miniprogram/pages/ShopManager/addDish.wxml</text>
+<view class="view">
+      <input type='text' name="dish_name" class="inputText" placeholder=' 请输入菜品名称' style='text-align:left' bindinput='getName'/>
+        
+      <input type='text' name="address" class="inputText" placeholder=' 请输入菜品价格' style='text-align:left' bindinput='getPrice'/>
+
+      <view class='shop_photo'>
+         <image src='{{dish_picture}}' class='photo' mode='scaleToFill'></image>
+         <button class='button' bindtap='setPhoto'>上传菜品图片</button>
+      </view>
+ </view>
+
+ <button class="submit" form-type='submit' bindtap='addDish'>确认</button>
+

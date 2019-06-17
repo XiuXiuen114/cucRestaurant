@@ -50,7 +50,16 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "cartpage",
+					"pathName": "pages/Cartpage/cartpage",
+					"query": "",
+					"scene": null
+				}
+			]
+
 		}
 	}
 }
