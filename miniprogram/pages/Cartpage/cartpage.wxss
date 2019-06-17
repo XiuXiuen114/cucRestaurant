@@ -1,1 +1,21 @@
 /* pages/Cartpage/cartpage.wxss */
+/* pages/Cartpage/cartpage.wxss */
+.empty{
+width: 100%;
+margin-top:30rpx;
+height: 300px;
+background: white;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.empty_pic{
+width: 340rpx;
+height: 340rpx;
+}
+
+.item_num{
+font-size: 30rpx;
+margin-top: -10rpx;
+}

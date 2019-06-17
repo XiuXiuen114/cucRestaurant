@@ -75,3 +75,7 @@ height:300rpx;
   text-indent: 30rpx;
   color:#586C94;
 }
+.weui-media-box__desc{
+padding-bottom: 5rpx;
+padding-top: 5rpx;
+}

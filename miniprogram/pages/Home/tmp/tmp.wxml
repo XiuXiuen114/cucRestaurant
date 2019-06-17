@@ -18,14 +18,17 @@
             <view>
               <text class="dishname">{{item.dish_name}}</text>
             </view>
-                <view class="weui-media-box__desc">
+            <view>
+              <text class="information">获赞{{item.thumbs_up}} | 获踩{{item.thumbs_down}} | 预约{{item.reserved_number}}单</text>
+            </view>
+                <!--view class="weui-media-box__desc">
                   <image style="width: 12px; height: 12px;" src="/icon/dishicon/GOOD.png" />
                       {{item.thumbs_up}}
                   <image style="width: 12px; height: 12px;" src="/icon/dishicon/BAD.png" />
                           {{item.thumbs_down}}
                   <image style="width: 12px; height: 12px;" src="/icon/yuyue.png" />
                           {{item.reserved_number}}
-                </view>
+                </view-->
           </view>
           <view class="tags">
             <view>

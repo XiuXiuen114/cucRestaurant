@@ -131,7 +131,7 @@ margin-left: 20rpx;
 flex-direction: column;
 align-items: center;
 height: 80rpx;
-color: lightgray;
+color: gray;
 }
 
 .dishname{

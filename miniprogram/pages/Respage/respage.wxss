@@ -1,1 +1,166 @@
 /* pages/Respage/respage.wxss */
+/*列表项的样式*/
+.page-wrapper {
+margin: 0;
+font-size: 28rpx;
+line-height: 1.5;
+color: #333;
+background-color: #efefef;
+overflow-x: hidden;
+-webkit-overflow-scrolling: touch;
+-webkit-tap-highlight-color: transparent;
+min-height:2000rpx;
+}
+
+.bus-list .bus-list-item {
+position: relative;
+height: 160rpx;
+background-color: #fff; 
+margin: 16rpx ;
+border: 2rpx solid #e5e5e5;
+border-width: 2rpx ;
+}
+
+.bus-list .bus-list-item::before,.bus-list .bus-list-item::after {
+position: absolute;
+left: 122rpx;
+content: '';
+width: 24rpx;
+height: 12rpx;
+background-color: #efefef;
+border: 2rpx solid #e5e5e5;
+}
+
+.bus-list .bus-list-item::before {
+border-radius: 0 0 60rpx 60rpx;
+border-top: none;
+top: -2rpx;
+}
+
+.bus-list .bus-list-item::after {
+border-radius: 60rpx 60rpx 0 0;
+border-bottom: none;
+bottom: -2rpx;
+}
+
+.bus-time {
+position: absolute;
+left: 0;
+width: 134rpx;
+height: 100rpx;
+line-height: 100rpx;
+margin: 30rpx 0;
+color: #7BAFE2;
+text-align: center;
+font-size: 40rpx;
+font-family: Arial;
+border-right: 2rpx dashed #e5e5e5;
+}
+
+.bus-list .bus-list-item.disabled .tobooking {
+background-color: #c5c5c5;
+}
+
+.detail {
+height: 80rpx;
+padding: 20rpx 0;
+margin: 0 140rpx 0 144rpx;
+}
+
+.sub-list{
+height: 52rpx;
+}
+
+.ticket {
+color: #fd8f01;
+font-size: 24rpx;
+border: 2rpx solid #fd8f01;
+padding: 2rpx 8rpx;
+border-radius: 10rpx;
+font-family: Arial;
+}
+
+.ticket {
+color: #c5c5c5;
+}
+
+.s-icon1 {
+margin: 0 10rpx;
+border-color: #7BAFE2;
+}
+
+.s-icon2 {
+margin: 0 10rpx;
+border-color: #f06463;
+}
+
+.tags {
+width: 160rpx;
+text-align: right;
+position: absolute;
+right: 0;
+margin-right: 138rpx;
+margin-top: 20rpx;
+top: 0;
+}
+
+
+
+.countleft{
+font-size: 26rpx;
+/* margin-bottom: 35rpx; */
+/* margin-right: 20rpx; */
+flex-direction: column;
+align-items: center;
+height: 80rpx;
+color: #7BAFE2;
+}
+
+.price {
+font-size: 26rpx;
+/* margin-top: -50rpx; */
+margin-right: 20rpx; 
+flex-direction: column;
+align-items: center;
+color: #f06463;
+}
+
+.information{
+font-size: 20rpx;
+margin-bottom: 35rpx; 
+margin-left: 20rpx; 
+flex-direction: column;
+align-items: center;
+height: 80rpx;
+color: gray;
+}
+
+.dishname{
+font-size: 26rpx;
+/* margin-bottom: 35rpx; */
+margin-left: 20rpx; 
+padding-top: -10rpx;
+flex-direction: column;
+align-items: center;
+height: 80rpx;
+color: black;
+}
+
+.tobooking {
+background-color: #7BAFE2;
+position: absolute;
+right: 0;
+width: 120rpx;
+height: 160rpx;
+line-height: 160rpx;
+text-align: center;
+color: #fff;
+font-size: 30rpx;
+}
+.weui-media-box__desc{
+padding-bottom: 5rpx;
+padding-top: 5rpx;
+}
+.tag{
+
+}
