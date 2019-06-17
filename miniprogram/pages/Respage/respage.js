@@ -11,7 +11,7 @@ Page({
 
   onLoad: function (options) {
     this.res_id = app.globalData.resID.toString();
-    console.log(this.res_id);
+    console.log('respage res_id',this.res_id);
     this.getBasicInfo();
     this.getAllDishes();
   },

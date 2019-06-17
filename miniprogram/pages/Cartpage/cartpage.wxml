@@ -1,28 +1,69 @@
 <view>
+	<!-- 输入取餐时间，取餐备注 -->
+  <van-cell-group style="bottom:60px;">
+  <van-field  wx:if="{{cart_dishes.length!=0}}"
+    value="{{ cart_sub }}"
+    label="取餐时间"
+    type="textarea"
+    placeholder="请输入取餐时间"
+    autosize
+    border="false"
+    bind:blur="onChangesub"
+  />
+  <van-field wx:if="{{cart_dishes!=0}}"
+    value="{{ cart_ps }}"
+    label="备注"
+    type="textarea"
+    placeholder="请输入订单备注"
+    autosize
+    border="false"
+    bind:blur="onChangeps"
+  />
+</van-cell-group>
+  <!-- <van-toast wx:if="{{showToast}}" /> -->
   <!-- 未购买商品提示 -->
-  <view wx:if="{{cart_dishes.length==0}}" class='empty'>
+  <view wx:if="{{cart_dishes==0}}" class='empty'>
 <image class="empty_pic" src='../../icon/empty_pic.png'/>
 </view>
   
   <!-- 购物车中菜品列表 -->
-  <block wx:for="{{cart_dishes}}" wx:key="unique">
-    <block>
-      <van-card
+  <block class="dish_block" wx:for="{{cart_dishes}}" wx:key="unique">
+      <!-- <van-card class="custom-class"
       num="{{item.number}}"
       price="{{item.dish_price}}"
       title="{{item.dish_name}}"
       thumb="{{item.dish_picture}}"
-      />
-    </block>
-    <block>
-      <image style="width: 30px; height: 30px;" src="/icon/dishicon/ADD.png" bindtap='addNumber' data-dish_index="{{index}}"></image>
-      {{item.number}}
-      <image style="width: 30px; height: 30px;" src="/icon/dishicon/MINUS.png" bindtap='minusNumber' data-dish_index="{{index}}"></image>
-    </block>
+      /> -->
+
+      <view class="weui-cell">
+          <view class="weui-cell__hd">          
+              <image style="width: 70px; height: 70px; display: block;margin-right: 15rpx;" src="{{item.dish_picture}}" />
+          </view>
+          <view class="weui-cell__bd1" >
+              <view class="weui-media-box__title">
+                <image style="width: 15px; height: 15px;" src="/icon/dishicon/FOOD.png" />
+                {{item.dish_name}}
+              </view>
+              <view class="weui-media-box__title">
+                <image style="width: 15px; height: 15px;" src="/icon/dishicon/MONEY.png" />
+                {{item.dish_price}}
+              </view>
+              
+          </view>
+          <view class="weui-cell__bd2">          
+              <image style="width: 28px; height: 28px;" src="/icon/dishicon/MINUS.png" bindtap='minusNumber' data-dish_index="{{index}}"></image>
+                {{item.number}}
+              <image style="width: 30px; height: 30px;" src="/icon/dishicon/ADD.png" bindtap='addNumber' data-dish_index="{{index}}"></image>
+          </view>
+    </view>
+
+    
   </block>
+  
+  
 
   <!-- 提交订单栏 -->
-  <van-submit-bar
+  <van-submit-bar class="submit_bar" wx:if="{{dish_length!=0}}"
     price="{{total_price*100}}"
     button-text="提交订单"
     bind:submit="submitCart"
