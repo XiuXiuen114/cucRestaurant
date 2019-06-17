@@ -131,7 +131,7 @@ margin-left: 20rpx;
 flex-direction: column;
 align-items: center;
 height: 80rpx;
-color: gray;
+color: lightgray;
 }
 
 .dishname{
@@ -155,6 +155,10 @@ line-height: 160rpx;
 text-align: center;
 color: #fff;
 font-size: 30rpx;
+}
+.weui-media-box__desc{
+padding-bottom: 5rpx;
+padding-top: 5rpx;
 }
 .tag{
 

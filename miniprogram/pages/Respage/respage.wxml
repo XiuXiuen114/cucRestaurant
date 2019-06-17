@@ -12,8 +12,8 @@
 </view>
 
 <view class="weui-panel__hd">菜单列表</view>
-  <!--view class="weui-panel__bd">
-    < <view wx:for="{{res_dishes}}" wx:key="unique" bindtap='clickDish'> >
+  <view class="weui-panel__bd">
+    <!-- <view wx:for="{{res_dishes}}" wx:key="unique" bindtap='clickDish'> -->
       <navigator wx:for="{{res_dishes}}" wx:key="unique" data-link_id="{{item._id}}"  bindtap='clickDish'
       url="/pages/Home/dishpage/dishpage" class="weui-media-box weui-media-box_appmsg"                          hover-class="weui-cell_active">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
@@ -28,40 +28,5 @@
               <image class="weui-media-box__thumb" src="{{icons.CART}}" />
           </view>
       </navigator>
-     < </view> >
-  </view-->
-
-   <!--搜索结果列表框-->
-<view wx:for="{{res_dishes}}" wx:key="unique" class="bus-list js_bus_list ">
-
-<view class="bus-list-item" >
-<!--view class="bus-time">{{item._id}}</view-->
-  <view class="tobooking" bindtap="addToCart" data-dish="{{item}}"> 预订 </view>
-    <navigator url="/pages/Home/dishpage/dishpage" bindtap='Clickdish' data-dishid="{{item._id}}">
-        <image class="bus-time" src="{{item.dish_picture}}"></image>
-        <view class="tag">
-          <view class="detail">
-            <view>
-              <text class="dishname">{{item.dish_name}}</text>
-            </view>
-            <view>
-              <text class="information">获赞{{item.thumbs_up}} | 获踩{{item.thumbs_down}} | 预约{{item.reserved_number}}单</text>
-            </view>
-                <!--view class="weui-media-box__desc">
-                  <image style="width: 12px; height: 12px;" src="/icon/dishicon/GOOD.png" />
-                      {{item.thumbs_up}}
-                  <image style="width: 12px; height: 12px;" src="/icon/dishicon/BAD.png" />
-                          {{item.thumbs_down}}
-                  <image style="width: 12px; height: 12px;" src="/icon/yuyue.png" />
-                          {{item.reserved_number}}
-                </view-->
-          </view>
-          <view class="tags">
-            <view>
-              <text class="price">￥{{item.dish_price}}</text>
-            </view>
-          </view>
-      </view>
-    </navigator>
+     <!-- </view> -->
   </view>
-</view>
