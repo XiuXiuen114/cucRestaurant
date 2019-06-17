@@ -1,4 +1,7 @@
-<view>
+<view wx:if="{{order_len == 0}}">
+<view class = "mind">您目前没有待取餐的订单哦</view>
+</view>
+<view wx:if="{{order_len != 0}}">
 <view class="divLine"></view>
 <view wx:for="{{res_}}" > 
 <view class="shop_address">
