@@ -6,28 +6,24 @@
             <view class="weui-panel__bd">
                 <view class="weui-cell" wx:for="{{rank_dishes}}" wx:key="unique">
                 <!-- <block wx:for="{{rank_dishes}}" wx:key="unique"> -->
-                    <view class="weui-cell__hd">NO.{{index+1}}</view>
+                    <view class="rank">NO.{{index+1}}</view>
                     <view class="weui-cell__hd">          
-                        <image style="width: 60px; height: 60px; display: block" src="{{item.dish_picture}}" />
+                        <image style="width: 60px; height: 60px; display: block;margin-right: 15rpx;" src="{{item.dish_picture}}" />
                     </view>
                     <view class="weui-cell__bd">
                         <view class="weui-media-box__title">
-                          <image style="width: 15px; height: 15px;" src="/icon/dishicon/FOOD.png" />
+                          <image style="width: 10px; height: 10px;" src="/icon/dishicon/FOOD.png" />
                           {{item.dish_name}}
                         </view>
                         <view class="weui-media-box__desc">
-                          <image style="width: 15px; height: 15px;" src="/icon/dishicon/MONEY.png" />
+                          <image style="width: 10px; height: 10px;" src="/icon/dishicon/MONEY.png" />
                           {{item.dish_price}}
                         </view>
                         <view class="weui-media-box__desc">
-                          <image style="width: 15px; height: 15px;" src="/icon/dishicon/GOOD.png" />
+                          <image style="width: 10px; height: 10px;" src="/icon/dishicon/GOOD.png" />
                           {{item.thumbs_up}}
-                          <image style="width: 15px; height: 15px;" src="/icon/dishicon/BAD.png" />
+                          <image style="width: 10px; height: 10px;" src="/icon/dishicon/BAD.png" />
                           {{item.thumbs_down}}
-                        </view>
-                        <view class="weui-media-box__desc">
-                          <image style="width: 15px; height: 15px;" src="/icon/dishicon/TIME.png" />
-                          {{item.update_time}}
                         </view>
                     </view>
                     <image style="width: 30px; height: 30px;" src="/icon/dishicon/CART.png" bindtap='addToCart' data-dish='{{item}}'/>

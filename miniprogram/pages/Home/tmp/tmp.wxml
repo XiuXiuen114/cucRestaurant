@@ -10,26 +10,25 @@
 
 <view class="bus-list-item" >
 <!--view class="bus-time">{{item._id}}</view-->
-<view class="tobooking" bindtap="Clickyuding" data-itm="{{item}}"> 预订 </view>
-<navigator url="/pages/Home/dishpage/dishpage" bindtap='Clickdish' data-dishid="{{item._id}}">
-<image class="bus-time" src="{{item.dish_picture}}"></image>
-<view class="detail">
-<view>
-<text class="dishname">{{item.dish_name}}</text>
-</view>
-<view>
-<text class="information">获赞{{item.thumbs_up}} | 获踩{{item.thumbs_down}} | 预约{{item.reserved_number}}单</text>
-</view>
-</view>
-<view class="tags">
-<view>
-<text class="price">￥{{item.dish_price}}</text>
-</view>
-<view>
-<text class="b-tags js_tags"></text>
-</view>
-</view>
-</navigator>
-</view>
+  <view class="tobooking" bindtap="Clickyuding" data-itm="{{item}}"> 预订 </view>
+    <navigator url="/pages/Home/dishpage/dishpage" bindtap='Clickdish' data-dishid="{{item._id}}">
+        <image class="bus-time" src="{{item.dish_picture}}"></image>
+        <view class="tag">
+          <view class="detail">
+            <view>
+              <text class="dishname">{{item.dish_name}}</text>
+            </view>
+            <view>
+              <text class="information">获赞{{item.thumbs_up}} | 获踩{{item.thumbs_down}} | 预约{{item.reserved_number}}单</text>
+            </view>
+          </view>
+          <view class="tags">
+            <view>
+              <text class="price">￥{{item.dish_price}}</text>
+            </view>
+          </view>
+      </view>
+    </navigator>
+  </view>
 </view>
 
