@@ -1,1 +1,48 @@
 /* miniprogram/pages/ShopManager/applyAd.wxss */
+.view{
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.inputText{
+  height:110rpx;
+  border-bottom: 1px solid lightgrey;
+  font-size: 16px;
+  width: 100%;
+  padding-left: 15%;
+}
+.shop_photo{
+  border-top: 1px solid #7BAFE2;
+  border-bottom: 1px solid #7BAFE2;
+  border-left: 1px solid #7BAFE2;
+  border-right: 1px solid #7BAFE2;
+  width: 70%;
+  height: 160px;
+  margin-left: 15%;
+  margin-top: 30px;
+  padding: 10rpx 10rpx;
+}
+.photo{
+  padding-top: 10rpx;
+  height: 72%;
+  width: 85%;
+}
+.button{
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background: #7BAFE2;
+  width: 78%;
+  font-size: 14px;
+}
+.submit{
+  margin-top: 50rpx;
+  width:450rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background-color: #7BAFE2;
+  color: white;
+}
+

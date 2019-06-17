@@ -178,12 +178,12 @@ Page({
           // _id: app.globalData.userId
         }).get({
           success: function (res0) {
-            console.log(res0.data[res.total - 1]._id);  //获取restaurants表最后一个记录的id
-            if (res0.data[res.total - 1]._id){
+            console.log(res0.data);  //获取restaurants表最后一个记录的id
+            if (res.total != 0) {
               that.setData({
-                id: parseInt(res0.data[res.total - 1]._id )+ 1
+                id: parseInt(res0.data[res.total - 1]._id) + 1
               })
-            }else{
+            } else {
               that.setData({
                 id: 1
               })
@@ -198,6 +198,7 @@ Page({
                 res_name: that.data.shop_name,
                 password: that.data.password,
                 status: '2',
+                res_status: true,
                 res_phone: that.data.telNumber,
                 res_picture: that.data.photo_shop,
                 res_rank: null

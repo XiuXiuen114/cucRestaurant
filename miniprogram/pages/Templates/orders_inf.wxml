@@ -2,7 +2,7 @@
 <view>
 <view class = "list">
 <image src="{{dish_picture}}" class="dish_image"/>
-<text class = "dish_name">{{dish_name}}</text>
+<text class = "dish_name">{{dish_name}}x{{dish_number}}</text>
 </view>
 <view>
 <text class = "dish_price">单价：{{dish_price}}￥</text>

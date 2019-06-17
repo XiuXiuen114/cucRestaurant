@@ -28,7 +28,8 @@ Page({
       env: 'minidev-ko6dk'
     })
     db.collection('ads').where({
-      res_id: Number(app.globalData.userId)
+      res_id: Number(app.globalData.userId),
+      flag: true
     }).get({
       success: function (res) {
          console.log(res)
@@ -49,7 +50,7 @@ Page({
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
-    db.collection('orders').doc(id).remove({
+    db.collection('ads').doc(id).remove({
       success: function (res) {
         wx.showToast({
           title: '取消成功！'

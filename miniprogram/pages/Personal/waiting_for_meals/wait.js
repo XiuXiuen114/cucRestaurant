@@ -5,6 +5,8 @@ Page({
   * 页面的初始数据
   */
   data: {
+    comment_status:null,
+    ps:null,
     count: 0,
     time: null,
     total_price: 0,
@@ -27,36 +29,45 @@ Page({
       env: 'minidev-ko6dk'
     })
     db.collection('orders').where({
-      user_id: Number(app.globalData.userId),
+      user_id: app.globalData.userId,
       _id: that.data.orderId
     }).get({
       success: function (res) {
         that.setData({
+          comment_status:res.data[0].if_comment,
+          ps:res.data[0].ps,
           dish_imf: res.data,
           count: res.data.length,
-          status:res.data[0].status
+          status:res.data[0].order_status
         })
+       // console.log(that.data.dish_imf)
         for (var i = 0; i < that.data.count; i++) {
           that.setData({
-            time: that.data.dish_imf[i].order_start_time.getFullYear() + '-' + that.data.dish_imf[i].order_start_time.getMonth() + '-' + that.data.dish_imf[i].order_start_time.getDate() + ' ' + that.data.dish_imf[i].order_start_time.getHours() + ":" + that.data.dish_imf[i].order_start_time.getMinutes()
+            time: that.data.dish_imf[i].order_time
           })
-          for (var j = 0; j < that.data.dish_imf[i].dish_id.length; j++) {
+          for (var j = 0; j < that.data.dish_imf[i].dishes.length; j++) {
             that.setData({
-              total_price: that.data.total_price + that.data.dish_imf[i].dish_id[j].dish_price
+              total_price: that.data.total_price + that.data.dish_imf[i].order_price
             })
           }
         }
+        app.globalData.dishID = that.data.dish_imf[0].dishes[0]._id
         console.log(that.data.dish_imf)//一次预定
       }
+    })
+    console.log(app.globalData.dishID)
+  },
+  view_comment:function(){
+    wx.navigateTo({
+      url: '../../Home/comment/comment',
     })
   },
   submit:function(e){
     var that = this
     console.log(e.currentTarget.dataset.dish[0])
     wx.navigateTo({
-      url: '../comment/comment?dish_Info=' + e.currentTarget.dataset.dish[0]
+      url: '../comment/comment?dish_Info=' + escape(JSON.stringify(e.currentTarget.dataset.dish))
     })
-    console.log("dishinfo:"+dishinfo)
   },
   /**
   * 生命周期函数--监听页面初次渲染完成

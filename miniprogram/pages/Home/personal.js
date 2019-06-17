@@ -19,10 +19,10 @@ Page({
       { text: '订单统计', url: "../ShopManager/order?status=1", icon: '../../icon/shijian.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '菜品更新', url: "../ShopManager/dishUpdate", icon: '../../icon/consumeList.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '广告推广', url: "../ShopManager/ads", icon: '../../icon/fuwudianpu.png', tips: '', arrows: '../../icon/youjiantou.png' },
-      { text: '设置', url: "../Personal/set/setInfo", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      // { text: '设置', url: "../Personal/set/setInfo", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
     ],
     userInfo: null,
-    userName:null,
+    userName: null,
     userFlag: null,
     status: null,
     shop_name: null,
@@ -32,32 +32,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    var that = this;
     console.log(app.globalData.status)
     this.setData({
       userInfo: app.globalData.userInfo,
-      head:app.globalData.headPhoto,
-      userName:wx.getStorageSync('userName'),
-      userFlag:app.globalData.userType,
+      head: app.globalData.headPhoto,
+      userName: wx.getStorageSync('userName'),
+      userFlag: app.globalData.userType,
       status: app.globalData.status,
       shop_name: app.globalData.shop_name ? app.globalData.shop_name : wx.getStorageSync('shop_name'),
       shop_image: app.globalData.shop_photo ? app.globalData.shop_photo : wx.getStorageSync('shop_photo'),
     })
   },
 
-  register: function(){
+  register: function () {
     wx.navigateTo({
       url: '../Login/register',
     })
   },
 
-  login: function(){
+  login: function () {
     wx.navigateTo({
       url: '../Login/login',
     })
   },
 
-  register_shop: function(){
+  register_shop: function () {
     wx.navigateTo({
       url: './register_shop',
     })
