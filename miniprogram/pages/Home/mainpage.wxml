@@ -52,7 +52,7 @@
   </block>
 </view>
 
-<button bindtap='goUseless'>先不要动这个按钮</button>
+<!--button bindtap='goUseless'>先不要动这个按钮</button-->
 
 <!-- 列表项-->
 <view class="appointment">
