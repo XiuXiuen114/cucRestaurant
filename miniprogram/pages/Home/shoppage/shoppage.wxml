@@ -17,9 +17,9 @@
       <view class="mod-info">
         <view class="mod-icon">
         <image src="/icon/star2.jpg" class="icon"></image>
-        </view>
-         <text class="moinfont2">评分</text>
-        <view class="moinfont">店铺状态{{item.res_status}}</view>
+         <text class="moinfont2">sdsd</text>
+        </view>      
+        <view class="moinfont">店铺状态: {{item.res_status}}</view>
       </view>
     </navigator>
     </view>

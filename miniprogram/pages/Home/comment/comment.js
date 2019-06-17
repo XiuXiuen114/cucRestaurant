@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    comment:[],
   },
 
   /**
@@ -27,10 +27,18 @@ Page({
       ({
         success: function (res) {
           //res.data为满足条件的json数组
-          console.log('comment', res.data);
           that.setData({
-            comments: res.data
+            commentlist: [],      
+          })
+         for (var i = 0; i < res.data.length; i++) 
+         {
+           that.data.commentlist.push({ '_id': res.data[i]._id, 'comment_content': res.data[i].comment_content, 'comment_time': JSON.stringify(res.data[i].comment_time), 'user_id': res.data[i].user_id, 'user_pic': res.data[i].user_pic, 'user_name': res.data[i].user_name});
+         }
+          console.log('commentlist', that.data.commentlist );
+          that.setData({
+           comment: that.data.commentlist
           });
+         // console.log('comment', comment);
         }
       }, {
         fail: console.error

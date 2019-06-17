@@ -49,8 +49,8 @@
     <block wx:for="{{comments}}"  wx:key="_id">
       <view class="list_item">
         <view class='pj_u_info clear'>
-          <view class='header_img'><image src="/icon/skzxc.jpg" mode="aspectFit"></image></view>
-          <view class='name'>{{item.user_id}}</view>
+          <view class='header_img'><image src="{{item.user_pic}}" mode="aspectFit"></image></view>
+          <view class='name'>{{item.user_name}}</view>
           <view class='time'>{{item.comment_time}}</view>
         </view>
         <view class='pj_cont'>

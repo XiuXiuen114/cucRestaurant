@@ -25,7 +25,7 @@ Page({
     const db = wx.cloud.database()
     db.collection('dishes')
       .where({
-        own_of_res_id: that.res_id,
+        shop_id: that.res_id,
       })
       .get()
       .then(res => {

@@ -1,3 +1,30 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "#7BAFE2",
+    "backgroundColor": "#FAFAFA",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/Home/mainpage",
+        "text": "点餐",
+        "iconPath": "icon/tab_icon_home_default.png",
+        "selectedIconPath": "icon/tab_icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/Cartpage/cartpage",
+        "text": "订单",
+        "iconPath": "icon/tab_shop_normal.png",
+        "selectedIconPath": "icon/tab_shop_selected.png"
+      },
+      {
+        "pagePath": "pages/Home/personal",
+        "text": "个人",
+        "iconPath": "icon/tab_icon_my_default.png",
+        "selectedIconPath": "icon/tab_icon_my_selected.png"
+      }
+    ]
+  },
+  "navigationBarTitleText": "榜单页面"
 }

@@ -8,8 +8,6 @@ Page({
   },
   onLoad() {
 
-
-
   },
   onShow() {
 
@@ -78,7 +76,7 @@ Clickdish: function(e)
 },
 Clickyuding: function(e)
 {
-  var option = e.currentTarget.dataset.itm;
+  let option = e.currentTarget.dataset.itm;
   app.globalData.cartDishes.push(option);
   console.log('Clickyuding',option)
 }
