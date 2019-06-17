@@ -15,9 +15,13 @@
          <text>{{item.res_name}}</text>
       </view>
       <view class="mod-info">
-      <view class="weui-media-box__desc">
-             <image style="width: 12px; height: 12px;" src="/icon/star2.jpg" />
-                   {{item.res_rank}} |   店铺状态{{item.res_status}}
+      <view wx:if="{{item.res_status ==true}}" class="weui-media-box__desc">
+      <image style="width: 12px; height: 12px;" src="/icon/star2.jpg" />
+                   {{item.res_rank}} |   open
+       </view>
+      <view wx:else class="weui-media-box__desc">
+      <image style="width: 12px; height: 12px;" src="/icon/star2.jpg" />
+                   {{item.res_rank}} |   打烊
        </view>
         <!--view class="mod-icon">
         <image src="/icon/star2.jpg" class="icon"></image>
