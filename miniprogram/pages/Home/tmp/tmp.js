@@ -78,7 +78,9 @@ Clickdish: function(e)
 },
 Clickyuding: function(e)
 {
-  var option = e.currentTarget.dataset.dishidd;
+  var option = e.currentTarget.dataset.itm;
+  app.globalData.cartDishes.push(option);
+  console.log('Clickyuding',option)
 }
 
 })
