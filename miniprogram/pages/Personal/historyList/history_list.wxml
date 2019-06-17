@@ -1,4 +1,7 @@
-<view>
+<view wx:if="{{history_len == 0}}">
+<view class = "mind">您暂时还没有历史订单</view>
+</view>
+<view wx:if="{{history_len != 0}}">
 <view class="divLine"></view>
 <view wx:for="{{res_}}" > 
 <view class="shop_address">

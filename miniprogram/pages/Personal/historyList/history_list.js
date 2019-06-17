@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    history_len:0,
     res_: [],
     order_res: null,
     order_id: null,
@@ -28,6 +29,7 @@ Page({
       success: function (res) {
         console.log(res)
         that.setData({
+          history_len:res.data.length,
           order_res: res
         })
         for (var i = 0; i < res.data.length; i++) {

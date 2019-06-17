@@ -47,17 +47,21 @@ Page({
           })
           for (var j = 0; j < that.data.dish_imf[i].dishes.length; j++) {
             that.setData({
-              total_price: that.data.total_price + that.data.dish_imf[i].order_price
+              total_price: that.data.dish_imf[i].order_price
             })
           }
         }
-        app.globalData.dishID = that.data.dish_imf[0].dishes[0]._id
+        console.log(that.data.dish_imf[0].dishes[0]._id)
+       getApp().globalData.dishID = that.data.dish_imf[0].dishes[0]._id
         console.log(that.data.dish_imf)//一次预定
       }
     })
     console.log(app.globalData.dishID)
   },
   view_comment:function(){
+    var that = this
+    getApp().globalData.dishID = that.data.dish_imf[0].dishes[0]._id
+    console.log(app.globalData.dishID)
     wx.navigateTo({
       url: '../../Home/comment/comment',
     })
