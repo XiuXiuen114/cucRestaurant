@@ -44,7 +44,7 @@ Page({
     var that = this
     db.collection('restaurants').where
      ({
-        res_address: '星光餐厅'
+        kind: '星光餐厅'
      }).get
       ({
         success: function (res) {
@@ -64,7 +64,7 @@ Page({
     var that = this
     db.collection('restaurants').where
       ({
-        res_address: '南苑餐厅'
+        kind: '南苑餐厅'
       }).get
       ({
         success: function (res) {
@@ -86,7 +86,7 @@ Page({
     let that = this;
     db.collection('restaurants').where
       ({
-        res_address: '北苑餐厅'
+        kind: '北苑餐厅'
       }).get
       ({
         success: function (res) {
@@ -108,7 +108,7 @@ Page({
     let that = this;
     db.collection('restaurants').where
       ({
-        res_address: '中蓝餐厅'
+        kind: '中蓝餐厅'
       }).get
       ({
         success: function (res) {
@@ -130,7 +130,7 @@ Page({
     let that = this;
     db.collection('restaurants').where
       ({
-        res_address: '梆子井餐厅'
+        kind: '梆子井餐厅'
       }).get
       ({
         success: function (res) {
@@ -152,7 +152,7 @@ Page({
     let that = this;
     db.collection('restaurants').where
       ({
-        res_address: '清真餐厅'
+        kind: '清真餐厅'
       }).get
       ({
         success: function (res) {
