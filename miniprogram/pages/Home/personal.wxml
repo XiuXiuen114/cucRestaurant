@@ -1,5 +1,5 @@
 
-<view wx:if="{{status == 2}}">
+<view wx:if="{{status == 1}}">
 <!-- 师生界面 -->
   <view class="mine-wrapper">
 
