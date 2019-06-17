@@ -50,6 +50,14 @@ Page({
       }
     })
   },
+  submit:function(e){
+    var that = this
+    console.log(e.currentTarget.dataset.dish[0])
+    wx.navigateTo({
+      url: '../comment/comment?dish_Info=' + e.currentTarget.dataset.dish[0]
+    })
+    console.log("dishinfo:"+dishinfo)
+  },
   /**
   * 生命周期函数--监听页面初次渲染完成
   */

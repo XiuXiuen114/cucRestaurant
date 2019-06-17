@@ -1,0 +1,5 @@
+<!--miniprogram/pages/Personal/comment/commenr.wxml-->
+<view>
+<text>您对商家/菜品满意吗？</text>
+
+</view>
