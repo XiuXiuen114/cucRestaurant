@@ -19,6 +19,7 @@
     "pages/Home/shoppage/shoppage",
     "pages/Home/searchpage/searchpage",
     "pages/Home/dishpage/dishpage",
+    "pages/Home/comment/comment",
     "pages/Respage/respage",
     "pages/Rankpage/rankpage",
     "pages/Home/searchbar/searchbar",
@@ -29,7 +30,8 @@
     "pages/ShopManager/ads",
     "pages/ShopManager/applyAd",
     "pages/ShopManager/addDish",
-    "pages/Personal/historyList/history_list"
+    "pages/Personal/historyList/history_list",
+    "pages/Personal/comment/comment"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -7,9 +7,9 @@
     <block>
       <van-card
       num="{{item.number}}"
-      price="{{item.dish.dish_price}}"
-      title="{{item.dish.dish_name}}"
-      thumb="{{item.dish.dish_picture}}"
+      price="{{item.dish_price}}"
+      title="{{item.dish_name}}"
+      thumb="{{item.dish_picture}}"
       />
     </block>
     <block>

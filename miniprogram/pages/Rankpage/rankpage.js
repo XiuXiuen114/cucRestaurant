@@ -17,8 +17,15 @@ Page({
   },
   addToCart: function (e) {
     let dish=e.currentTarget.dataset.dish;
-    app.globalData.cartDishes.push(dish);
     console.log('cartDishes', app.globalData.cartDishes);
+    //判断该菜品是否在购物车里面，已经在购物车里面则不push
+    // console.log(JSON.stringify(app.globalData.cartDishes).indexOf(JSON.stringify(dish)));
+    if (JSON.stringify(app.globalData.cartDishes).indexOf(JSON.stringify(dish))==-1){
+      app.globalData.cartDishes.push(dish);
+      console.log('cartDishes', app.globalData.cartDishes);
+    }else{
+      console.log("已经存在");
+    }
   },
   getRankID:function(){
     switch(app.globalData.rankID){
@@ -81,21 +88,38 @@ Page({
       env: 'minidev-ko6dk'
     });
     let that = this;
+    that.setData({
+      dishlist:[]
+    });
     console.log('userID', app.globalData.userId);
     db.collection('orders').where({
-      user_id:app.globalData.userId
+      user_id:app.globalData.userId,
+      order_status:3
     }).get({
         success: function (res) {
           //res.data为满足条件的json数组
-          console.log('getRec', res.data);
+         // console.log('每一lie', res.data[0].dishes[0].dish_name);
+          for(var i=0;i<res.data.length;i++)
+          {
+            for(var j=0;j<res.data[i].dishes.length;j++)
+            {
+                   console.log('每一条', res.data[i].dishes[j].dish_name);
+                  that.data.dishlist.push(res.data[i].dishes[j]);
+            }
+          }
+          console.log('getRec', that.data.dishlist);
           that.setData({
-            rank_dishes: res.data
+            rank_dishes: that.data.dishlist
           });
         }
       }, {
         fail: console.error
       })
-  } //end getRec
-
+  }, //end getRec
+  Clickdish: function (e) {
+    var option = e.currentTarget.dataset.dishid;
+    app.globalData.dishID = option;
+    console.log('Clickdish', app.globalData.dishID);
+  },
   
 })

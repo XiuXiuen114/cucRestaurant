@@ -1,1 +1,34 @@
 /* pages/Rankpage/rankpage.wxss */
+/* pages/Rankpage/rankpage.wxss */
+.rank{
+font-size: 30rpx;
+margin-left: 5rpx; 
+margin-right: 15rpx;
+flex-direction: column;
+align-items: center;
+color: gray;
+}
+.weui-panel__bd{
+padding-bottom: 10rpx;
+padding-top: 10rpx;
+}
+.weui-media-box__title{
+font-size: 28rpx;
+padding-bottom: 5rpx;
+padding-top: 5rpx;
+}
+.weui-media-box__desc{
+padding-bottom: 5rpx;
+padding-top: 5rpx;
+}
+.tobooking {
+background-color: #7BAFE2;
+position: absolute;
+right: 0;
+width: 120rpx;
+height: 160rpx;
+line-height: 160rpx;
+text-align: center;
+color: #fff;
+font-size: 30rpx;
+}

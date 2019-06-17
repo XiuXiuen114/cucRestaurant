@@ -62,7 +62,7 @@ background-color: #c5c5c5;
 
 .detail {
 height: 80rpx;
-padding: 36rpx 0;
+padding: 20rpx 0;
 margin: 0 140rpx 0 144rpx;
 }
 
@@ -99,7 +99,7 @@ text-align: right;
 position: absolute;
 right: 0;
 margin-right: 138rpx;
-margin-top: 34rpx;
+margin-top: 20rpx;
 top: 0;
 }
 
@@ -131,14 +131,14 @@ margin-left: 20rpx;
 flex-direction: column;
 align-items: center;
 height: 80rpx;
-color: ligh gray;
+color: lightgray;
 }
 
 .dishname{
-
 font-size: 26rpx;
 /* margin-bottom: 35rpx; */
 margin-left: 20rpx; 
+padding-top: -10rpx;
 flex-direction: column;
 align-items: center;
 height: 80rpx;
@@ -156,4 +156,10 @@ text-align: center;
 color: #fff;
 font-size: 30rpx;
 }
+.weui-media-box__desc{
+padding-bottom: 5rpx;
+padding-top: 5rpx;
+}
+.tag{
 
+}

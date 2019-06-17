@@ -8,8 +8,6 @@ Page({
   },
   onLoad() {
 
-
-
   },
   onShow() {
 
@@ -78,7 +76,21 @@ Clickdish: function(e)
 },
 Clickyuding: function(e)
 {
-  var option = e.currentTarget.dataset.dishidd;
-}
+  let option = e.currentTarget.dataset.itm;
+  app.globalData.cartDishes.push(option);
+  console.log('Clickyuding',option)
+},
+ addToCart: function (e) {
+    let dish = e.currentTarget.dataset.dish;
+    console.log('cartDishes', app.globalData.cartDishes);
+    //判断该菜品是否在购物车里面，已经在购物车里面则不push
+    // console.log(JSON.stringify(app.globalData.cartDishes).indexOf(JSON.stringify(dish)));
+    if (JSON.stringify(app.globalData.cartDishes).indexOf(JSON.stringify(dish)) == -1) {
+      app.globalData.cartDishes.push(dish);
+      console.log('cartDishes', app.globalData.cartDishes);
+    } else {
+      console.log("已经存在");
+    }
+  },
 
 })

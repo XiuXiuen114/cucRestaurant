@@ -10,7 +10,7 @@
   <!-- 记得设置name值，这样JS才能接收name=keyword的值 -->
 
     <input type="text" name="keyword" bindtap='formSubmit' class="search_input" placeholder='想吃点什么呢'/>
-    <button formType="submit"  class="search_btn">搜索</button>    
+    <!--button formType="submit"  class="search_btn">搜索</button-->    
  <!-->  </form> -->
   </view>
 

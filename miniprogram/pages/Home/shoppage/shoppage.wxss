@@ -2,8 +2,8 @@
 
 /*列表样式*/
 .mod-item{
-            width:46%;
-            height:300rpx;
+ width:46%;
+height:300rpx;
  float: left;
  margin-left:20rpx;
  margin-top:40rpx;
@@ -43,13 +43,15 @@
   height:40rpx;
 }
 .mod-icon{
-            display: flex;
-            flex-direction: row;
-  width: 40rpx;
+  display: flex;
+  flex-direction: row;
+  width: 180rpx;
   height: 40rpx;
+  align-items: center;
+  justify-content: center; 
 }
 .icon{
-            width: 40rpx;
+  width: 40rpx;
   height: 40rpx;
 }
 .moinfont{
@@ -59,8 +61,8 @@
   color:#bfbfbf;
 }
 .moinfont2{
-            font-size: 28rpx;
-  text-indent: 120rpx;
+  font-size: 28rpx;
+ 
   font-family: '微软雅黑';
   color:#bfbfbf;
 }

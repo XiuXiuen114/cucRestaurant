@@ -23,7 +23,7 @@ Page({
     this.data.total_price=0;
     let that=this;
     this.data.cart_dishes.forEach(function(item){
-      that.data.total_price+=item.number*item.dish.dish_price
+      that.data.total_price+=item.number*item.dish_price
     })
     this.setData({
       total_price:that.data.total_price
@@ -50,39 +50,54 @@ Page({
       this.setData({
         cart_dishes: that.data.cart_dishes
       });
-    }
+    } 
     this.calTotalPrice();
   },
   setCartData:function(){
     let that=this;
+    
     app.globalData.cartDishes.forEach(function(item){
-      that.data.cart_dishes.push({'dish':item,'number':1})
+      // that.data.cart_dishes.push({'dish':item,'number':1})
+      item['number'] = 1;
+      that.data.cart_dishes.push(item)
     });
     this.setData({
       cart_dishes:that.data.cart_dishes
     });
+
+    console.log("setData dishes",this.data.cart_dishes);
   },
   //将选择的菜品插入到orders表
   insertOrders:function(){
     let curDate=new Date();
+    //遍历整个cart_dishes,找到number==0的删除
+    for(let i=0;i<this.data.cart_dishes.length;i++){
+      let temp_dish=this.data.cart_dishes[i];
+      if(temp_dish.number==0){
+        this.data.cart_dishes.splice(i,1);
+      }else{
+
+      }
+    }
+    console.log("insert cart_dishes",this.data.cart_dishes);
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     });
     let that=this;
     db.collection('orders').add({
       data:{
+        user_id: app.globalData.userID,
         dishes:that.data.cart_dishes,
-        order_start_time:util.formatTime(curDate),
-        order_end_time:null,
-        status:0,//未接单
-        time_sub:'中午12点',
-        user_id:app.globalData.userID,
-        user_name:app.globalData.userName,
-        order_price:that.data.total_price,
-
+        user_name: app.globalData.userName,
+        order_time:util.formatTime(curDate),
+        order_sub:'',
+        ps:'',
+        order_grade:null,
+        order_price: that.data.total_price,
+        order_status:0,//未接单
       },
       success:function(res){
-        console.log(res);
+        console.log('insertOrders res',res);
       },
       fail:console.error
     })

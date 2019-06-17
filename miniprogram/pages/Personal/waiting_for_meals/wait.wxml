@@ -1,8 +1,9 @@
 <import src="../../Templates/orders_inf.wxml" />
 <view wx:for="{{dish_imf}}" wx:key="id">
-<view wx:for="{{item.dish_id}}" wx:for-item="dish" wx:key="id">
+<view wx:for="{{item.dishes}}" wx:for-item="dish" wx:key="id">
 <template is="orders_inf" data="{{dish_name:dish.dish_name,dish_picture:dish.dish_picture,dish_price:dish.dish_price}}"/>
 <view class = "divLine"></view>
+</view>
 </view>
 <view class = "text2">
 <text class = "text">共计</text>
@@ -10,5 +11,12 @@
 </view>
 <view class = "divLine1"></view>
 <view class = "order_inf">下单时间：{{time}}</view>
-<view class = "order_inf">状态：待取餐/待评价/已评价</view>
+<view wx:if="{{status == 1}}" class = "order_inf">状态：待取餐</view>
+<view wx:elif="{{status == 2}}" class = "order_inf">状态：订单失效</view>
+<view wx:elif="{{status == 0}}" class = "order_inf">状态：等待商家接单</view>
+<view wx:elif="{{status == 3}}" class = "order_inf">
+<text>状态：已结束</text>
+<button class = "button" bindtap="submit" data-dish = "{{dish_imf}}">评价一下</button>
 </view>
+
+

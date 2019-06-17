@@ -1,0 +1,12 @@
+<!--miniprogram/pages/Personal/comment/commenr.wxml-->
+<view>
+<text>您对商家/菜品满意吗？</text>
+<!-- <view wx:for="{{dish_info}}" wx:key = "id"> -->
+  <view wx:for="{{dish_info[0].dishes}}"  wx:key = "id">
+   <view>
+        <image class = "image" src = "{{item.dish_picture}}" mode='scaletoFill'></image>
+    <text>{{item.dish_name}}</text>
+   </view>
+  </view>
+<!-- </view> -->
+</view>
