@@ -1,6 +1,4 @@
-
-/* pages/Home/dishpage/dishpage.wxss */
-
+/* pages/Home/comment/comment.wxss */
 .clear{clear: both;overflow: hidden;}
 
 .banner{height:300px;}
@@ -108,4 +106,3 @@
 .kefu button .iconfont{ padding:0px;}
 
 .icon-shoucang2{color:red;}
-

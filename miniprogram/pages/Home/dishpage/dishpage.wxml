@@ -30,10 +30,10 @@
     <image style='height:20px;width:20px;' src="/icon/dishicon/GOOD.png"></image>
       <text class="sub">{{dishes[0].thumbs_up}}</text>
     <image style='height:20px;width:20px;' src="/icon/dishicon/BAD.png"></image>
-      <text class="sub">{{dishes[0].thumbs_down}}</text>
+      <text class="sub" >{{dishes[0].thumbs_down}}</text>
     </view>
 </view>
-<block wx:if="{{pjDataList!=''}}">
+<block wx:if="{{comments!=''}}">
   <!--评价-->
   <view class='pj_box'>
     <view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
@@ -42,14 +42,14 @@
         <image src="/icon/youjiantou.png" class="ico_img_jt"></image>
      </view>
      <view style='float:right;font-size:12px;color:#A2A2A2;'>
-        <navigator url="pjList?id={{goods_id}}">查看全部</navigator>
+        <navigator url="/pages/Home/comment/comment" >查看全部</navigator>
      </view>
      <view class='clear'></view>
     </view>
     <block wx:for="{{comments}}"  wx:key="_id">
       <view class="list_item">
         <view class='pj_u_info clear'>
-          <view class='header_img'><image src="{{item.headpic}}" mode="aspectFit"></image></view>
+          <view class='header_img'><image src="/icon/skzxc.jpg" mode="aspectFit"></image></view>
           <view class='name'>{{item.user_id}}</view>
           <view class='time'>{{item.comment_time}}</view>
         </view>
@@ -74,7 +74,7 @@
 <!--底部浮动 start-->
 <view class="foot-nav mt15">
   <view class="flex con gridXt tc">
-    <view class="fast-links mr15 flex f12">
+    <!--view class="fast-links mr15 flex f12">
       <view class="sub gridYr" bindtap='shoucang'>
         <text class="iconfont {{is_shoucang==0?'icon-shoucang1':'icon-shoucang2'}}">收藏</text>
       </view>
@@ -86,9 +86,9 @@
       <view class="sub gridYr">
         <text class="iconfont icon-gouwuche">购物车</text>
       </view>
-    </view>
+    </view-->
     <view class="add-cart sub f16">
-      <button class="add-cart-btn" bindtap='buy' data-buyid="{{item._id}}">立即购买</button>
+      <button class="add-cart-btn" bindtap='buy' data-buyid="{{dishes[0]}}" >预定</button>
     </view>
   </view>
 </view>
