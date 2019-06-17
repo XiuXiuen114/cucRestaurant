@@ -10,7 +10,7 @@ width: 100%;
 height: 5rpx;
 }
 .button{
-  
+  width:90%;
 }
 .list{
 width: 50%;
@@ -54,7 +54,7 @@ margin-left:8%;
 color: gray;
 margin-top:10px;
 font-family: "幼圆";
-margin-left:50%;
+margin-left:5%;
 font-size: 14px;
 }
 .total_{
