@@ -5,6 +5,8 @@ Page({
   * 页面的初始数据
   */
   data: {
+    comment_status:null,
+    ps:null,
     count: 0,
     time: null,
     total_price: 0,
@@ -32,6 +34,8 @@ Page({
     }).get({
       success: function (res) {
         that.setData({
+          comment_status:res.data[0].if_comment,
+          ps:res.data[0].ps,
           dish_imf: res.data,
           count: res.data.length,
           status:res.data[0].order_status
@@ -43,12 +47,19 @@ Page({
           })
           for (var j = 0; j < that.data.dish_imf[i].dishes.length; j++) {
             that.setData({
-              total_price: that.data.total_price + that.data.dish_imf[i].dishes[j].dish_price
+              total_price: that.data.total_price + that.data.dish_imf[i].order_price
             })
           }
         }
+        app.globalData.dishID = that.data.dish_imf[0].dishes[0]._id
         console.log(that.data.dish_imf)//一次预定
       }
+    })
+    console.log(app.globalData.dishID)
+  },
+  view_comment:function(){
+    wx.navigateTo({
+      url: '../../Home/comment/comment',
     })
   },
   submit:function(e){

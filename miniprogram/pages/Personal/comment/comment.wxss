@@ -1,4 +1,11 @@
-
+.text_view{
+  font-family: "幼圆";
+  margin-left: 3%;
+  color: gray;
+}
+.show_orders{
+  font-family: "幼圆";
+}
 .comment1-description{
   padding:30rpx 0;
   display:flex;

@@ -11,7 +11,7 @@
        </view>
       </view>
       <view style="font-size: 13px;color: #888888;">地址：{{shop_address}}{{shop_name}}</view>
-      <view style="font-size: 13px;color: #888888;">电话：{{}}</view>
+      <view style="font-size: 13px;color: #888888;">电话：{{shop_phone}}</view>
       <text style="font-size: 13px;color: #888888;">下单时间:{{dish_info[0].order_time}}</text>
   </view>
 </view>

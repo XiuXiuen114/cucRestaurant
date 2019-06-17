@@ -1,5 +1,8 @@
 // miniprogram/pages/Personal/comment/commenr.js
+var util = require('../../../utils/util.js')
+var app = getApp()
 Page({
+  
 
   /**
    * 页面的初始数据
@@ -24,16 +27,48 @@ Page({
 
   },
   bindSubmit: function () {
+    var time = util.formatTime(new Date())
     var that = this;
-    wx.showToast({
-      title: '发布成功',
-      icon: 'success',
-      duration: 1500,
-      mask: false,
-      success: function () {
-        that.setData({ info: '', noteNowLen: 0, flag: 0 })
-      }
+    console.log("click Order_id:" + that.data.orderId)
+    const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
     })
+    db.collection('comments').add({
+      data:{
+        comment_content:that.data.info,
+        comment_time:time,
+        dish_id:that.data.dish_info[0].dishes[0]._id,
+        user_id: that.data.dish_info[0].user_id,
+        user_name:app.globalData.user_name,
+        user_pic: app.globalData.headPhoto
+      },success:function(res){
+        db.collection('orders').doc(that.data.dish_info[0]._id).update({
+          data:{
+            if_comment:1
+          }
+        })
+        console.log(res)
+        wx.showToast({
+          title: '发布成功',
+          icon: 'success',
+          duration: 1500,
+          mask: false,
+          success: function () {
+            that.setData({
+              info: '',
+              noteNowLen: 0,
+              flag: 0
+            })
+          }
+        })
+        wx.navigateTo({
+          url: '../waiting_for_meals/wait',
+        })
+      }//success
+    })
+    console.log(that.data.info)
+    console.log(that.data.flag)
+
 
   },
   changeColor1: function () {
@@ -84,6 +119,7 @@ Page({
         that.setData({
           shop_address:res.data[0].res_address,
           shop_name:res.data[0].res_name,
+          shop_phone:res.data[0].res_phone,
           shop_picture:res.data[0].res_picture
         })
       }
