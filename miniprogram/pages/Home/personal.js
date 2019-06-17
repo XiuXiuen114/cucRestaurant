@@ -19,7 +19,7 @@ Page({
       { text: '订单统计', url: "../ShopManager/order?status=1", icon: '../../icon/shijian.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '菜品更新', url: "../ShopManager/dishUpdate", icon: '../../icon/consumeList.png', tips: '', arrows: '../../icon/youjiantou.png' },
       { text: '广告推广', url: "../ShopManager/ads", icon: '../../icon/fuwudianpu.png', tips: '', arrows: '../../icon/youjiantou.png' },
-      { text: '设置', url: "../Personal/set/setInfo", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
+      // { text: '设置', url: "../Personal/set/setInfo", icon: '../../icon/shezhi.png', tips: '', arrows: '../../icon/youjiantou.png' },
     ],
     userInfo: null,
     userName:null,

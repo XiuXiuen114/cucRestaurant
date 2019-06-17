@@ -51,12 +51,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
 					"name": "cartpage",
 					"pathName": "pages/Cartpage/cartpage",
+					"query": "",
 					"scene": null
 				}
 			]
