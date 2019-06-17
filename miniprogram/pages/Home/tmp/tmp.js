@@ -82,7 +82,12 @@ Clickyuding: function(e)
 },
  addToCart: function (e) {
     let dish = e.currentTarget.dataset.dish;
-    console.log('cartDishes', app.globalData.cartDishes);
+   wx.showToast({
+     title: dish.dish_name+'加入购物车',
+     icon: 'success',
+     duration: 2000
+   })
+    console.log('预约dish', dish);
     //判断该菜品是否在购物车里面，已经在购物车里面则不push
     // console.log(JSON.stringify(app.globalData.cartDishes).indexOf(JSON.stringify(dish)));
     if (JSON.stringify(app.globalData.cartDishes).indexOf(JSON.stringify(dish)) == -1) {
