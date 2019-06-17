@@ -9,6 +9,9 @@ background: #91B0E4;
 width: 100%;
 height: 5rpx;
 }
+.button{
+  
+}
 .list{
 width: 50%;
 }

@@ -9,6 +9,7 @@ Page({
     time: null,
     total_price: 0,
     orderId: null,
+    status:null,
     resId: null,
     dish: [],
     dish_imf: []
@@ -32,7 +33,8 @@ Page({
       success: function (res) {
         that.setData({
           dish_imf: res.data,
-          count: res.data.length
+          count: res.data.length,
+          status:res.data[0].status
         })
         for (var i = 0; i < that.data.count; i++) {
           that.setData({
@@ -47,6 +49,14 @@ Page({
         console.log(that.data.dish_imf)//一次预定
       }
     })
+  },
+  submit:function(e){
+    var that = this
+    console.log(e.currentTarget.dataset.dish[0])
+    wx.navigateTo({
+      url: '../comment/comment?dish_Info=' + e.currentTarget.dataset.dish[0]
+    })
+    console.log("dishinfo:"+dishinfo)
   },
   /**
   * 生命周期函数--监听页面初次渲染完成
