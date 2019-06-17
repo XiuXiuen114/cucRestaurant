@@ -1,6 +1,6 @@
 <view>
   <!-- 未购买商品提示 -->
-  <view wx:if="{{cart_dishes.length==0}}">您未购买任何商品！</view>
+  <view wx:if="{{cart_dishes.length==0}}">您还未购买任何商品！</view>
   
   <!-- 购物车中菜品列表 -->
   <block wx:for="{{cart_dishes}}" wx:key="unique">
