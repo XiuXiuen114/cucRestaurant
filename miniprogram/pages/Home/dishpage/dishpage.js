@@ -50,14 +50,22 @@ Page({
         success: function (res) {
           //res.data为满足条件的json数组
           console.log('getcomment', res.data);
+      
           that.setData({
-            comments: res.data
+            comments: res.data,
+  
           });
         }
       }, {
         fail: console.error
       })
   },
+  buy: function(e)
+  {
+    var option = e.currentTarget.dataset.buyid;
+    app.globalData.cartDishes.push(option);
+    console.log('Clickbuy', option)
+  }
 
 })
 

@@ -51,8 +51,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "tmp",
+					"pathName": "pages/Home/tmp/tmp",
+					"scene": null
+				}
+			]
 		}
 	}
 }

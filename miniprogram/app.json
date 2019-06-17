@@ -19,6 +19,7 @@
     "pages/Home/shoppage/shoppage",
     "pages/Home/searchpage/searchpage",
     "pages/Home/dishpage/dishpage",
+    "pages/Home/comment/comment",
     "pages/Respage/respage",
     "pages/Rankpage/rankpage",
     "pages/Home/searchbar/searchbar",
