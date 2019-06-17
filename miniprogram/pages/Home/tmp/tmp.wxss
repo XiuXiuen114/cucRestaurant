@@ -156,6 +156,10 @@ text-align: center;
 color: #fff;
 font-size: 30rpx;
 }
+.weui-media-box__desc{
+padding-bottom: 5rpx;
+padding-top: 5rpx;
+}
 .tag{
 
 }

@@ -6,11 +6,12 @@
             <view class="weui-panel__bd">
                 <view class="weui-cell" wx:for="{{rank_dishes}}" wx:key="unique">
                 <!-- <block wx:for="{{rank_dishes}}" wx:key="unique"> -->
+              <view class="tobooking" bindtap="addToCart" data-dish="{{item}}"> 预订 </view>
                     <view class="rank">NO.{{index+1}}</view>
                     <view class="weui-cell__hd">          
                         <image style="width: 60px; height: 60px; display: block;margin-right: 15rpx;" src="{{item.dish_picture}}" />
                     </view>
-                    <view class="weui-cell__bd">
+                    <view class="weui-cell__bd" >
                         <view class="weui-media-box__title">
                           <image style="width: 10px; height: 10px;" src="/icon/dishicon/FOOD.png" />
                           {{item.dish_name}}
@@ -26,7 +27,7 @@
                           {{item.thumbs_down}}
                         </view>
                     </view>
-                    <image style="width: 30px; height: 30px;" src="/icon/dishicon/CART.png" bindtap='addToCart' data-dish='{{item}}'/>
+                    <!--image style="width: 30px; height: 30px;" src="/icon/dishicon/CART.png" bindtap='addToCart' data-dish='{{item}}'/-->
                 <!-- </block> -->
                 </view>
             </view>
