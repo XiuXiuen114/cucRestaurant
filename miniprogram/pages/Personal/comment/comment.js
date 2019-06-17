@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     var that = this
     that.setData({
-      dish_info:options.dish_Info
+      dish_info:JSON.parse(unescape(options.dish_Info))
     })
     console.log(that.data.dish_info)
   },

@@ -21,28 +21,33 @@ Page({
       env: 'minidev-ko6dk'
     })
     db.collection('orders').where({
-      user_id: Number(app.globalData.userId),
-      status: 1
+      user_id: app.globalData.userId,
+      order_status: 1
       //商家已接单
     }).get({
       success: function (res) {
+        console.log(res)
         that.setData({
           order_res: res
         })
         for (var i = 0; i < res.data.length; i++) {
           db.collection('restaurants').where({
-            _id: String(res.data[i].res_id)
+            _id: String(res.data[i].shop_id)
           }).get({
             success: function (res1) {
+              console.log(res1)
               res_inf['order_id'] = that.data.order_res.data[count]._id;
+              console.log(that.data.order_res)
+              res_inf['date'] = that.data.order_res.data[count].order_time
+              res_inf['address'] = res1.data[0].res_address
               count++;
               res_inf['res_id'] = res1.data[0]._id
               res_inf['name'] = res1.data[0].res_name
-              res_inf['date'] = res.data[0].order_start_time.getFullYear() + '-' + res.data[0].order_start_time.getMonth() + '-' + res.data[0].order_start_time.getDate() + ' ' + res.data[0].order_start_time.getHours() + ":" + res.data[0].order_start_time.getMinutes()
-              res_inf['address'] = res1.data[0].res_address
               res_inf['phone'] = res1.data[0].res_phone
               res_inf['picture'] = res1.data[0].res_picture
+              console.log(res_inf)
               that.data.res_.push(res_inf)
+              console.log(that.data.res_)
               res_inf = { 'order_id': null, 'res_id': null, 'name': null, 'date': null, "address": null, "phone": null, "picture": null, }//否则会覆盖原来的值
               that.setData({
                 res_: that.data.res_
