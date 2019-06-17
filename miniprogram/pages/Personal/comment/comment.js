@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dish_info:null
+    dish_info:null,
+    shop_name:null,
+    shop_picture:null,
+    shop_address:null
   },
 
   /**
@@ -15,6 +18,20 @@ Page({
     var that = this
     that.setData({
       dish_info:JSON.parse(unescape(options.dish_Info))
+    })
+    const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
+    })
+    db.collection('restaurants').where({
+      _id:String(that.data.dish_info[0].shop_id)
+    }).get({
+      success:function(res){
+        that.setData({
+          shop_address:res.data[0].res_address,
+          shop_name:res.data[0].res_name,
+          shop_picture:res.data[0].res_picture
+        })
+      }
     })
     console.log(that.data.dish_info)
   },
