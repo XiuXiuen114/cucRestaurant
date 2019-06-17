@@ -1,5 +1,13 @@
 
 /* pages/Cartpage/cartpage.wxss */
+.weui-cell__bd1{
+  margin-left:20px;
+  width: 100px;
+}
+.weui-cell__bd2{
+  float: right;
+  margin-left: 50px;
+}
 .empty{
 width: 100%;
 margin-top:30rpx;

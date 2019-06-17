@@ -14,6 +14,7 @@ Page({
     cart_ps:null,//取餐备注
     cart_sub:null,//取餐时间
     showToast:false,
+    dish_length:0,
   },
 
   /**
@@ -57,10 +58,13 @@ Page({
     // console.log('dish_index event', e);
     let index = e.currentTarget.dataset.dish_index;
     this.data.cart_dishes[index].number++;
+    this.data.dish_length++;
     let that=this;
     this.setData({
-      cart_dishes:that.data.cart_dishes
+      cart_dishes:that.data.cart_dishes,
+      dish_length:that.data.dish_length
     });
+    console.log("dish_length",this.data.dish_length);
     this.calTotalPrice();
     
   },
@@ -69,10 +73,18 @@ Page({
     let index = e.currentTarget.dataset.dish_index;
     if (this.data.cart_dishes[index].number>=1){
       this.data.cart_dishes[index].number--;
+      this.data.dish_length--;
       let that = this;
       this.setData({
-        cart_dishes: that.data.cart_dishes
+        cart_dishes: that.data.cart_dishes,
+        dish_length:that.data.dish_length
       });
+      console.log('dish_length',this.data.dish_length);
+      // if(this.data.cart_dishes.length==0){
+      //   this.setData({
+      //     dish_length:0
+      //   })
+      // }
     } 
     this.calTotalPrice();
   },
@@ -82,11 +94,14 @@ Page({
     app.globalData.cartDishes.forEach(function(item){
       // that.data.cart_dishes.push({'dish':item,'number':1})
       item['number'] = 1;
+      that.data.dish_length+=item.number;
       that.data.cart_dishes.push(item)
     });
     this.setData({
-      cart_dishes:that.data.cart_dishes
+      cart_dishes:that.data.cart_dishes,
+      dish_length:that.data.dish_length
     });
+    console.log("dish_length",this.data.dish_length);
 
     console.log("setData dishes",this.data.cart_dishes);
   },

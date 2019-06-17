@@ -15,6 +15,12 @@ height: 3rpx;
   background: white;
   margin-top:5%;
 }
+.mind{
+  font-family: "幼圆";
+  text-align: center;
+  margin-top:30%;
+  color: gray;
+}
 .list{
 width: 50%;
 }
