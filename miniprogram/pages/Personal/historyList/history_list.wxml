@@ -11,7 +11,7 @@
 <image class="shop_image" src="{{item.picture}}"></image>
 <view class="shop_name">{{item.name}}</view>
 </view>
-<!--view class = 'order_text' bindtap="order_info" id="{{item.order_id}}">订单详情 ></view-->
+<view class = 'order_text' bindtap="order_info" id="{{item.order_id}}">订单详情 ></view>
 <view class="text_date">
 <text>联系商家：{{item.phone}}</text>
 </view>
@@ -19,7 +19,5 @@
 <text>下单时间：{{item.date}}</text>
 </view>
 <view class="divLine"></view>
-<view class = 'order_text' bindtap="order_info" id="{{item.order_id}}">订单详情 ></view>
 </view>
-<view class="divLine"></view>
 </view>

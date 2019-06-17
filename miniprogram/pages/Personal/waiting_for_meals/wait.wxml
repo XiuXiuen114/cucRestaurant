@@ -17,7 +17,6 @@
 <view wx:elif="{{status == 3}}" class = "order_inf">
 <text>状态：已结束</text>
 <button class = "button" bindtap="submit" data-dish = "{{dish_imf}}">评价一下</button>
-
 </view>
 
 
