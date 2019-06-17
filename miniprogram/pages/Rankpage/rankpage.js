@@ -120,6 +120,7 @@ Page({
       }, {
         fail: console.error
       })
+      console.log("rank_dishes",this.data.rank_dishes);
   }, //end getRec
   Clickdish: function (e) {
     var option = e.currentTarget.dataset.dishid;

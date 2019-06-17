@@ -128,7 +128,7 @@ Page({
       },
       success:function(res){
         console.log('insertOrders res',res);
-        that.data.showToast=true;
+        // that.data.showToast=true;
       },
       fail:console.error
     })
@@ -174,7 +174,18 @@ Page({
     // this.insertOrders();
     // console.log("cart_sub,cart_ps",this.data.cart_sub,this.data.cart_ps);
     this.sortOrders();
-    
+    // wx.navigateTo({
+    //   url: '/pages/Home/mainpage',
+    // })
+    wx.switchTab({
+      url: '/pages/Home/mainpage',
+    })
+    app.globalData.cartDishes=[];
+    this.setData({
+      dish_length:0,
+      cart_dishes:[]
+    })
+    console.log("global cart_dishes",app.globalData.cart_dishes);
     //跳转至订单状态页面
 
   },
