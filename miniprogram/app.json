@@ -28,7 +28,9 @@
     "pages/ShopManager/order",
     "pages/ShopManager/dishUpdate",
     "pages/ShopManager/ads",
-    "pages/ShopManager/order_ing"
+    "pages/ShopManager/applyAd",
+    "pages/ShopManager/addDish",
+    "pages/Personal/historyList/history_list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -69,4 +71,3 @@
   },
   "sitemapLocation": "sitemap.json"
 }
-

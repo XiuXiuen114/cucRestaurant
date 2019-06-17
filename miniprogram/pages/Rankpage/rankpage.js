@@ -16,8 +16,9 @@ Page({
     this.getRankID();
   },
   addToCart: function (e) {
-    let dish_id=e.currentTarget.dataset.dish_id;
-    console.log('dish_id',dish_id);
+    let dish=e.currentTarget.dataset.dish;
+    app.globalData.cartDishes.push(dish);
+    console.log('cartDishes', app.globalData.cartDishes);
   },
   getRankID:function(){
     switch(app.globalData.rankID){

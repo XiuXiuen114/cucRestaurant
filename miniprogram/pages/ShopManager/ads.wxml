@@ -1,2 +1,23 @@
 <!--miniprogram/pages/ShopManager/ads.wxml-->
-<text>miniprogram/pages/ShopManager/ads.wxml</text>
+
+<view wx:for="{{adlist}}"  wx:key="id">
+      <view class='list'>
+
+        <view style='  display: flex;flex-direction:column;'>
+          <image src='{{item.ad_picture}}' mode='scaletoFill' class='image'></image>
+          <text class='text'>{{item.ad_content}}</text>
+        </view>
+
+        <view class='column1'>
+            <text>菜品名称{{item.dish_name}}</text>
+            <text>价格：{{item.ad_price}}元</text>
+            <text>评分：{{item.grade}}</text>
+      </view>
+
+       <view class='column2'>
+          <button class='button' bindtap='cancel' id='{{item._id}}'>取消</button>
+        </view>
+      </view>
+    </view>
+
+    <button bindtap='apply' class='button2'>申请广告</button>

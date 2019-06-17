@@ -1,13 +1,32 @@
 <!--miniprogram/pages/ShopManager/order.wxml-->
-<view wx:for="{{res_}}" class="list" bindtap="order_info" id="{{item.order_id}}"> 
-  <view class="shop_address">{{item.address}}</view>
-  <image class="shop_image" src="{{item.picture}}"></image>
-  <view class="shop_name">{{item.name}}</view>
-  <view class="text_date">
-  <text>联系商家：{{item.phone}}</text>
+<!-- 统计每个菜品被点过的次数 -->
+<view wx:if="{{status == 1}}">
+  <view wx:for="{{dishlist}}"  wx:key="id"> 
+    <view class='list'>
+        <image src='{{item.dish_picture}}' mode='scaletoFill' class='image'></image>
+        <view class='column1'>
+            <text>{{item.dish_name}}</text>
+            <text>订单次数：{{item.count}}</text>
+            <text>评分：{{item.grade}}</text>
+        </view>
+    </view>
   </view>
-  <view class="text_date">
-  <text>下单时间：{{item.date}}</text>
-  </view>
-  <view class="divLine"></view>
+</view>
+
+<view wx:else>
+  <view wx:for="{{dishlist}}"  wx:key="id">
+      <view class='list2'>
+        <image src='{{item.dish_picture}}' mode='scaletoFill' class='image'></image>
+        <view class='column1'>
+            <text>{{item.dish_name}}</text>
+            <text>预约时间：{{item.time}}</text>
+            <text>预约人：{{item.user_name}}</text>
+      </view>
+       <view class='column2'>
+          <button class='button' bindtap='accept' disabled='{{}}' id="{{item.order_id}}">接受</button>
+          <button class='button' bindtap='refuse' disabled='{{}}'id="{{item.order_id}}">拒绝</button>
+        </view>
+       
+      </view>
+    </view>
 </view>

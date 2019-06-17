@@ -7,7 +7,10 @@ Page({
   data: {
     headPhoto:null,
     userInfo: null,
-    user_name:null
+    user_name:null,
+    shop_name: null,
+    shop_photo: null,
+    status: null
   },
 
   /**
@@ -18,7 +21,10 @@ Page({
     var that = this;
     this.setData({
       headPhoto:app.globalData.headPhoto,
-      user_name: app.globalData.user_name
+      user_name: app.globalData.user_name,
+      shop_name: app.globalData.shop_name,
+      shop_photo: app.globalData.shop_photo,
+      status: app.globalData.status
     })
   },
 

@@ -1,66 +1,94 @@
 // miniprogram/pages/ShopManager/dishUpdate.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    dishlist: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getdishList();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getdishList: function () {  //获取商家菜品
+    var that = this
+    const db = wx.cloud.database({
+      env: 'minidev-ko6dk'
+    })
+    db.collection('dishes').where({
+      shop_id: Number(app.globalData.userId)
+    }).get({
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          dishlist: res.data
+        })
+      },
+      fail: function (err) {
+        console.error('获取广告数据失败：', err)
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  add: function (e) {
+    // console.log(e)
+    // var that = this;
+    // that.setData({
+    //   id: e.currentTarget.id
+    // })
+    // const db = wx.cloud.database({
+    //   env: 'minidev-ko6dk'
+    // });
+    // db.collection('orders').doc(that.data.id).update({
+    //   data: {
+    //     status: 1
+    //   },
+    //   success: function (res) {
+    //     wx.showToast({
+    //       title: '接单成功！'
+    //     })
+    //     that.getorderList(that.data.status)
+    //   }, fail: function (err) {
+    //     console.log(err);
+    //   }
+    // })
+    wx.navigateTo({
+      url: './addDish',
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+  remove: function (e) {
+    var that = this;
+    console.log(e)
+    wx.showModal({
+      title: '温馨提示',
+      content: '您确定移除该菜品吗？',
+      success: function (res) {
+        if (res.confirm) {
+          var id = e.currentTarget.id
+          const db = wx.cloud.database({
+            env: 'minidev-ko6dk'
+          });
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+          db.collection('dishes').doc(id).remove({
+            success: function (res0) {
+              console.log(res0)
+              wx.showToast({
+                title: '移除成功！'
+              })
+              that.getdishList()
+            }, fail: function (err) {
+              console.log(err);
+            }
+          })
+        }
+      }
+    })
   }
 })
