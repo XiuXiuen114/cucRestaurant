@@ -1,23 +1,48 @@
 <view>
+	<!-- 输入取餐时间，取餐备注 -->
+  <van-cell-group style="bottom:60px;">
+  <van-field
+    value="{{ cart_sub }}"
+    label="取餐时间"
+    type="textarea"
+    placeholder="请输入取餐时间"
+    autosize
+    border="false"
+    bind:blur="onChangesub"
+  />
+  <van-field
+    value="{{ cart_ps }}"
+    label="备注"
+    type="textarea"
+    placeholder="请输入订单备注"
+    autosize
+    border="false"
+    bind:blur="onChangeps"
+  />
+</van-cell-group>
+  <!-- <van-toast wx:if="{{showToast}}" /> -->
   <!-- 未购买商品提示 -->
   <view wx:if="{{cart_dishes.length==0}}">您未购买任何商品！</view>
   
   <!-- 购物车中菜品列表 -->
   <block wx:for="{{cart_dishes}}" wx:key="unique">
     <block>
-      <van-card
+      <van-card class="custom-class"
       num="{{item.number}}"
       price="{{item.dish_price}}"
       title="{{item.dish_name}}"
       thumb="{{item.dish_picture}}"
       />
-    </block>
-    <block>
+	  <block class="number-block">
       <image style="width: 30px; height: 30px;" src="/icon/dishicon/ADD.png" bindtap='addNumber' data-dish_index="{{index}}"></image>
       {{item.number}}
       <image style="width: 30px; height: 30px;" src="/icon/dishicon/MINUS.png" bindtap='minusNumber' data-dish_index="{{index}}"></image>
     </block>
+    </block>
+    
   </block>
+  
+  
 
   <!-- 提交订单栏 -->
   <van-submit-bar
