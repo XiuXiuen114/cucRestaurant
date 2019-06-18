@@ -21,16 +21,16 @@
   </view>
 </view>
 <view class="info-title">
-    <text class="sub">{{dishes[0].dish_name}}</text>
-   <image style='height:20px;width:20px;' src="/icon/yuyue.png"></image>
-      <text class="sub">{{dishes[0].reserved_number}}</text>
+    <text class="sub">{{dishes[0].dish_name}}      </text>
+   <image style='height:12px;width:12px;' src="/icon/yuyue.png"></image>
+      <text class="num">已预定：{{dishes[0].reserved_number}}</text>
 </view>
 <view style="border-top:1px solid #F6F6F6;background: #fff; padding:5px 15px;">
     <view class="clearfix flex grey gridXt">
-    <image style='height:20px;width:20px;' src="/icon/dishicon/GOOD.png"></image>
-      <text class="sub">{{dishes[0].thumbs_up}}</text>
-    <image style='height:20px;width:20px;' src="/icon/dishicon/BAD.png"></image>
-      <text class="sub" >{{dishes[0].thumbs_down}}</text>
+    <image style='height:15px;width:15px;margin-bottom:-10rpx;' src="/icon/dishicon/GOOD.png"></image>
+      <text class="num">{{dishes[0].thumbs_up}}</text>
+    <image style='height:15px;width:15px;margin-bottom:-10rpx;' src="/icon/dishicon/BAD.png"></image>
+      <text class="num" >{{dishes[0].thumbs_down}}</text>
     </view>
 </view>
 <block wx:if="{{comments!=''}}">

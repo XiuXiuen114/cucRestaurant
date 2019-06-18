@@ -1,7 +1,15 @@
 /* miniprogram/pages/Personal/about_us/about.wxss */
-.item{
-  margin-top:2%;
-  margin-left:5%;
-  font-family: "宋体";
+.empty{
+width: 100%;
+margin-top:30rpx;
+height: 550px;
+background: white;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
+.intro{
+width: 90%;
+height: 95%;
 }

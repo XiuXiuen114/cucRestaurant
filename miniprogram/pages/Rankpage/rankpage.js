@@ -18,7 +18,7 @@ Page({
   addToCart: function (e) {
     let dish=e.currentTarget.dataset.dish;
     wx.showToast({
-      title: dish.dish_name + '加入购物车',
+      title: dish.dish_name + '已加入购物车',
       icon: 'success',
       duration: 2000
     })

@@ -1,2 +1,4 @@
 <!--miniprogram/pages/Personal/help/help.wxml-->
-<text>如有问题请联系邮箱到yttxwork@cuc.edu.cn</text>
+    <view class='empty'>
+        <image class="cone" src='../../../icon/cone.png'/>
+    </view>  

@@ -1,5 +1,5 @@
 
-<view wx:if="{{status == 2}}">
+<view wx:if="{{status == 1}}">
 <!-- 师生界面 -->
   <view class="mine-wrapper">
 
@@ -19,8 +19,8 @@
     </view>
 
 <!-- 添加空白区域的设计 -->
-    <view wx:if="{{userFlag == 1 || userFlag == 2}}" class='empty'>添加空白区域的设计
-    
+    <view wx:if="{{userFlag == 1 || userFlag == 2}}" class='empty'>
+        <image class="welcome" src='../../icon/welcome.png'/>
     </view>  
 
 

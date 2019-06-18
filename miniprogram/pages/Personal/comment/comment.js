@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    comment_flag:null,
     order_id:null,
     dish_info:null,
     noteMaxLen: 50,
@@ -65,10 +66,15 @@ Page({
       data: {
         if_comment: 1
       }, success:function(res){
-        console.log(res)
+        that.setData({
+          comment_flag:1
+        })
         wx.navigateTo({
           url: '../waiting_for_meals/wait?order_Id=' + that.data.order_id
         })
+        getCurrentPages()[getCurrentPages().length].onLoad
+        getCurrentPages()[getCurrentPages().length-1].onLoad
+        console.log(res)
       },
       fail: console.log
     })

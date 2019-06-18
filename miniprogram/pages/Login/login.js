@@ -50,7 +50,7 @@ Page({
       wx.switchTab({
         url: '../Home/personal',
         success(res) {
-          getCurrentPages().pop().onLoad();
+          getCurrentPages()[getCurrentPages().length-1].onLoad();
         }
       })
     }else{

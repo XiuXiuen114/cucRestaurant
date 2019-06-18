@@ -15,6 +15,8 @@
       <text style="font-size: 13px;color: #888888;">下单时间:{{dish_info[0].order_time}}</text>
   </view>
 </view>
+
+<view wx:if="{{comment_flag!=1}}">
   <view class="text_view">您对商家/菜品满意吗？</view>
 <view class="container">
   <view class="comment1-description">
@@ -39,4 +41,8 @@
 <view class="btnSf">
 <button bindtap="bindSubmit">发布</button>
 </view>
+</view>
+</view>
+<view wx:if="{{comment_flag==1}}">
+<view class = "text_view">感谢您对小店的帮助！</view>
 </view>
