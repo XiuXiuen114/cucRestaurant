@@ -5,7 +5,7 @@ Page({
   data: {
     menuitems: [
       { text: '修改个人信息', url: "userInfo/modify", icon: '../../../icon/person.png',  arrows: '../../../icon/youjiantou.png' },
-       { text: '更换手机号 ', url: "account/changePhone", icon: '../../../icon/index_icon.png',arrows: '../../../icon/youjiantou.png' }
+      { text: '更换手机号 ', url: "account/changePhone", icon: '../../../icon/telephone.png',arrows: '../../../icon/youjiantou.png' }
       ],
   },
 

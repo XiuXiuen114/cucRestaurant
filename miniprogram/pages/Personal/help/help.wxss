@@ -1,1 +1,15 @@
 /* miniprogram/pages/Personal/help/help.wxss */
+.empty{
+width: 100%;
+margin-top:30rpx;
+height: 360px;
+background: white;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cone{
+width: 90%;
+height: 95%;
+}
