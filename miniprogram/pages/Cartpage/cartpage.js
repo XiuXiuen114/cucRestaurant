@@ -177,15 +177,23 @@ Page({
     // wx.navigateTo({
     //   url: '/pages/Home/mainpage',
     // })
-    wx.switchTab({
-      url: '/pages/Home/mainpage',
-    })
-    app.globalData.cartDishes=[];
+    app.globalData.cartDishes = [];
     this.setData({
-      dish_length:0,
-      cart_dishes:[]
+      dish_length: 0,
+      cart_dishes: []
     })
-    console.log("global cart_dishes",app.globalData.cart_dishes);
+    console.log("global cart_dishes", app.globalData.cart_dishes);
+    wx.showToast({
+      title: '订单已提交',
+      icon: 'success',
+      duration: 3000,
+      success:function(){
+        wx.switchTab({
+          url: '/pages/Home/mainpage',
+        })
+      }
+    })
+    
     //跳转至订单状态页面
 
   },
