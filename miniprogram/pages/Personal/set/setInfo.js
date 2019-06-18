@@ -19,9 +19,12 @@ Page({
   exitLogin: function(){
     wx.setStorageSync('userType', "2");
     app.globalData.userType = "2";
-   wx.switchTab({
-     url: 'Home/personal'
-   })
+    wx.switchTab({
+      url: '../../Home/personal',
+      success(res){
+        getCurrentPages()[getCurrentPages().length-1].onLoad()
+      }
+    })
   },
 
   destroy: function () {
