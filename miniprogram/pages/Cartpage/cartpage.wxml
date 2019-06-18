@@ -51,9 +51,9 @@
               
           </view>
           <view class="weui-cell__bd2">          
-              <image style="width: 28px; height: 28px;" src="/icon/dishicon/MINUS.png" bindtap='minusNumber' data-dish_index="{{index}}"></image>
-                {{item.number}}
-              <image style="width: 30px; height: 30px;" src="/icon/dishicon/ADD.png" bindtap='addNumber' data-dish_index="{{index}}"></image>
+              <image style="width: 20px; height: 20px;" src="/icon/dishicon/MINUS.png" bindtap='minusNumber' data-dish_index="{{index}}"></image>
+               <text style='margin-top:-5px;padding-right:15rpx;padding-left:15rpx'> {{item.number}}</text>
+              <image style="width: 20px; height: 20px;" src="/icon/dishicon/ADD.png" bindtap='addNumber' data-dish_index="{{index}}"></image>
           </view>
     </view>
 
