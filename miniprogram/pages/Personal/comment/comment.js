@@ -8,6 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    comment_flag:null,
+    order_id:null,
     dish_info:null,
     noteMaxLen: 50,
     noteNowLen: 0,
@@ -29,7 +31,6 @@ Page({
   bindSubmit: function () {
     var time = util.formatTime(new Date())
     var that = this;
-    console.log("click Order_id:" + that.data.orderId)
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
@@ -42,11 +43,6 @@ Page({
         user_name:app.globalData.user_name,
         user_pic: app.globalData.headPhoto
       },success:function(res){
-        db.collection('orders').doc(that.data.dish_info[0]._id).update({
-          data:{
-            if_comment:1
-          }
-        })
         console.log(res)
         wx.showToast({
           title: '发布成功',
@@ -61,13 +57,32 @@ Page({
             })
           }
         })
-        wx.navigateTo({
-          url: '../waiting_for_meals/wait',
-        })
       }//success
+    })
+    console.log(that.data.dish_info[0]._id)
+    db.collection('orders').doc(
+      that.data.dish_info[0]._id
+    ).update({
+      data: {
+        if_comment: 1
+      }, success:function(res){
+        that.setData({
+          comment_flag:1
+        })
+        wx.navigateTo({
+          url: '../waiting_for_meals/wait?order_Id=' + that.data.order_id
+        })
+        getCurrentPages()[getCurrentPages().length].onLoad
+        getCurrentPages()[getCurrentPages().length-1].onLoad
+        console.log(res)
+      },
+      fail: console.log
     })
     console.log(that.data.info)
     console.log(that.data.flag)
+    // wx.navigateTo({
+    //   url: '../waiting_for_meals/wait?order_Id=' + that.data.order_id
+    // })
 
 
   },
@@ -125,6 +140,9 @@ Page({
       }
     })
     console.log(that.data.dish_info)
+    that.setData({
+      order_id:that.data.dish_info[0]._id
+    })
   },
 
   /**

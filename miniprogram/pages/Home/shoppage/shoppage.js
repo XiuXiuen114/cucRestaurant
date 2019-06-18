@@ -16,7 +16,7 @@ Page({
     this.getcanteenID();
   },
   getcanteenID: function () {
-    console.log('getcanteen', app.globalData.canteenID)
+    console.log('getcanteenID', app.globalData.canteenID)
     switch (app.globalData.canteenID) {
       case '1':
         this.getXG();

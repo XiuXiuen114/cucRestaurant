@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    history_len:0,
     res_: [],
     order_res: null,
     order_id: null,
@@ -28,6 +29,7 @@ Page({
       success: function (res) {
         console.log(res)
         that.setData({
+          history_len:res.data.length,
           order_res: res
         })
         for (var i = 0; i < res.data.length; i++) {
@@ -39,7 +41,7 @@ Page({
               res_inf['order_id'] = that.data.order_res.data[count]._id;
               console.log(that.data.order_res)
               res_inf['date'] = that.data.order_res.data[count].order_time
-              res_inf['address'] = res1.data[0].res_address
+              res_inf['address'] = res1.data[0].kind
               count++;
               res_inf['res_id'] = res1.data[0]._id
               res_inf['name'] = res1.data[0].res_name
@@ -75,7 +77,7 @@ Page({
   },
   view_shop: function (e) {
     var that = this
-    // console.log(e.currentTarget.id)
+    console.log(e.currentTarget.id)
     const db = wx.cloud.database({
       env: 'minidev-ko6dk'
     })
